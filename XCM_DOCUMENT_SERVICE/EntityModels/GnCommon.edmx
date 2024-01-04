@@ -1,0 +1,1081 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GnCommonXcmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TmsShipment">
+          <Key>
+            <PropertyRef Name="Uniq" />
+          </Key>
+          <Property Name="DocTip" Type="tinyint" Nullable="false" />
+          <Property Name="DocNum" Type="varchar" MaxLength="32" />
+          <Property Name="DocDta" Type="date" />
+          <Property Name="DocTime" Type="varchar" MaxLength="16" />
+          <Property Name="DocUse" Type="tinyint" />
+          <Property Name="DocStatus" Type="tinyint" />
+          <Property Name="DocDes" Type="varchar" MaxLength="128" />
+          <Property Name="DocUnit" Type="varchar" MaxLength="16" />
+          <Property Name="DocQty" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="InsideRef" Type="varchar" MaxLength="1024" />
+          <Property Name="ExternRef" Type="varchar" MaxLength="1024" />
+          <Property Name="IncotermID" Type="varchar" MaxLength="8" />
+          <Property Name="Freight" Type="varchar" MaxLength="32" />
+          <Property Name="BusinessUnit" Type="varchar" MaxLength="16" />
+          <Property Name="ShipmentType" Type="varchar" MaxLength="8" />
+          <Property Name="ServiceType" Type="varchar" MaxLength="8" />
+          <Property Name="CarrierType" Type="varchar" MaxLength="8" />
+          <Property Name="TransportType" Type="varchar" MaxLength="8" />
+          <Property Name="VehicleTypeAsked" Type="varchar" MaxLength="8" />
+          <Property Name="VehicleID" Type="varchar" MaxLength="16" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="8" />
+          <Property Name="TowID" Type="varchar" MaxLength="16" />
+          <Property Name="GoodsType" Type="varchar" MaxLength="8" />
+          <Property Name="GoodsValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DepositValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="Documents" Type="varchar" MaxLength="256" />
+          <Property Name="DocumentsDate" Type="date" />
+          <Property Name="DriverID1" Type="varchar" MaxLength="16" />
+          <Property Name="DriverID2" Type="varchar" MaxLength="16" />
+          <Property Name="HolderID1" Type="varchar" MaxLength="16" />
+          <Property Name="HolderID2" Type="varchar" MaxLength="16" />
+          <Property Name="TransitID" Type="varchar" MaxLength="16" />
+          <Property Name="TripID" Type="int" />
+          <Property Name="TripSheetID" Type="varchar" MaxLength="16" />
+          <Property Name="TripList" Type="varchar" MaxLength="256" />
+          <Property Name="TripBack" Type="bit" />
+          <Property Name="BackID" Type="varchar" MaxLength="8" />
+          <Property Name="CargoTripID" Type="varchar" MaxLength="16" />
+          <Property Name="Port" Type="int" />
+          <Property Name="Weight" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="Meters" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="Cube" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="Km" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="KmEmpty" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="Packs" Type="int" />
+          <Property Name="Pack1" Type="int" />
+          <Property Name="PackN" Type="int" />
+          <Property Name="PackFree" Type="int" />
+          <Property Name="PalletID" Type="varchar" MaxLength="16" />
+          <Property Name="Pallets" Type="int" />
+          <Property Name="Barcodes" Type="varchar" MaxLength="128" />
+          <Property Name="TicketNumber" Type="int" />
+          <Property Name="TicketValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="FuelCost" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="FuelCostPercent" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="FuelFullfillment" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="FuelKm" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CreditSplitType" Type="tinyint" />
+          <Property Name="DebitSplitType" Type="tinyint" />
+          <Property Name="CreditInvoiceOk" Type="bit" />
+          <Property Name="DebitInvoiceOk" Type="bit" />
+          <Property Name="InvoiceReason" Type="varchar" MaxLength="8" />
+          <Property Name="FuelCarrierPercent" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="FuelLegKm" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="VehicleFuelType" Type="tinyint" />
+          <Property Name="CashValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="IsSenderCash" Type="bit" />
+          <Property Name="IsShippingTaking" Type="bit" />
+          <Property Name="IsDelivered" Type="bit" />
+          <Property Name="Info" Type="varchar(max)" />
+          <Property Name="Info0" Type="varchar(max)" />
+          <Property Name="Info1" Type="varchar(max)" />
+          <Property Name="Info2" Type="varchar(max)" />
+          <Property Name="Info3" Type="varchar(max)" />
+          <Property Name="Info4" Type="varchar(max)" />
+          <Property Name="Info5" Type="varchar(max)" />
+          <Property Name="Info6" Type="varchar(max)" />
+          <Property Name="DocCredit" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DocDebit" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DocBalance" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="SenderID" Type="int" />
+          <Property Name="SenderName" Type="nvarchar" MaxLength="512" />
+          <Property Name="ConsigneeID" Type="int" />
+          <Property Name="ConsigneeName" Type="nvarchar" MaxLength="512" />
+          <Property Name="Notify" Type="nvarchar" MaxLength="512" />
+          <Property Name="Notify2" Type="nvarchar" MaxLength="512" />
+          <Property Name="FinalConsignee" Type="nvarchar" MaxLength="512" />
+          <Property Name="CustomsAgency" Type="nvarchar" MaxLength="512" />
+          <Property Name="NumCod" Type="varchar" MaxLength="8" />
+          <Property Name="Numero" Type="int" />
+          <Property Name="Uniq" Type="int" Nullable="false" />
+          <Property Name="RecCreate" Type="datetime" />
+          <Property Name="RecUserID" Type="smallint" />
+          <Property Name="RecChange" Type="datetime" />
+          <Property Name="RecChangeUserID" Type="smallint" />
+          <Property Name="RecCompany" Type="tinyint" />
+          <Property Name="RecAgency" Type="tinyint" />
+          <Property Name="RecLocked" Type="bit" />
+          <Property Name="RecType" Type="tinyint" />
+          <Property Name="PriorityCode" Type="smallint" />
+          <Property Name="Seat" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="NetWeight" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="StartAgencyCod" Type="varchar" MaxLength="16" />
+          <Property Name="EndAgency" Type="varchar" MaxLength="16" />
+          <Property Name="DocumentsGrouped" Type="varchar(max)" />
+          <Property Name="UniqCustomsExternal" Type="int" />
+          <Property Name="StatusTypeFrom" Type="varchar" MaxLength="32" />
+          <Property Name="CashValueCurrency" Type="varchar" MaxLength="8" />
+          <Property Name="CashValueType" Type="varchar" MaxLength="32" />
+          <Property Name="CashValueNote" Type="varchar(max)" />
+          <Property Name="StartTransitPointID" Type="int" />
+          <Property Name="EndTransitPointID" Type="int" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="SalesManagerID" Type="varchar" MaxLength="16" />
+          <Property Name="ChkFields" Type="varchar" MaxLength="16" />
+          <Property Name="DocCredit2" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="Temperature" Type="varchar" MaxLength="8" />
+          <Property Name="StartAgency" Type="varchar" MaxLength="16" />
+          <Property Name="TourID_Start" Type="varchar" MaxLength="16" />
+          <Property Name="TourID_End" Type="varchar" MaxLength="16" />
+          <Property Name="UniqEdiFrom" Type="int" />
+          <Property Name="PTVLastUpdate" Type="datetime" />
+          <Property Name="ManagerID" Type="smallint" />
+          <Property Name="CodADP" Type="varchar" MaxLength="16" />
+          <Property Name="Rubrique" Type="varchar" MaxLength="16" />
+          <Property Name="IncotermTypeID" Type="varchar" MaxLength="8" />
+          <Property Name="KmReal" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="DestPayment" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="NotifyID" Type="int" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="16" />
+          <Property Name="ServiceTypeNetwork" Type="varchar" MaxLength="8" />
+          <Property Name="Customer_PriceID" Type="varchar" MaxLength="16" />
+          <Property Name="StartZoneID" Type="varchar" MaxLength="16" />
+          <Property Name="EndZoneID" Type="varchar" MaxLength="16" />
+          <Property Name="StartHubID" Type="varchar" MaxLength="16" />
+          <Property Name="DestPaymentType" Type="varchar" MaxLength="32" />
+          <Property Name="OwnerAgency" Type="varchar" MaxLength="16" />
+          <Property Name="LinkShipStartAgency" Type="int" />
+          <Property Name="LinkShipEndAgency" Type="int" />
+          <Property Name="GroupID_Supplier1" Type="int" />
+          <Property Name="GroupID_Supplier2" Type="int" />
+          <Property Name="AirShipmentType" Type="varchar" MaxLength="8" />
+          <Property Name="DeliveryAgentName" Type="nvarchar" MaxLength="512" />
+          <Property Name="DeliveryAgentID" Type="int" />
+          <Property Name="SeaShipmentType" Type="varchar" MaxLength="8" />
+          <Property Name="CodeRate" Type="varchar" MaxLength="16" />
+          <Property Name="IdCompany" Type="int" />
+          <Property Name="IdMasterAnaCustomer" Type="int" />
+          <Property Name="Cig" Type="varchar" MaxLength="16" />
+          <Property Name="Cup" Type="varchar" MaxLength="16" />
+          <Property Name="ShipDateOriStart" Type="date" />
+          <Property Name="ShipDateOriEnd" Type="date" />
+          <Property Name="ShipTimeOriStart" Type="varchar" MaxLength="8" />
+          <Property Name="ShipTimeOriEnd" Type="varchar" MaxLength="8" />
+          <Property Name="ItineraryCod" Type="varchar" MaxLength="16" />
+          <Property Name="AccrualDate" Type="date" />
+          <Property Name="ExternalId" Type="nvarchar" MaxLength="64" />
+          <Property Name="ExternalId1" Type="nvarchar" MaxLength="64" />
+          <Property Name="HolderRegTypeID" Type="varchar" MaxLength="32" />
+          <Property Name="WebAttachCount" Type="int" />
+        </EntityType>
+        <EntityType Name="TmsTrip">
+          <Key>
+            <PropertyRef Name="Uniq" />
+          </Key>
+          <Property Name="DocTip" Type="tinyint" />
+          <Property Name="DocNum" Type="varchar" MaxLength="32" />
+          <Property Name="DocDta" Type="date" />
+          <Property Name="DocTime" Type="varchar" MaxLength="16" />
+          <Property Name="DocUse" Type="tinyint" />
+          <Property Name="DocStatus" Type="tinyint" />
+          <Property Name="DocDes" Type="varchar" MaxLength="128" />
+          <Property Name="DriverID1" Type="varchar" MaxLength="16" />
+          <Property Name="DriverID2" Type="varchar" MaxLength="16" />
+          <Property Name="HolderID1" Type="varchar" MaxLength="16" />
+          <Property Name="HolderID2" Type="varchar" MaxLength="16" />
+          <Property Name="TransitID" Type="varchar" MaxLength="16" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="8" />
+          <Property Name="VehicleID" Type="varchar" MaxLength="16" />
+          <Property Name="TowID" Type="varchar" MaxLength="16" />
+          <Property Name="CarrierID" Type="varchar" MaxLength="16" />
+          <Property Name="CarrierTotal" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="16" />
+          <Property Name="TripQty" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="TripUnitValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="TripTotal" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="TripKm" Type="float" />
+          <Property Name="StartDes" Type="nvarchar" MaxLength="256" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="StartTime" Type="varchar" MaxLength="8" />
+          <Property Name="StartKm" Type="float" />
+          <Property Name="StartLocationID" Type="int" />
+          <Property Name="StartLocation" Type="nvarchar" MaxLength="128" />
+          <Property Name="StartCountry" Type="varchar" MaxLength="64" />
+          <Property Name="StartRegion" Type="varchar" MaxLength="64" />
+          <Property Name="StartDistrict" Type="varchar" MaxLength="32" />
+          <Property Name="StartZipCode" Type="varchar" MaxLength="16" />
+          <Property Name="EndDes" Type="nvarchar" MaxLength="256" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="EndTime" Type="varchar" MaxLength="8" />
+          <Property Name="EndKm" Type="float" />
+          <Property Name="EmptyKm" Type="float" />
+          <Property Name="EndLocationID" Type="int" />
+          <Property Name="EndLocation" Type="nvarchar" MaxLength="128" />
+          <Property Name="EndCountry" Type="varchar" MaxLength="64" />
+          <Property Name="EndRegion" Type="varchar" MaxLength="64" />
+          <Property Name="EndDistrict" Type="varchar" MaxLength="32" />
+          <Property Name="EndZipCode" Type="varchar" MaxLength="16" />
+          <Property Name="Currency" Type="varchar" MaxLength="8" />
+          <Property Name="CurrencyChange" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="VatID" Type="varchar" MaxLength="8" />
+          <Property Name="PayID" Type="varchar" MaxLength="16" />
+          <Property Name="PriceID" Type="varchar" MaxLength="16" />
+          <Property Name="PriceType" Type="tinyint" />
+          <Property Name="DocCredit" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DocDebit" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DocBalance" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CalcDes" Type="varchar" MaxLength="64" />
+          <Property Name="CalcUnit" Type="varchar" MaxLength="8" />
+          <Property Name="CalcQty" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="CalcValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CalcTotal" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CalcType" Type="tinyint" />
+          <Property Name="UpdateDes" Type="varchar" MaxLength="64" />
+          <Property Name="UpdateUnit" Type="varchar" MaxLength="8" />
+          <Property Name="UpdateQty" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="UpdateValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="UpdateTotal" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CostValue" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="CostTotal" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DebitTotal" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DebitInvoice" Type="bit" />
+          <Property Name="DebitInvoiceID" Type="int" />
+          <Property Name="DebitFinancialYear" Type="smallint" />
+          <Property Name="DebitInvoiceDate" Type="date" />
+          <Property Name="DebitSplitType" Type="tinyint" />
+          <Property Name="DebitInvoiceOk" Type="bit" />
+          <Property Name="Markup" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="Signet" Type="varchar" MaxLength="32" />
+          <Property Name="Booking" Type="varchar" MaxLength="32" />
+          <Property Name="ItemInfo" Type="varchar(max)" />
+          <Property Name="NumCod" Type="varchar" MaxLength="8" />
+          <Property Name="Numero" Type="int" />
+          <Property Name="Uniq" Type="int" Nullable="false" />
+          <Property Name="Uniq2" Type="int" />
+          <Property Name="RecCreate" Type="datetime" />
+          <Property Name="RecUserID" Type="smallint" />
+          <Property Name="RecChange" Type="datetime" />
+          <Property Name="RecChangeUserID" Type="smallint" />
+          <Property Name="RecCompany" Type="tinyint" />
+          <Property Name="RecAgency" Type="tinyint" />
+          <Property Name="RecLocked" Type="bit" />
+          <Property Name="RecType" Type="tinyint" />
+          <Property Name="Info1" Type="varchar(max)" />
+          <Property Name="Info2" Type="varchar(max)" />
+          <Property Name="Info3" Type="varchar(max)" />
+          <Property Name="Info4" Type="varchar(max)" />
+          <Property Name="Info5" Type="varchar(max)" />
+          <Property Name="Info6" Type="varchar(max)" />
+          <Property Name="ExternRef" Type="varchar" MaxLength="64" />
+          <Property Name="ItemServiceType" Type="varchar" MaxLength="8" />
+          <Property Name="ChkFields" Type="varchar" MaxLength="16" />
+          <Property Name="StartObligatoryType" Type="tinyint" />
+          <Property Name="EndObligatoryType" Type="tinyint" />
+          <Property Name="TransitPointID" Type="int" />
+          <Property Name="AgencyCod" Type="varchar" MaxLength="16" />
+          <Property Name="SenderID" Type="int" />
+          <Property Name="StatusTypeFrom" Type="varchar" MaxLength="32" />
+          <Property Name="ServiceType" Type="varchar" MaxLength="8" />
+          <Property Name="CarrierType" Type="varchar" MaxLength="8" />
+          <Property Name="TransportType" Type="varchar" MaxLength="8" />
+          <Property Name="IncotermID" Type="varchar" MaxLength="8" />
+          <Property Name="StartAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="EndAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="ManagerID" Type="smallint" />
+          <Property Name="ExpectedKm" Type="float" />
+          <Property Name="ItemUse" Type="tinyint" />
+          <Property Name="CarrierLocationID" Type="int" />
+          <Property Name="StartBorderCrossingID" Type="int" />
+          <Property Name="EndBorderCrossingID" Type="int" />
+          <Property Name="InboundKm" Type="float" />
+          <Property Name="OutboundKmAB" Type="float" />
+          <Property Name="OutboundKmSTOP" Type="float" />
+          <Property Name="BusinessUnit" Type="varchar" MaxLength="16" />
+          <Property Name="IsStartLocked" Type="bit" />
+          <Property Name="IsEndLocked" Type="bit" />
+          <Property Name="UseCoeff" Type="decimal" Precision="19" Scale="6" />
+          <Property Name="TripType" Type="varchar" MaxLength="8" />
+          <Property Name="Signet2" Type="varchar" MaxLength="32" />
+          <Property Name="DeviceID" Type="int" />
+          <Property Name="CarrierID2" Type="varchar" MaxLength="256" />
+          <Property Name="UniqEdiFrom" Type="int" />
+          <Property Name="ShipID" Type="varchar" MaxLength="16" />
+          <Property Name="Escal" Type="varchar" MaxLength="32" />
+          <Property Name="Rubrique" Type="varchar" MaxLength="32" />
+          <Property Name="CarrierID_ForDet" Type="varchar" MaxLength="16" />
+          <Property Name="CarrierPriceID_ForDet" Type="varchar" MaxLength="16" />
+          <Property Name="TrailerID_List" Type="varchar" MaxLength="128" />
+          <Property Name="LdcUniqFrom" Type="int" />
+          <Property Name="HolderCube1" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="HolderCube2" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="HolderWmsUnload1" Type="bit" />
+          <Property Name="HolderWmsUnload2" Type="bit" />
+          <Property Name="CargoStartPortID" Type="nvarchar" MaxLength="128" />
+          <Property Name="CargoEndPortID" Type="nvarchar" MaxLength="128" />
+          <Property Name="TerminalStart" Type="varchar" MaxLength="512" />
+          <Property Name="TerminalEnd" Type="varchar" MaxLength="512" />
+          <Property Name="MasterNumber" Type="varchar" MaxLength="64" />
+          <Property Name="ShipName" Type="nvarchar" MaxLength="64" />
+          <Property Name="ShipTripNumber" Type="varchar" MaxLength="128" />
+          <Property Name="HolderNumber" Type="varchar" MaxLength="64" />
+          <Property Name="Seal" Type="varchar" MaxLength="32" />
+          <Property Name="HolderType" Type="varchar" MaxLength="16" />
+          <Property Name="AirPortStartID" Type="nvarchar" MaxLength="128" />
+          <Property Name="AirPortEndID" Type="nvarchar" MaxLength="128" />
+          <Property Name="CargoFinalPortID" Type="varchar" MaxLength="64" />
+          <Property Name="TerminalFinal" Type="varchar" MaxLength="512" />
+          <Property Name="ETAFinal" Type="date" />
+          <Property Name="ETAFinalTime" Type="varchar" MaxLength="8" />
+          <Property Name="CarrierCustoms" Type="varchar" MaxLength="16" />
+          <Property Name="CustomsDeclarationType" Type="varchar" MaxLength="8" />
+          <Property Name="SenderName" Type="nvarchar" MaxLength="512" />
+          <Property Name="ConsigneeID" Type="int" />
+          <Property Name="ConsigneeName" Type="nvarchar" MaxLength="512" />
+          <Property Name="NotifyID" Type="int" />
+          <Property Name="NotifyDes" Type="nvarchar" MaxLength="512" />
+          <Property Name="PrepaidWT" Type="bit" />
+          <Property Name="PagesOriginal" Type="int" />
+          <Property Name="PagesCopy" Type="int" />
+          <Property Name="IdCompany" Type="int" />
+          <Property Name="SeaTripType" Type="varchar" MaxLength="8" />
+          <Property Name="Date_Load" Type="date" />
+          <Property Name="Time_Load" Type="varchar" MaxLength="8" />
+          <Property Name="PltFloor" Type="int" />
+          <Property Name="StartAddressNumber" Type="nvarchar" MaxLength="32" />
+          <Property Name="EndAddressNumber" Type="nvarchar" MaxLength="32" />
+          <Property Name="HolderRegTypeID" Type="varchar" MaxLength="32" />
+          <Property Name="TourID" Type="varchar" MaxLength="16" />
+        </EntityType>
+        <EntityContainer Name="GnCommonXcmModelStoreContainer">
+          <EntitySet Name="TmsShipment" EntityType="Self.TmsShipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TmsTrip" EntityType="Self.TmsTrip" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GnCommonXcmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TmsShipment">
+          <Key>
+            <PropertyRef Name="Uniq" />
+          </Key>
+          <Property Name="DocTip" Type="Byte" Nullable="false" />
+          <Property Name="DocNum" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="DocDta" Type="DateTime" Precision="0" />
+          <Property Name="DocTime" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DocUse" Type="Byte" />
+          <Property Name="DocStatus" Type="Byte" />
+          <Property Name="DocDes" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="DocUnit" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DocQty" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="InsideRef" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="ExternRef" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Freight" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessUnit" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ShipmentType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="TransportType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeAsked" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="TowID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="GoodsType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GoodsValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DepositValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="Documents" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentsDate" Type="DateTime" Precision="0" />
+          <Property Name="DriverID1" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DriverID2" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="HolderID1" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="HolderID2" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TransitID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TripID" Type="Int32" />
+          <Property Name="TripSheetID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TripList" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="TripBack" Type="Boolean" />
+          <Property Name="BackID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CargoTripID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Port" Type="Int32" />
+          <Property Name="Weight" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="Meters" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="Cube" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="Km" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="KmEmpty" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="Packs" Type="Int32" />
+          <Property Name="Pack1" Type="Int32" />
+          <Property Name="PackN" Type="Int32" />
+          <Property Name="PackFree" Type="Int32" />
+          <Property Name="PalletID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Pallets" Type="Int32" />
+          <Property Name="Barcodes" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="TicketNumber" Type="Int32" />
+          <Property Name="TicketValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="FuelCost" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="FuelCostPercent" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="FuelFullfillment" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="FuelKm" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CreditSplitType" Type="Byte" />
+          <Property Name="DebitSplitType" Type="Byte" />
+          <Property Name="CreditInvoiceOk" Type="Boolean" />
+          <Property Name="DebitInvoiceOk" Type="Boolean" />
+          <Property Name="InvoiceReason" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="FuelCarrierPercent" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="FuelLegKm" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="VehicleFuelType" Type="Byte" />
+          <Property Name="CashValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="IsSenderCash" Type="Boolean" />
+          <Property Name="IsShippingTaking" Type="Boolean" />
+          <Property Name="IsDelivered" Type="Boolean" />
+          <Property Name="Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info0" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DocCredit" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DocDebit" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DocBalance" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="SenderID" Type="Int32" />
+          <Property Name="SenderName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ConsigneeID" Type="Int32" />
+          <Property Name="ConsigneeName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="Notify" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="Notify2" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="FinalConsignee" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="CustomsAgency" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="NumCod" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="Int32" />
+          <Property Name="Uniq" Type="Int32" Nullable="false" />
+          <Property Name="RecCreate" Type="DateTime" Precision="3" />
+          <Property Name="RecUserID" Type="Int16" />
+          <Property Name="RecChange" Type="DateTime" Precision="3" />
+          <Property Name="RecChangeUserID" Type="Int16" />
+          <Property Name="RecCompany" Type="Byte" />
+          <Property Name="RecAgency" Type="Byte" />
+          <Property Name="RecLocked" Type="Boolean" />
+          <Property Name="RecType" Type="Byte" />
+          <Property Name="PriorityCode" Type="Int16" />
+          <Property Name="Seat" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="NetWeight" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="StartAgencyCod" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="EndAgency" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentsGrouped" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UniqCustomsExternal" Type="Int32" />
+          <Property Name="StatusTypeFrom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="CashValueCurrency" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CashValueType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="CashValueNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartTransitPointID" Type="Int32" />
+          <Property Name="EndTransitPointID" Type="Int32" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="SalesManagerID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ChkFields" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DocCredit2" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="Temperature" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="StartAgency" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TourID_Start" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TourID_End" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="UniqEdiFrom" Type="Int32" />
+          <Property Name="PTVLastUpdate" Type="DateTime" Precision="3" />
+          <Property Name="ManagerID" Type="Int16" />
+          <Property Name="CodADP" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Rubrique" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermTypeID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="KmReal" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="DestPayment" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="NotifyID" Type="Int32" />
+          <Property Name="CustomerID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceTypeNetwork" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_PriceID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="StartZoneID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="EndZoneID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="StartHubID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DestPaymentType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="OwnerAgency" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="LinkShipStartAgency" Type="Int32" />
+          <Property Name="LinkShipEndAgency" Type="Int32" />
+          <Property Name="GroupID_Supplier1" Type="Int32" />
+          <Property Name="GroupID_Supplier2" Type="Int32" />
+          <Property Name="AirShipmentType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryAgentName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryAgentID" Type="Int32" />
+          <Property Name="SeaShipmentType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CodeRate" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="IdCompany" Type="Int32" />
+          <Property Name="IdMasterAnaCustomer" Type="Int32" />
+          <Property Name="Cig" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Cup" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ShipDateOriStart" Type="DateTime" Precision="0" />
+          <Property Name="ShipDateOriEnd" Type="DateTime" Precision="0" />
+          <Property Name="ShipTimeOriStart" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ShipTimeOriEnd" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ItineraryCod" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="AccrualDate" Type="DateTime" Precision="0" />
+          <Property Name="ExternalId" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ExternalId1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="HolderRegTypeID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="WebAttachCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TmsTrip">
+          <Key>
+            <PropertyRef Name="Uniq" />
+          </Key>
+          <Property Name="DocTip" Type="Byte" />
+          <Property Name="DocNum" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="DocDta" Type="DateTime" Precision="0" />
+          <Property Name="DocTime" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DocUse" Type="Byte" />
+          <Property Name="DocStatus" Type="Byte" />
+          <Property Name="DocDes" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="DriverID1" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="DriverID2" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="HolderID1" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="HolderID2" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TransitID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TowID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierTotal" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CustomerID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TripQty" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="TripUnitValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="TripTotal" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="TripKm" Type="Double" />
+          <Property Name="StartDes" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="StartKm" Type="Double" />
+          <Property Name="StartLocationID" Type="Int32" />
+          <Property Name="StartLocation" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="StartCountry" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="StartRegion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="StartDistrict" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="StartZipCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="EndDes" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="EndTime" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="EndKm" Type="Double" />
+          <Property Name="EmptyKm" Type="Double" />
+          <Property Name="EndLocationID" Type="Int32" />
+          <Property Name="EndLocation" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="EndCountry" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="EndRegion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="EndDistrict" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="EndZipCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Currency" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CurrencyChange" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="VatID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="PayID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="PriceID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="PriceType" Type="Byte" />
+          <Property Name="DocCredit" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DocDebit" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DocBalance" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CalcDes" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CalcUnit" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CalcQty" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="CalcValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CalcTotal" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CalcType" Type="Byte" />
+          <Property Name="UpdateDes" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateUnit" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateQty" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="UpdateValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="UpdateTotal" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CostValue" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CostTotal" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DebitTotal" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DebitInvoice" Type="Boolean" />
+          <Property Name="DebitInvoiceID" Type="Int32" />
+          <Property Name="DebitFinancialYear" Type="Int16" />
+          <Property Name="DebitInvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="DebitSplitType" Type="Byte" />
+          <Property Name="DebitInvoiceOk" Type="Boolean" />
+          <Property Name="Markup" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="Signet" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Booking" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ItemInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NumCod" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="Int32" />
+          <Property Name="Uniq" Type="Int32" Nullable="false" />
+          <Property Name="Uniq2" Type="Int32" />
+          <Property Name="RecCreate" Type="DateTime" Precision="3" />
+          <Property Name="RecUserID" Type="Int16" />
+          <Property Name="RecChange" Type="DateTime" Precision="3" />
+          <Property Name="RecChangeUserID" Type="Int16" />
+          <Property Name="RecCompany" Type="Byte" />
+          <Property Name="RecAgency" Type="Byte" />
+          <Property Name="RecLocked" Type="Boolean" />
+          <Property Name="RecType" Type="Byte" />
+          <Property Name="Info1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Info6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExternRef" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="ItemServiceType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ChkFields" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="StartObligatoryType" Type="Byte" />
+          <Property Name="EndObligatoryType" Type="Byte" />
+          <Property Name="TransitPointID" Type="Int32" />
+          <Property Name="AgencyCod" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="SenderID" Type="Int32" />
+          <Property Name="StatusTypeFrom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="TransportType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="IncotermID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="StartAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EndAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerID" Type="Int16" />
+          <Property Name="ExpectedKm" Type="Double" />
+          <Property Name="ItemUse" Type="Byte" />
+          <Property Name="CarrierLocationID" Type="Int32" />
+          <Property Name="StartBorderCrossingID" Type="Int32" />
+          <Property Name="EndBorderCrossingID" Type="Int32" />
+          <Property Name="InboundKm" Type="Double" />
+          <Property Name="OutboundKmAB" Type="Double" />
+          <Property Name="OutboundKmSTOP" Type="Double" />
+          <Property Name="BusinessUnit" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="IsStartLocked" Type="Boolean" />
+          <Property Name="IsEndLocked" Type="Boolean" />
+          <Property Name="UseCoeff" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="TripType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Signet2" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceID" Type="Int32" />
+          <Property Name="CarrierID2" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="UniqEdiFrom" Type="Int32" />
+          <Property Name="ShipID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Escal" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Rubrique" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierID_ForDet" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierPriceID_ForDet" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="TrailerID_List" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="LdcUniqFrom" Type="Int32" />
+          <Property Name="HolderCube1" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="HolderCube2" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="HolderWmsUnload1" Type="Boolean" />
+          <Property Name="HolderWmsUnload2" Type="Boolean" />
+          <Property Name="CargoStartPortID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CargoEndPortID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="TerminalStart" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="TerminalEnd" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="MasterNumber" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="ShipName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="ShipTripNumber" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="HolderNumber" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Seal" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="HolderType" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="AirPortStartID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="AirPortEndID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CargoFinalPortID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="TerminalFinal" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="ETAFinal" Type="DateTime" Precision="0" />
+          <Property Name="ETAFinalTime" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CarrierCustoms" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CustomsDeclarationType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="SenderName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ConsigneeID" Type="Int32" />
+          <Property Name="ConsigneeName" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="NotifyID" Type="Int32" />
+          <Property Name="NotifyDes" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="PrepaidWT" Type="Boolean" />
+          <Property Name="PagesOriginal" Type="Int32" />
+          <Property Name="PagesCopy" Type="Int32" />
+          <Property Name="IdCompany" Type="Int32" />
+          <Property Name="SeaTripType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Load" Type="DateTime" Precision="0" />
+          <Property Name="Time_Load" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="PltFloor" Type="Int32" />
+          <Property Name="StartAddressNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EndAddressNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="HolderRegTypeID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="TourID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="GnCommonXcmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TmsShipment" EntityType="Self.TmsShipment" />
+          <EntitySet Name="TmsTrip" EntityType="Self.TmsTrip" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GnCommonXcmModelStoreContainer" CdmEntityContainer="GnCommonXcmEntities">
+          <EntitySetMapping Name="TmsShipment">
+            <EntityTypeMapping TypeName="GnCommonXcmModel.TmsShipment">
+              <MappingFragment StoreEntitySet="TmsShipment">
+                <ScalarProperty Name="DocTip" ColumnName="DocTip" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="DocDta" ColumnName="DocDta" />
+                <ScalarProperty Name="DocTime" ColumnName="DocTime" />
+                <ScalarProperty Name="DocUse" ColumnName="DocUse" />
+                <ScalarProperty Name="DocStatus" ColumnName="DocStatus" />
+                <ScalarProperty Name="DocDes" ColumnName="DocDes" />
+                <ScalarProperty Name="DocUnit" ColumnName="DocUnit" />
+                <ScalarProperty Name="DocQty" ColumnName="DocQty" />
+                <ScalarProperty Name="InsideRef" ColumnName="InsideRef" />
+                <ScalarProperty Name="ExternRef" ColumnName="ExternRef" />
+                <ScalarProperty Name="IncotermID" ColumnName="IncotermID" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="BusinessUnit" ColumnName="BusinessUnit" />
+                <ScalarProperty Name="ShipmentType" ColumnName="ShipmentType" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="CarrierType" ColumnName="CarrierType" />
+                <ScalarProperty Name="TransportType" ColumnName="TransportType" />
+                <ScalarProperty Name="VehicleTypeAsked" ColumnName="VehicleTypeAsked" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="TowID" ColumnName="TowID" />
+                <ScalarProperty Name="GoodsType" ColumnName="GoodsType" />
+                <ScalarProperty Name="GoodsValue" ColumnName="GoodsValue" />
+                <ScalarProperty Name="DepositValue" ColumnName="DepositValue" />
+                <ScalarProperty Name="Documents" ColumnName="Documents" />
+                <ScalarProperty Name="DocumentsDate" ColumnName="DocumentsDate" />
+                <ScalarProperty Name="DriverID1" ColumnName="DriverID1" />
+                <ScalarProperty Name="DriverID2" ColumnName="DriverID2" />
+                <ScalarProperty Name="HolderID1" ColumnName="HolderID1" />
+                <ScalarProperty Name="HolderID2" ColumnName="HolderID2" />
+                <ScalarProperty Name="TransitID" ColumnName="TransitID" />
+                <ScalarProperty Name="TripID" ColumnName="TripID" />
+                <ScalarProperty Name="TripSheetID" ColumnName="TripSheetID" />
+                <ScalarProperty Name="TripList" ColumnName="TripList" />
+                <ScalarProperty Name="TripBack" ColumnName="TripBack" />
+                <ScalarProperty Name="BackID" ColumnName="BackID" />
+                <ScalarProperty Name="CargoTripID" ColumnName="CargoTripID" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Meters" ColumnName="Meters" />
+                <ScalarProperty Name="Cube" ColumnName="Cube" />
+                <ScalarProperty Name="Km" ColumnName="Km" />
+                <ScalarProperty Name="KmEmpty" ColumnName="KmEmpty" />
+                <ScalarProperty Name="Packs" ColumnName="Packs" />
+                <ScalarProperty Name="Pack1" ColumnName="Pack1" />
+                <ScalarProperty Name="PackN" ColumnName="PackN" />
+                <ScalarProperty Name="PackFree" ColumnName="PackFree" />
+                <ScalarProperty Name="PalletID" ColumnName="PalletID" />
+                <ScalarProperty Name="Pallets" ColumnName="Pallets" />
+                <ScalarProperty Name="Barcodes" ColumnName="Barcodes" />
+                <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+                <ScalarProperty Name="TicketValue" ColumnName="TicketValue" />
+                <ScalarProperty Name="FuelCost" ColumnName="FuelCost" />
+                <ScalarProperty Name="FuelCostPercent" ColumnName="FuelCostPercent" />
+                <ScalarProperty Name="FuelFullfillment" ColumnName="FuelFullfillment" />
+                <ScalarProperty Name="FuelKm" ColumnName="FuelKm" />
+                <ScalarProperty Name="CreditSplitType" ColumnName="CreditSplitType" />
+                <ScalarProperty Name="DebitSplitType" ColumnName="DebitSplitType" />
+                <ScalarProperty Name="CreditInvoiceOk" ColumnName="CreditInvoiceOk" />
+                <ScalarProperty Name="DebitInvoiceOk" ColumnName="DebitInvoiceOk" />
+                <ScalarProperty Name="InvoiceReason" ColumnName="InvoiceReason" />
+                <ScalarProperty Name="FuelCarrierPercent" ColumnName="FuelCarrierPercent" />
+                <ScalarProperty Name="FuelLegKm" ColumnName="FuelLegKm" />
+                <ScalarProperty Name="VehicleFuelType" ColumnName="VehicleFuelType" />
+                <ScalarProperty Name="CashValue" ColumnName="CashValue" />
+                <ScalarProperty Name="IsSenderCash" ColumnName="IsSenderCash" />
+                <ScalarProperty Name="IsShippingTaking" ColumnName="IsShippingTaking" />
+                <ScalarProperty Name="IsDelivered" ColumnName="IsDelivered" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="Info0" ColumnName="Info0" />
+                <ScalarProperty Name="Info1" ColumnName="Info1" />
+                <ScalarProperty Name="Info2" ColumnName="Info2" />
+                <ScalarProperty Name="Info3" ColumnName="Info3" />
+                <ScalarProperty Name="Info4" ColumnName="Info4" />
+                <ScalarProperty Name="Info5" ColumnName="Info5" />
+                <ScalarProperty Name="Info6" ColumnName="Info6" />
+                <ScalarProperty Name="DocCredit" ColumnName="DocCredit" />
+                <ScalarProperty Name="DocDebit" ColumnName="DocDebit" />
+                <ScalarProperty Name="DocBalance" ColumnName="DocBalance" />
+                <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+                <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+                <ScalarProperty Name="ConsigneeID" ColumnName="ConsigneeID" />
+                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="Notify2" ColumnName="Notify2" />
+                <ScalarProperty Name="FinalConsignee" ColumnName="FinalConsignee" />
+                <ScalarProperty Name="CustomsAgency" ColumnName="CustomsAgency" />
+                <ScalarProperty Name="NumCod" ColumnName="NumCod" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Uniq" ColumnName="Uniq" />
+                <ScalarProperty Name="RecCreate" ColumnName="RecCreate" />
+                <ScalarProperty Name="RecUserID" ColumnName="RecUserID" />
+                <ScalarProperty Name="RecChange" ColumnName="RecChange" />
+                <ScalarProperty Name="RecChangeUserID" ColumnName="RecChangeUserID" />
+                <ScalarProperty Name="RecCompany" ColumnName="RecCompany" />
+                <ScalarProperty Name="RecAgency" ColumnName="RecAgency" />
+                <ScalarProperty Name="RecLocked" ColumnName="RecLocked" />
+                <ScalarProperty Name="RecType" ColumnName="RecType" />
+                <ScalarProperty Name="PriorityCode" ColumnName="PriorityCode" />
+                <ScalarProperty Name="Seat" ColumnName="Seat" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="StartAgencyCod" ColumnName="StartAgencyCod" />
+                <ScalarProperty Name="EndAgency" ColumnName="EndAgency" />
+                <ScalarProperty Name="DocumentsGrouped" ColumnName="DocumentsGrouped" />
+                <ScalarProperty Name="UniqCustomsExternal" ColumnName="UniqCustomsExternal" />
+                <ScalarProperty Name="StatusTypeFrom" ColumnName="StatusTypeFrom" />
+                <ScalarProperty Name="CashValueCurrency" ColumnName="CashValueCurrency" />
+                <ScalarProperty Name="CashValueType" ColumnName="CashValueType" />
+                <ScalarProperty Name="CashValueNote" ColumnName="CashValueNote" />
+                <ScalarProperty Name="StartTransitPointID" ColumnName="StartTransitPointID" />
+                <ScalarProperty Name="EndTransitPointID" ColumnName="EndTransitPointID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="SalesManagerID" ColumnName="SalesManagerID" />
+                <ScalarProperty Name="ChkFields" ColumnName="ChkFields" />
+                <ScalarProperty Name="DocCredit2" ColumnName="DocCredit2" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="StartAgency" ColumnName="StartAgency" />
+                <ScalarProperty Name="TourID_Start" ColumnName="TourID_Start" />
+                <ScalarProperty Name="TourID_End" ColumnName="TourID_End" />
+                <ScalarProperty Name="UniqEdiFrom" ColumnName="UniqEdiFrom" />
+                <ScalarProperty Name="PTVLastUpdate" ColumnName="PTVLastUpdate" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="CodADP" ColumnName="CodADP" />
+                <ScalarProperty Name="Rubrique" ColumnName="Rubrique" />
+                <ScalarProperty Name="IncotermTypeID" ColumnName="IncotermTypeID" />
+                <ScalarProperty Name="KmReal" ColumnName="KmReal" />
+                <ScalarProperty Name="DestPayment" ColumnName="DestPayment" />
+                <ScalarProperty Name="NotifyID" ColumnName="NotifyID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ServiceTypeNetwork" ColumnName="ServiceTypeNetwork" />
+                <ScalarProperty Name="Customer_PriceID" ColumnName="Customer_PriceID" />
+                <ScalarProperty Name="StartZoneID" ColumnName="StartZoneID" />
+                <ScalarProperty Name="EndZoneID" ColumnName="EndZoneID" />
+                <ScalarProperty Name="StartHubID" ColumnName="StartHubID" />
+                <ScalarProperty Name="DestPaymentType" ColumnName="DestPaymentType" />
+                <ScalarProperty Name="OwnerAgency" ColumnName="OwnerAgency" />
+                <ScalarProperty Name="LinkShipStartAgency" ColumnName="LinkShipStartAgency" />
+                <ScalarProperty Name="LinkShipEndAgency" ColumnName="LinkShipEndAgency" />
+                <ScalarProperty Name="GroupID_Supplier1" ColumnName="GroupID_Supplier1" />
+                <ScalarProperty Name="GroupID_Supplier2" ColumnName="GroupID_Supplier2" />
+                <ScalarProperty Name="AirShipmentType" ColumnName="AirShipmentType" />
+                <ScalarProperty Name="DeliveryAgentName" ColumnName="DeliveryAgentName" />
+                <ScalarProperty Name="DeliveryAgentID" ColumnName="DeliveryAgentID" />
+                <ScalarProperty Name="SeaShipmentType" ColumnName="SeaShipmentType" />
+                <ScalarProperty Name="CodeRate" ColumnName="CodeRate" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="IdMasterAnaCustomer" ColumnName="IdMasterAnaCustomer" />
+                <ScalarProperty Name="Cig" ColumnName="Cig" />
+                <ScalarProperty Name="Cup" ColumnName="Cup" />
+                <ScalarProperty Name="ShipDateOriStart" ColumnName="ShipDateOriStart" />
+                <ScalarProperty Name="ShipDateOriEnd" ColumnName="ShipDateOriEnd" />
+                <ScalarProperty Name="ShipTimeOriStart" ColumnName="ShipTimeOriStart" />
+                <ScalarProperty Name="ShipTimeOriEnd" ColumnName="ShipTimeOriEnd" />
+                <ScalarProperty Name="ItineraryCod" ColumnName="ItineraryCod" />
+                <ScalarProperty Name="AccrualDate" ColumnName="AccrualDate" />
+                <ScalarProperty Name="ExternalId" ColumnName="ExternalId" />
+                <ScalarProperty Name="ExternalId1" ColumnName="ExternalId1" />
+                <ScalarProperty Name="HolderRegTypeID" ColumnName="HolderRegTypeID" />
+                <ScalarProperty Name="WebAttachCount" ColumnName="WebAttachCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TmsTrip">
+            <EntityTypeMapping TypeName="GnCommonXcmModel.TmsTrip">
+              <MappingFragment StoreEntitySet="TmsTrip">
+                <ScalarProperty Name="DocTip" ColumnName="DocTip" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="DocDta" ColumnName="DocDta" />
+                <ScalarProperty Name="DocTime" ColumnName="DocTime" />
+                <ScalarProperty Name="DocUse" ColumnName="DocUse" />
+                <ScalarProperty Name="DocStatus" ColumnName="DocStatus" />
+                <ScalarProperty Name="DocDes" ColumnName="DocDes" />
+                <ScalarProperty Name="DriverID1" ColumnName="DriverID1" />
+                <ScalarProperty Name="DriverID2" ColumnName="DriverID2" />
+                <ScalarProperty Name="HolderID1" ColumnName="HolderID1" />
+                <ScalarProperty Name="HolderID2" ColumnName="HolderID2" />
+                <ScalarProperty Name="TransitID" ColumnName="TransitID" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="TowID" ColumnName="TowID" />
+                <ScalarProperty Name="CarrierID" ColumnName="CarrierID" />
+                <ScalarProperty Name="CarrierTotal" ColumnName="CarrierTotal" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="TripQty" ColumnName="TripQty" />
+                <ScalarProperty Name="TripUnitValue" ColumnName="TripUnitValue" />
+                <ScalarProperty Name="TripTotal" ColumnName="TripTotal" />
+                <ScalarProperty Name="TripKm" ColumnName="TripKm" />
+                <ScalarProperty Name="StartDes" ColumnName="StartDes" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="StartKm" ColumnName="StartKm" />
+                <ScalarProperty Name="StartLocationID" ColumnName="StartLocationID" />
+                <ScalarProperty Name="StartLocation" ColumnName="StartLocation" />
+                <ScalarProperty Name="StartCountry" ColumnName="StartCountry" />
+                <ScalarProperty Name="StartRegion" ColumnName="StartRegion" />
+                <ScalarProperty Name="StartDistrict" ColumnName="StartDistrict" />
+                <ScalarProperty Name="StartZipCode" ColumnName="StartZipCode" />
+                <ScalarProperty Name="EndDes" ColumnName="EndDes" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="EndKm" ColumnName="EndKm" />
+                <ScalarProperty Name="EmptyKm" ColumnName="EmptyKm" />
+                <ScalarProperty Name="EndLocationID" ColumnName="EndLocationID" />
+                <ScalarProperty Name="EndLocation" ColumnName="EndLocation" />
+                <ScalarProperty Name="EndCountry" ColumnName="EndCountry" />
+                <ScalarProperty Name="EndRegion" ColumnName="EndRegion" />
+                <ScalarProperty Name="EndDistrict" ColumnName="EndDistrict" />
+                <ScalarProperty Name="EndZipCode" ColumnName="EndZipCode" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="CurrencyChange" ColumnName="CurrencyChange" />
+                <ScalarProperty Name="VatID" ColumnName="VatID" />
+                <ScalarProperty Name="PayID" ColumnName="PayID" />
+                <ScalarProperty Name="PriceID" ColumnName="PriceID" />
+                <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+                <ScalarProperty Name="DocCredit" ColumnName="DocCredit" />
+                <ScalarProperty Name="DocDebit" ColumnName="DocDebit" />
+                <ScalarProperty Name="DocBalance" ColumnName="DocBalance" />
+                <ScalarProperty Name="CalcDes" ColumnName="CalcDes" />
+                <ScalarProperty Name="CalcUnit" ColumnName="CalcUnit" />
+                <ScalarProperty Name="CalcQty" ColumnName="CalcQty" />
+                <ScalarProperty Name="CalcValue" ColumnName="CalcValue" />
+                <ScalarProperty Name="CalcTotal" ColumnName="CalcTotal" />
+                <ScalarProperty Name="CalcType" ColumnName="CalcType" />
+                <ScalarProperty Name="UpdateDes" ColumnName="UpdateDes" />
+                <ScalarProperty Name="UpdateUnit" ColumnName="UpdateUnit" />
+                <ScalarProperty Name="UpdateQty" ColumnName="UpdateQty" />
+                <ScalarProperty Name="UpdateValue" ColumnName="UpdateValue" />
+                <ScalarProperty Name="UpdateTotal" ColumnName="UpdateTotal" />
+                <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+                <ScalarProperty Name="CostTotal" ColumnName="CostTotal" />
+                <ScalarProperty Name="DebitTotal" ColumnName="DebitTotal" />
+                <ScalarProperty Name="DebitInvoice" ColumnName="DebitInvoice" />
+                <ScalarProperty Name="DebitInvoiceID" ColumnName="DebitInvoiceID" />
+                <ScalarProperty Name="DebitFinancialYear" ColumnName="DebitFinancialYear" />
+                <ScalarProperty Name="DebitInvoiceDate" ColumnName="DebitInvoiceDate" />
+                <ScalarProperty Name="DebitSplitType" ColumnName="DebitSplitType" />
+                <ScalarProperty Name="DebitInvoiceOk" ColumnName="DebitInvoiceOk" />
+                <ScalarProperty Name="Markup" ColumnName="Markup" />
+                <ScalarProperty Name="Signet" ColumnName="Signet" />
+                <ScalarProperty Name="Booking" ColumnName="Booking" />
+                <ScalarProperty Name="ItemInfo" ColumnName="ItemInfo" />
+                <ScalarProperty Name="NumCod" ColumnName="NumCod" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Uniq" ColumnName="Uniq" />
+                <ScalarProperty Name="Uniq2" ColumnName="Uniq2" />
+                <ScalarProperty Name="RecCreate" ColumnName="RecCreate" />
+                <ScalarProperty Name="RecUserID" ColumnName="RecUserID" />
+                <ScalarProperty Name="RecChange" ColumnName="RecChange" />
+                <ScalarProperty Name="RecChangeUserID" ColumnName="RecChangeUserID" />
+                <ScalarProperty Name="RecCompany" ColumnName="RecCompany" />
+                <ScalarProperty Name="RecAgency" ColumnName="RecAgency" />
+                <ScalarProperty Name="RecLocked" ColumnName="RecLocked" />
+                <ScalarProperty Name="RecType" ColumnName="RecType" />
+                <ScalarProperty Name="Info1" ColumnName="Info1" />
+                <ScalarProperty Name="Info2" ColumnName="Info2" />
+                <ScalarProperty Name="Info3" ColumnName="Info3" />
+                <ScalarProperty Name="Info4" ColumnName="Info4" />
+                <ScalarProperty Name="Info5" ColumnName="Info5" />
+                <ScalarProperty Name="Info6" ColumnName="Info6" />
+                <ScalarProperty Name="ExternRef" ColumnName="ExternRef" />
+                <ScalarProperty Name="ItemServiceType" ColumnName="ItemServiceType" />
+                <ScalarProperty Name="ChkFields" ColumnName="ChkFields" />
+                <ScalarProperty Name="StartObligatoryType" ColumnName="StartObligatoryType" />
+                <ScalarProperty Name="EndObligatoryType" ColumnName="EndObligatoryType" />
+                <ScalarProperty Name="TransitPointID" ColumnName="TransitPointID" />
+                <ScalarProperty Name="AgencyCod" ColumnName="AgencyCod" />
+                <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+                <ScalarProperty Name="StatusTypeFrom" ColumnName="StatusTypeFrom" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="CarrierType" ColumnName="CarrierType" />
+                <ScalarProperty Name="TransportType" ColumnName="TransportType" />
+                <ScalarProperty Name="IncotermID" ColumnName="IncotermID" />
+                <ScalarProperty Name="StartAddress" ColumnName="StartAddress" />
+                <ScalarProperty Name="EndAddress" ColumnName="EndAddress" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="ExpectedKm" ColumnName="ExpectedKm" />
+                <ScalarProperty Name="ItemUse" ColumnName="ItemUse" />
+                <ScalarProperty Name="CarrierLocationID" ColumnName="CarrierLocationID" />
+                <ScalarProperty Name="StartBorderCrossingID" ColumnName="StartBorderCrossingID" />
+                <ScalarProperty Name="EndBorderCrossingID" ColumnName="EndBorderCrossingID" />
+                <ScalarProperty Name="InboundKm" ColumnName="InboundKm" />
+                <ScalarProperty Name="OutboundKmAB" ColumnName="OutboundKmAB" />
+                <ScalarProperty Name="OutboundKmSTOP" ColumnName="OutboundKmSTOP" />
+                <ScalarProperty Name="BusinessUnit" ColumnName="BusinessUnit" />
+                <ScalarProperty Name="IsStartLocked" ColumnName="IsStartLocked" />
+                <ScalarProperty Name="IsEndLocked" ColumnName="IsEndLocked" />
+                <ScalarProperty Name="UseCoeff" ColumnName="UseCoeff" />
+                <ScalarProperty Name="TripType" ColumnName="TripType" />
+                <ScalarProperty Name="Signet2" ColumnName="Signet2" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="CarrierID2" ColumnName="CarrierID2" />
+                <ScalarProperty Name="UniqEdiFrom" ColumnName="UniqEdiFrom" />
+                <ScalarProperty Name="ShipID" ColumnName="ShipID" />
+                <ScalarProperty Name="Escal" ColumnName="Escal" />
+                <ScalarProperty Name="Rubrique" ColumnName="Rubrique" />
+                <ScalarProperty Name="CarrierID_ForDet" ColumnName="CarrierID_ForDet" />
+                <ScalarProperty Name="CarrierPriceID_ForDet" ColumnName="CarrierPriceID_ForDet" />
+                <ScalarProperty Name="TrailerID_List" ColumnName="TrailerID_List" />
+                <ScalarProperty Name="LdcUniqFrom" ColumnName="LdcUniqFrom" />
+                <ScalarProperty Name="HolderCube1" ColumnName="HolderCube1" />
+                <ScalarProperty Name="HolderCube2" ColumnName="HolderCube2" />
+                <ScalarProperty Name="HolderWmsUnload1" ColumnName="HolderWmsUnload1" />
+                <ScalarProperty Name="HolderWmsUnload2" ColumnName="HolderWmsUnload2" />
+                <ScalarProperty Name="CargoStartPortID" ColumnName="CargoStartPortID" />
+                <ScalarProperty Name="CargoEndPortID" ColumnName="CargoEndPortID" />
+                <ScalarProperty Name="TerminalStart" ColumnName="TerminalStart" />
+                <ScalarProperty Name="TerminalEnd" ColumnName="TerminalEnd" />
+                <ScalarProperty Name="MasterNumber" ColumnName="MasterNumber" />
+                <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+                <ScalarProperty Name="ShipTripNumber" ColumnName="ShipTripNumber" />
+                <ScalarProperty Name="HolderNumber" ColumnName="HolderNumber" />
+                <ScalarProperty Name="Seal" ColumnName="Seal" />
+                <ScalarProperty Name="HolderType" ColumnName="HolderType" />
+                <ScalarProperty Name="AirPortStartID" ColumnName="AirPortStartID" />
+                <ScalarProperty Name="AirPortEndID" ColumnName="AirPortEndID" />
+                <ScalarProperty Name="CargoFinalPortID" ColumnName="CargoFinalPortID" />
+                <ScalarProperty Name="TerminalFinal" ColumnName="TerminalFinal" />
+                <ScalarProperty Name="ETAFinal" ColumnName="ETAFinal" />
+                <ScalarProperty Name="ETAFinalTime" ColumnName="ETAFinalTime" />
+                <ScalarProperty Name="CarrierCustoms" ColumnName="CarrierCustoms" />
+                <ScalarProperty Name="CustomsDeclarationType" ColumnName="CustomsDeclarationType" />
+                <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+                <ScalarProperty Name="ConsigneeID" ColumnName="ConsigneeID" />
+                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
+                <ScalarProperty Name="NotifyID" ColumnName="NotifyID" />
+                <ScalarProperty Name="NotifyDes" ColumnName="NotifyDes" />
+                <ScalarProperty Name="PrepaidWT" ColumnName="PrepaidWT" />
+                <ScalarProperty Name="PagesOriginal" ColumnName="PagesOriginal" />
+                <ScalarProperty Name="PagesCopy" ColumnName="PagesCopy" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="SeaTripType" ColumnName="SeaTripType" />
+                <ScalarProperty Name="Date_Load" ColumnName="Date_Load" />
+                <ScalarProperty Name="Time_Load" ColumnName="Time_Load" />
+                <ScalarProperty Name="PltFloor" ColumnName="PltFloor" />
+                <ScalarProperty Name="StartAddressNumber" ColumnName="StartAddressNumber" />
+                <ScalarProperty Name="EndAddressNumber" ColumnName="EndAddressNumber" />
+                <ScalarProperty Name="HolderRegTypeID" ColumnName="HolderRegTypeID" />
+                <ScalarProperty Name="TourID" ColumnName="TourID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

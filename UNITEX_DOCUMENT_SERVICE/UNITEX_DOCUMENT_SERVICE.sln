@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNITEX_DOCUMENT_SERVICE", "UNITEX_DOCUMENT_SERVICE.csproj", "{410B948D-73E8-4D09-96BD-FE0633D27B7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410B948D-73E8-4D09-96BD-FE0633D27B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410B948D-73E8-4D09-96BD-FE0633D27B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410B948D-73E8-4D09-96BD-FE0633D27B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410B948D-73E8-4D09-96BD-FE0633D27B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA723147-AFF5-4936-87F4-D9F8F12B44BA}
+	EndGlobalSection
+EndGlobal

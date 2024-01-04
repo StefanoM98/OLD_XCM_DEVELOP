@@ -1,0 +1,134 @@
+﻿@model API_XCM.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/login/SignInRegister.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/SignInRegister.js")"></script>
+}
+
+<script>
+    function onCheckedChanged(s, e) {
+        if (s.GetChecked()) {
+            TextBox.GetInputElement().setAttribute("type", "text");
+        } else {
+            TextBox.GetInputElement().setAttribute("type", "password");
+        }
+    }
+</script>
+
+<div class="formLayout-verticalAlign">
+    <div class="formLayout-container">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.DevExpress().FormLayout(settings =>
+       {
+           settings.Name = "formLayout";
+           settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+           var groupItem = settings.Items.AddGroupItem(i =>
+           {
+               i.ShowCaption = DefaultBoolean.False;
+               i.GroupBoxDecoration = GroupBoxDecoration.None;
+               i.ColumnCount = 1;
+           });
+           groupItem.GridSettings.StretchLastItem = DefaultBoolean.True;
+           groupItem.GridSettings.ChangeCaptionLocationAtWidth = 660;
+           groupItem.GridSettings.Breakpoints.Add(new LayoutBreakpoint() { Name = "S", ColumnCount = 1, MaxWidth = 500 });
+           groupItem.GridSettings.Breakpoints.Add(new LayoutBreakpoint() { Name = "M", ColumnCount = 1, MaxWidth = 800 });
+           groupItem.Items.Add(i =>
+           {
+               i.FieldName = "";
+               i.Caption = "";
+               i.SetNestedContent("<div align=\"center\"><img width=\"300px\" src=\""+@Url.Content("~/Content/Image/LogoXCM1920.png")+"\"/></div>");
+               //i.NestedExtension().Image(img =>
+               //{
+               //    img.ImageUrl = "~/Content/Image/LogoXCM1920.png";
+               //    img.Width = 200;
+
+               //});
+           });
+           groupItem.Items.Add(m => m.Username, i =>
+           {
+               i.HelpText = "Inserisci il nome utente";
+               i.NestedExtension().TextBox(s =>
+               {
+                   s.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+                   s.ShowModelErrors = true;
+                   //s.AutoCompleteType = System.Web.UI.WebControls.AutoCompleteType.;
+
+                   s.Properties.ValidationSettings.Display = Display.Dynamic;
+                   s.Properties.ValidationSettings.SetFocusOnError = true;
+                   s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+                   s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+
+                   s.Properties.ClientSideEvents.Init = "function(s, e){ s.Focus(); }";
+               });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "S", ColumnSpan = 1, RowSpan = 1 });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "M", ColumnSpan = 1, RowSpan = 1 });
+           });
+           groupItem.Items.Add(m => m.Password, i =>
+           {
+               i.HelpText = "Inserisci la password";
+               i.NestedExtension().TextBox(s =>
+               {
+                   s.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+                   s.ShowModelErrors = true;
+                   s.Properties.Password = true;
+                   
+                   //s.AutoCompleteType = System.Web.UI.WebControls.AutoCompleteType.None;
+                   s.Properties.ValidationSettings.Display = Display.Dynamic;
+                   s.Properties.ValidationSettings.SetFocusOnError = true;
+                   s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+                   s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+
+
+               });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "S", ColumnSpan = 1, RowSpan = 1 });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "M", ColumnSpan = 1, RowSpan = 1 });
+           });
+           //groupItem.Items.Add(item =>
+           //{
+           //    item.NestedExtension().CheckBox(s =>
+           //    {
+           //        s.Name = "Button";
+           //        s.Text = "Show/hide";
+           //        s.Properties.ClientSideEvents.CheckedChanged = "onCheckedChanged";
+           //    });
+           //});
+           groupItem.Items.Add(itemSettings =>
+           {
+               itemSettings.ShowCaption = DefaultBoolean.False;
+               itemSettings.Visible = ViewBag.GeneralError != null;
+               itemSettings.SetNestedContent(() =>
+               {
+                   ViewContext.Writer.Write("<div class=\"generalErrorText\">" + @ViewBag.GeneralError + "</div>");
+               });
+           });
+           groupItem.Items.Add(i =>
+           {
+               i.ShowCaption = DefaultBoolean.False;
+               i.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+               i.NestedExtension().Button(s =>
+               {
+                   s.Name = "SignInButton";
+                   s.Text = "Accedi";
+
+                   s.UseSubmitBehavior = true;
+               });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "S", ColumnSpan = 1, RowSpan = 1 });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "M", ColumnSpan = 1, RowSpan = 1 });
+           });
+
+       }).GetHtml()
+        }
+
+    </div>
+</div>
+
+

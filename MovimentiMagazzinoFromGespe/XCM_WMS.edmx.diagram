@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9852fa8eb9c24ae0be487d4cf253ba90" Name="Diagram1">
+        <EntityTypeShape EntityType="XCM_WMSModel.ANAGRAFICA_CLIENTI" Width="1.5" PointX="5.75" PointY="12.25" />
+        <EntityTypeShape EntityType="XCM_WMSModel.ANAGRAFICA_OPERATORI" Width="1.5" PointX="5.75" PointY="8.125" />
+        <EntityTypeShape EntityType="XCM_WMSModel.GEO_IT" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="XCM_WMSModel.GEO_IT_CAPOLUOGO" Width="1.5" PointX="3.75" PointY="8.125" />
+        <EntityTypeShape EntityType="XCM_WMSModel.PALLET_IN" Width="1.5" PointX="8" PointY="8.125" />
+        <EntityTypeShape EntityType="XCM_WMSModel.PALLET_MAX" Width="1.5" PointX="8.75" PointY="1.875" />
+        <EntityTypeShape EntityType="XCM_WMSModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="1.875" />
+        <EntityTypeShape EntityType="XCM_WMSModel.TMSC_LISTINI" Width="1.5" PointX="0.75" PointY="11.875" />
+        <EntityTypeShape EntityType="XCM_WMSModel.TMSC_SCAGLIONI" Width="1.5" PointX="2.75" PointY="11.875" />
+        <EntityTypeShape EntityType="XCM_WMSModel.TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XCM_WMSModel.TMSF_FORNITORI" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="XCM_WMSModel.TMSF_G_LISTINI" Width="1.5" PointX="6" PointY="3.875" />
+        <EntityTypeShape EntityType="XCM_WMSModel.TMSF_LISTINI" Width="1.5" PointX="3" PointY="4" />
+        <AssociationConnector Association="XCM_WMSModel.FK_PALLET_IN_PALLET_IN" />
+        <AssociationConnector Association="XCM_WMSModel.FK_PALLET_IN_ANAGRAFICA_OPERATORI" />
+        <AssociationConnector Association="XCM_WMSModel.FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO" />
+        <AssociationConnector Association="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI" />
+        <AssociationConnector Association="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_FORNITORI" />
+        <AssociationConnector Association="XCM_WMSModel.FK_TMSF_LISTINI_TMSF_FORNITORI" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,13 @@
+﻿00002|DOMUS|info@domuspetri.it
+00003|DALTON|info@daltonfarmaceutici.it
+00006|FARMAIMPRESA|isf@pjpharma.it
+00007|VIVISOL|a.gentile@vivisol.it
+00008|PRAEVENIO|info@praeveniopharma.it
+00010|FALQUI|giusi.merendino@falqui.it
+00011|PMS|amedeo.pizzoferrato@libero.it
+00012|CD LIFE|giovanni.liore@cdlifepharma.com,g.voltan@cdlifepharma.com
+00013|POLARIS|ordini@polarisfarmaceutici.com
+00015|PH PH|ordini@pharmadaypharmaceutical.it
+00016|NGF|amministrazione@ngfsciencesrl.com
+00018|NGD|info@ngdpharma.it,c.tripodi@ngdpharma.it,g.voltan@cdlifepharma.com
+00020|KPS|francesco.palumbo@kps-cso.com

@@ -1,0 +1,22 @@
+﻿@Html.DevExpress().PageControl(settings =>
+{
+    settings.Name = "PageControl";
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.EnableTabScrolling = true;
+    settings.CallbackRouteValues = new { Controller = "XCMView", Action = "PageControlPartial" };
+
+    //settings.TabPages.Add("EVASI").SetContent(() =>
+    //{
+    //    ViewContext.Writer.Write(@Html.Action("ResocontoDocumentiPartial"));
+
+    //});
+    //settings.TabPages.Add("NON EVASI").SetContent(() =>
+    //{
+    //    ViewContext.Writer.Write(@Html.Action("DocumentiNonSpeditiGridViewPartial"));
+    //});
+    settings.TabPages.Add("DOCUMENTI").SetContent(() =>
+    {
+        ViewContext.Writer.Write(@Html.Action("DocsGridViewPartial"));
+    });
+}).GetHtml()
+

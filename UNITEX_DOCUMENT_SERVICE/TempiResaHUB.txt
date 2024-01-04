@@ -1,0 +1,107 @@
+﻿Chieti;CH;Abruzzo;48;72;48;72
+L'Aquila;AQ;Abruzzo;48;72;48;72
+Pescara;PE;Abruzzo;48;72;48;72
+Teramo;TE;Abruzzo;48;72;48;72
+Matera;MT;Basilicata;48;72;48;72
+Potenza;PZ;Basilicata;48;72;48;72
+Catanzaro;CZ;Calabria;72;96;48;72
+Cosenza;CS;Calabria;72;96;48;72
+Crotone;KR;Calabria;72;96;48;72
+Reggio Calabria;RC;Calabria;72;96;48;72
+Vibo Valentia;VV;Calabria;72;96;48;72
+Avellino;AV;Campania;48;72;24;48
+Benevento;BN;Campania;48;72;24;48
+Caserta;CE;Campania;48;72;24;48
+Napoli;NA;Campania;48;72;24;48
+Salerno;SA;Campania;48;72;24;48
+Bologna;BO;Emilia-Romagna;48;72;48;72
+Ferrara;FE;Emilia-Romagna;48;72;48;72
+Forlì-Cesena;FC;Emilia-Romagna;48;72;48;72
+Modena;MO;Emilia-Romagna;48;72;48;72
+Parma;PR;Emilia-Romagna;48;72;48;72
+Piacenza;PC;Emilia-Romagna;48;72;48;72
+Ravenna;RA;Emilia-Romagna;48;72;48;72
+Reggio Emilia;RE;Emilia-Romagna;48;72;48;72
+Rimini;RN;Emilia-Romagna;48;72;48;72
+Gorizia;GO;Friuli-Venezia Giulia;48;72;48;72
+Pordenone;PN;Friuli-Venezia Giulia;48;72;48;72
+Trieste;TS;Friuli-Venezia Giulia;48;72;48;72
+Udine;UD;Friuli-Venezia Giulia;48;72;48;72
+Frosinone;FR;Lazio;48;72;48;72
+Latina;LT;Lazio;48;72;48;72
+Rieti;RI;Lazio;48;72;48;72
+Roma;RM;Lazio;48;72;48;72
+Viterbo;VT;Lazio;48;72;48;72
+Genova;GE;Liguria;48;72;48;72
+Imperia;IM;Liguria;48;72;48;72
+La Spezia;SP;Liguria;48;72;48;72
+Savona;SV;Liguria;48;72;48;72
+Bergamo;BG;Lombardia;24;48;48;72
+Brescia;BS;Lombardia;24;48;48;72
+Como;CO;Lombardia;24;48;48;72
+Cremona;CR;Lombardia;24;48;48;72
+Lecco;LC;Lombardia;24;48;48;72
+Lodi;LO;Lombardia;24;48;48;72
+Mantova;MN;Lombardia;48;72;48;72
+Milano;MI;Lombardia;24;48;48;72
+Monza e Brianza;MB;Lombardia;24;48;48;72
+Pavia;PV;Lombardia;24;48;48;72
+Sondrio;SO;Lombardia;48;72;48;72
+Varese;VA;Lombardia;24;48;48;72
+Ancona;AN;Marche;48;72;48;72
+Ascoli Piceno;AP;Marche;48;72;48;72
+Fermo;FM;Marche;48;72;48;72
+Macerata;MC;Marche;48;72;48;72
+Pesaro e Urbino;PU;Marche;48;72;48;72
+Campobasso;CB;Molise;48;72;48;72
+Isernia;IS;Molise;48;72;48;72
+Alessandria;AL;Piemonte;48;72;48;72
+Asti;AT;Piemonte;48;72;48;72
+Biella;BI;Piemonte;48;72;48;72
+Cuneo;CN;Piemonte;48;72;48;72
+Novara;NO;Piemonte;48;72;48;72
+Torino;TO;Piemonte;48;72;48;72
+Verbano-Cusio-Ossola;VB;Piemonte;48;72;48;72
+Vercelli;VC;Piemonte;48;72;48;72
+Bari;BA;Puglia;48;72;48;72
+Barletta-Andria-Trani;BT;Puglia;48;72;48;72
+Brindisi;BR;Puglia;48;72;48;72
+Foggia;FG;Puglia;48;72;48;72
+Lecce;LE;Puglia;48;72;48;72
+Taranto;TA;Puglia;72;96;72;96
+Cagliari;CA;Sardegna;72;96;72;96
+Nuoro;NU;Sardegna;72;96;72;96
+Oristano;OR;Sardegna;72;96;72;96
+Sassari;SS;Sardegna;72;96;72;96
+Sud Sardegna;SU;Sardegna;72;96;72;96
+Agrigento;AG;Sicilia;72;96;48;72
+Caltanissetta;CL;Sicilia;72;96;48;72
+Catania;CT;Sicilia;72;96;48;72
+Enna;EN;Sicilia;72;96;48;72
+Messina;ME;Sicilia;72;96;48;72
+Palermo;PA;Sicilia;72;96;48;72
+Ragusa;RG;Sicilia;72;96;48;72
+Siracusa;SR;Sicilia;72;96;48;72
+Trapani;TP;Sicilia;72;96;48;72
+Arezzo;AR;Toscana;48;72;48;72
+Firenze;FI;Toscana;48;72;48;72
+Grosseto;GR;Toscana;48;72;48;72
+Livorno;LI;Toscana;48;72;48;72
+Lucca;LU;Toscana;48;72;48;72
+Massa-Carrara;MS;Toscana;48;72;48;72
+Pisa;PI;Toscana;48;72;48;72
+Pistoia;PT;Toscana;48;72;48;72
+Prato;PO;Toscana;48;72;48;72
+Siena;SI;Toscana;48;72;48;72
+Bolzano;BZ;Trentino-Alto Adige;48;72;48;72
+Trento;TN;Trentino-Alto Adige;48;72;48;72
+Perugia;PG;Umbria;48;72;48;72
+Terni;TR;Umbria;48;72;48;72
+Aosta/Aoste;AO;Valle d'Aosta;48;72;48;72
+Belluno;BL;Veneto;48;72;48;72
+Padova;PD;Veneto;48;72;48;72
+Rovigo;RO;Veneto;48;72;48;72
+Treviso;TV;Veneto;48;72;48;72
+Venezia;VE;Veneto;48;72;48;72
+Verona;VR;Veneto;48;72;48;72
+Vicenza;VI;Veneto;48;72;48;72

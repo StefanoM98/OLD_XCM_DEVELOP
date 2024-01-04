@@ -1,0 +1,123 @@
+@{
+    var gridNonEvasi = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "NonEvasiGridView";
+        settings.SettingsDetail.MasterGridName = "DocsGridView";
+        settings.CallbackRouteValues = new { Controller = "XCMView", Action = "NonEvasiGridViewPartial", AnaId = ViewData["AnaId"] };
+
+        settings.CommandColumn.Visible = false;
+        settings.CommandColumn.ShowNewButton = false;
+        settings.CommandColumn.ShowDeleteButton = false;
+        settings.CommandColumn.ShowEditButton = false;
+
+        settings.KeyFieldName = "Mandante";
+
+        settings.SettingsPager.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+        settings.SettingsPager.PageSize = 20;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = false;
+        settings.SettingsBehavior.AllowSort = false;
+
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.SettingsPopup.FilterControl.AutoUpdatePosition = false;
+
+        settings.Toolbars.Add(t =>
+        {
+            t.Position = GridToolbarPosition.Bottom;
+            t.SettingsAdaptivity.Enabled = true;
+
+            t.Items.Add(b =>
+            {
+                b.Command = GridViewToolbarCommand.Refresh;
+                b.Text = "Aggiorna dati";
+                b.ToolTip = "Aggiorna di dati della tabella";
+                b.AdaptivePriority = 0;
+
+            });
+        });
+
+        settings.ClientSideEvents.ToolbarItemClick = "OnToolbarItemClick";
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Mandante";
+            c.Caption = "Mandante";
+            //c.AdaptivePriority = 0;
+            //c.GroupIndex = 0;
+            c.Visible = false;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "CreatedOn";
+            c.Caption = "Data Creazione";
+            c.AdaptivePriority = 0;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "RiferimentoExt";
+            c.Caption = "Riferimento Esterno";
+            c.AdaptivePriority = 1;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "StatoDocumento";
+            c.Caption = "Stato";
+            c.AdaptivePriority = 2;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Quantity";
+            c.Caption = "Quantita";
+            c.AdaptivePriority = 3;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Coverage";
+            c.Caption = "Coverage";
+            c.AdaptivePriority = 4;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Executed";
+            c.Caption = "Eseguito";
+            c.AdaptivePriority = 5;
+        });
+
+        //ASPxSummaryItem count = new ASPxSummaryItem();
+        //count.SummaryType = DevExpress.Data.SummaryItemType.Count;
+        //count.FieldName = "Mandante";
+        //count.DisplayFormat = "Da Evadere = {0}";
+
+        //ASPxSummaryItem ordiniEvasi = new ASPxSummaryItem();
+        //ordiniEvasi.SummaryType = DevExpress.Data.SummaryItemType.Max;
+        //ordiniEvasi.DisplayFormat = "Evasi = {0}";
+        //ordiniEvasi.FieldName = "EvasiSummary";
+
+        //settings.TotalSummary.Add(count);
+        //settings.TotalSummary.Add(ordiniEvasi);
+        //settings.GroupSummary.Add(count);
+        //settings.GroupSummary.Add(ordiniEvasi);
+
+        //settings.GroupSummary.Add(ordiniEvasi);
+        //settings.Settings.ShowGroupPanel = true;
+
+    });
+
+
+    if (ViewData["EditError"] != null)
+    {
+        gridNonEvasi.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@gridNonEvasi.Bind(Model).GetHtml()

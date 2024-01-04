@@ -1,0 +1,84 @@
+﻿@using API_XCM.Code
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors }
+    )
+    @Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.Editors }
+    )
+
+
+    @RenderSection("Head", false)
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/Image/LogoXCM1920.png" width="120" height="60"/>
+                </a>
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (AuthHelper.IsAuthenticated())
+                    {
+                        if (AuthHelper.IsRoot() || AuthHelper.IsCrm())
+                        {
+                            <li>@Html.ActionLink("Resoconto XCM", "Index", "Nino", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("APS x Dafne", "Index", "Aps", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Registra", "Register", "Root", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Esci", "SignOut", "Account", new { area = "" }, null)</li>
+                        }
+                    }
+                    @if (Convert.ToString(Session["isAuthenticated"]) == "xwHD14")
+                    {
+                        <li>@Html.ActionLink("Esci", "Logout", "Aps", new { area = "" }, null)</li>
+                    }
+                    else if (Convert.ToString(Session["nino"]) == "mkTY14")
+                    {
+                        <li>@Html.ActionLink("Esci", "Logout", "Nino", new { area = "" }, null)</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("APS", "Index", "Aps", new { area = "" }, null)</li>
+                        @*<li>@Html.ActionLink("Docs", "Index", "XCMView", new { area = "" }, null)</li>*@
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - XCM Healthcare all rights reserved</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

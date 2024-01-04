@@ -1,0 +1,1 @@
+curl --insecure url -X POST "https://192.168.2.254:9443/Validation/bool?input=%1" -H  \"accept: text/plain\" -d "" > result.txt

@@ -1,0 +1,28 @@
+﻿.formLayoutContainer {
+    max-width: 900px;
+}
+
+.formLayout {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Left Panel */
+.filters-navbar .item,
+.filters-navbar ul.dxnb-content {
+    border-right: none;
+}
+
+.filters-navbar .item {
+    padding-left: 24px !important;
+}
+
+.generalErrorText {
+    color: red;
+    margin-top: 30px;
+}
+
+.statusText{
+    color: green;
+    margin-top: 30px;
+}

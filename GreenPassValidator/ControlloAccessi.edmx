@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ControlloAccessiXCMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accessi">
+          <Key>
+            <PropertyRef Name="ID_ACCESSO" />
+          </Key>
+          <Property Name="ID_ACCESSO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATA_VERIFICA" Type="datetime" Nullable="false" />
+          <Property Name="FK_UTENTE" Type="bigint" Nullable="false" />
+          <Property Name="ORA_INGRESSO" Type="datetime" Nullable="false" />
+          <Property Name="ORA_USCITA" Type="datetime" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="IS_OSPITE" Type="bit" Nullable="false" />
+          <Property Name="OSPITE_NOME" Type="nvarchar" MaxLength="150" />
+          <Property Name="OSPITE_COGNOME" Type="nvarchar" MaxLength="150" />
+          <Property Name="OSPITE_DATA_DI_NASCITA" Type="datetime" />
+          <Property Name="IS_FERIE" Type="bit" Nullable="false" />
+          <Property Name="IS_MALATTIA" Type="bit" Nullable="false" />
+          <Property Name="IS_PERMESSO" Type="bit" Nullable="false" />
+          <Property Name="IS_MATERNITA" Type="bit" Nullable="false" />
+          <Property Name="IS_CONGEDO_MATRIMONIALE" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Anagrafica">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="COGNOME" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DATA_NASCITA" Type="datetime" Nullable="false" />
+          <Property Name="CODICE_FISCALE" Type="nvarchar" MaxLength="150" />
+          <Property Name="LIVELLO" Type="int" Nullable="false" />
+          <Property Name="QR_GP_COMUNICATO" Type="nvarchar(max)" />
+          <Property Name="ENABLED" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Accessi_Anagrafica">
+          <End Role="Anagrafica" Type="Self.Anagrafica" Multiplicity="1" />
+          <End Role="Accessi" Type="Self.Accessi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anagrafica">
+              <PropertyRef Name="ID_ANAGRAFICA" />
+            </Principal>
+            <Dependent Role="Accessi">
+              <PropertyRef Name="FK_UTENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ControlloAccessiXCMModelStoreContainer">
+          <EntitySet Name="Accessi" EntityType="Self.Accessi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anagrafica" EntityType="Self.Anagrafica" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Accessi_Anagrafica" Association="Self.FK_Accessi_Anagrafica">
+            <End Role="Anagrafica" EntitySet="Anagrafica" />
+            <End Role="Accessi" EntitySet="Accessi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ControlloAccessiXCMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ControlloAccessiXCMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accessi" EntityType="ControlloAccessiXCMModel.Accessi" />
+          <EntitySet Name="Anagrafica" EntityType="ControlloAccessiXCMModel.Anagrafica" />
+          <AssociationSet Name="FK_Accessi_Anagrafica" Association="ControlloAccessiXCMModel.FK_Accessi_Anagrafica">
+            <End Role="Anagrafica" EntitySet="Anagrafica" />
+            <End Role="Accessi" EntitySet="Accessi" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Accessi">
+          <Key>
+            <PropertyRef Name="ID_ACCESSO" />
+          </Key>
+          <Property Name="ID_ACCESSO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATA_VERIFICA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FK_UTENTE" Type="Int64" Nullable="false" />
+          <Property Name="ORA_INGRESSO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ORA_USCITA" Type="DateTime" Precision="3" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IS_OSPITE" Type="Boolean" Nullable="false" />
+          <Property Name="OSPITE_NOME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="OSPITE_COGNOME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="OSPITE_DATA_DI_NASCITA" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Anagrafica" Relationship="ControlloAccessiXCMModel.FK_Accessi_Anagrafica" FromRole="Accessi" ToRole="Anagrafica" />
+          <Property Name="IS_FERIE" Type="Boolean" Nullable="false" />
+          <Property Name="IS_MALATTIA" Type="Boolean" Nullable="false" />
+          <Property Name="IS_PERMESSO" Type="Boolean" Nullable="false" />
+          <Property Name="IS_MATERNITA" Type="Boolean" Nullable="false" />
+          <Property Name="IS_CONGEDO_MATRIMONIALE" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Anagrafica">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="COGNOME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_NASCITA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CODICE_FISCALE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accessi" Relationship="ControlloAccessiXCMModel.FK_Accessi_Anagrafica" FromRole="Anagrafica" ToRole="Accessi" />
+          <Property Name="LIVELLO" Type="Int32" Nullable="false" />
+          <Property Name="QR_GP_COMUNICATO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ENABLED" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Accessi_Anagrafica">
+          <End Type="ControlloAccessiXCMModel.Anagrafica" Role="Anagrafica" Multiplicity="1" />
+          <End Type="ControlloAccessiXCMModel.Accessi" Role="Accessi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anagrafica">
+              <PropertyRef Name="ID_ANAGRAFICA" />
+            </Principal>
+            <Dependent Role="Accessi">
+              <PropertyRef Name="FK_UTENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ControlloAccessiXCMModelStoreContainer" CdmEntityContainer="ControlloAccessiXCMEntities">
+          <EntitySetMapping Name="Accessi">
+            <EntityTypeMapping TypeName="ControlloAccessiXCMModel.Accessi">
+              <MappingFragment StoreEntitySet="Accessi">
+                <ScalarProperty Name="IS_CONGEDO_MATRIMONIALE" ColumnName="IS_CONGEDO_MATRIMONIALE" />
+                <ScalarProperty Name="IS_MATERNITA" ColumnName="IS_MATERNITA" />
+                <ScalarProperty Name="IS_PERMESSO" ColumnName="IS_PERMESSO" />
+                <ScalarProperty Name="IS_MALATTIA" ColumnName="IS_MALATTIA" />
+                <ScalarProperty Name="IS_FERIE" ColumnName="IS_FERIE" />
+                <ScalarProperty Name="OSPITE_DATA_DI_NASCITA" ColumnName="OSPITE_DATA_DI_NASCITA" />
+                <ScalarProperty Name="OSPITE_COGNOME" ColumnName="OSPITE_COGNOME" />
+                <ScalarProperty Name="OSPITE_NOME" ColumnName="OSPITE_NOME" />
+                <ScalarProperty Name="IS_OSPITE" ColumnName="IS_OSPITE" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ORA_USCITA" ColumnName="ORA_USCITA" />
+                <ScalarProperty Name="ORA_INGRESSO" ColumnName="ORA_INGRESSO" />
+                <ScalarProperty Name="FK_UTENTE" ColumnName="FK_UTENTE" />
+                <ScalarProperty Name="DATA_VERIFICA" ColumnName="DATA_VERIFICA" />
+                <ScalarProperty Name="ID_ACCESSO" ColumnName="ID_ACCESSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anagrafica">
+            <EntityTypeMapping TypeName="ControlloAccessiXCMModel.Anagrafica">
+              <MappingFragment StoreEntitySet="Anagrafica">
+                <ScalarProperty Name="ENABLED" ColumnName="ENABLED" />
+                <ScalarProperty Name="QR_GP_COMUNICATO" ColumnName="QR_GP_COMUNICATO" />
+                <ScalarProperty Name="LIVELLO" ColumnName="LIVELLO" />
+                <ScalarProperty Name="CODICE_FISCALE" ColumnName="CODICE_FISCALE" />
+                <ScalarProperty Name="DATA_NASCITA" ColumnName="DATA_NASCITA" />
+                <ScalarProperty Name="COGNOME" ColumnName="COGNOME" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ID_ANAGRAFICA" ColumnName="ID_ANAGRAFICA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

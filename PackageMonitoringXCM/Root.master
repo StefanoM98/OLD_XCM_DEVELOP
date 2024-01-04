@@ -1,0 +1,30 @@
+<%@ Master Language="C#" CodeBehind="Root.master.cs" Inherits="PackageMonitoringXCM.Root" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server" EnableViewState="false">
+    <meta charset="UTF-8" />
+    <title>XCM HealthCare - Monitor Cartoni</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href='<%# ResolveUrl("~/Content/Content.css") %>' />
+    <link rel="shortcut icon" type="image/x-icon" href='<%# ResolveUrl("~/Content/Icon/LogoXCM.ico") %>' />
+    <asp:ContentPlaceHolder ID="Head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" class="form">
+        <div class="content" id="pageContent">
+            <asp:ContentPlaceHolder runat="server" ID="PageContent"></asp:ContentPlaceHolder>
+            <div class="footer-wrapper" id="footerWrapper">
+                <div class="footer">
+                    <span class="footer-left">&copy; <%: DateTime.Now.Year %> - XCM HealthCare</span>
+                </div>
+            </div>
+        </div>
+
+        <dx:ASPxGlobalEvents runat="server">
+            <ClientSideEvents ControlsInitialized="onControlsInitialized" BrowserWindowResized="onBrowserWindowResized" />
+        </dx:ASPxGlobalEvents>
+    </form>
+</body>
+</html>

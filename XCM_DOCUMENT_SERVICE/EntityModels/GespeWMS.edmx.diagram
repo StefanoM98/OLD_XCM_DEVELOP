@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="330795d0a3dc41e68a0b9a46a9ea57f4" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsRegistrations" Width="2.25" PointX="21.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsDocument" Width="2.125" PointX="3.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsDocumentRows_XCM" Width="2.75" PointX="6.5" PointY="0.75" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsWarehouse" Width="2.125" PointX="10" PointY="0.75" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwTmsShipment" PointX="12.625" PointY="0.75" Width="2.5" />
+        <EntityTypeShape EntityType="GnXcmModel.TmsLocationDetail" Width="3.25" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="GnXcmModel.ViewPrdCRM" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GnXcmModel.ViewSerialSpec" Width="1.5" PointX="0.75" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

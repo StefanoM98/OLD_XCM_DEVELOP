@@ -1,0 +1,55 @@
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ResocontoDocumenti";
+        settings.CallbackRouteValues = new { Controller = "XCMView", Action = "ResocontoDocumentiPartial" };
+
+        settings.KeyFieldName = "Mandante";
+
+        settings.SettingsPager.Visible = false;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = false;
+        settings.SettingsBehavior.AllowSort = false;
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Left;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.SettingsPopup.FilterControl.AutoUpdatePosition = false;
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Mandante";
+            c.Caption = "Mandante";
+            c.AdaptivePriority = 0;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "DeliveryOUT";
+            c.Caption = "EVASI";
+            c.AdaptivePriority = 1;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "DeliveryIN";
+            c.Caption = "INGRESSATI";
+            c.AdaptivePriority = 2;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "QuantitaTotaleDeliveryOUT";
+            c.Caption = "Quantita EVASI";
+            c.AdaptivePriority = 3;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "QuantitaTotaleDeliveryIN";
+            c.Caption = "Quantita INGRESSATI";
+            c.AdaptivePriority = 4;
+        });
+    });
+}
+@grid.Bind(Model).GetHtml()

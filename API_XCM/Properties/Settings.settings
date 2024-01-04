@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="API_XCM.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IndirizzoFTP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)"> http://185.30.181.203</Value>
+    </Setting>
+    <Setting Name="PortaFTP" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+    <Setting Name="UserFSCFTP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">unitexFSC</Value>
+    </Setting>
+    <Setting Name="PasswordFSCFTP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FSCunitex</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

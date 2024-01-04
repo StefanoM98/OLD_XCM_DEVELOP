@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.9" version="18.7" Modules="simple" RootPath="." Language="en" Id="{FB1FFBC3-6001-4881-AE94-12D4A0359788}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="XCM Healthcare"/>
+    <ROW Property="ProductCode" Value="1033:{E4A6E63E-3C56-4FA9-9E87-8EB43A7F1A77} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="XCM EzOrders"/>
+    <ROW Property="ProductVersion" Value="0.9.6" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{96C0CCCB-AC5E-441C-858C-44C7D905CFA3}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{1CA56816-12CA-4B4C-B17F-AAF0CC28D72C}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="BouncyCastle.Crypto.dll" ComponentId="{BAB1A3B9-DFAB-4029-BF6D-66F871155283}" Directory_="APPDIR" Attributes="0" KeyPath="BouncyCastle.Crypto.dll"/>
+    <ROW Component="DevExpress.BonusSkins.v21.1.dll" ComponentId="{AFC50870-20F0-4553-B134-EDEBD156D896}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.BonusSkins.v21.1.dll"/>
+    <ROW Component="DevExpress.Charts.v21.1.Core.dll" ComponentId="{7CD56CC6-5A61-4051-8A0C-B6C489DDCD02}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Charts.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.CodeParser.v21.1.dll" ComponentId="{5BCE26EA-C3D1-428C-B97B-46509A23BBC8}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.CodeParser.v21.1.dll"/>
+    <ROW Component="DevExpress.Data.Desktop.v21.1.dll" ComponentId="{0A39B4B5-9D5A-4EDB-B4CB-6A661BB3D6B2}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.Desktop.v21.1.dll"/>
+    <ROW Component="DevExpress.Data.v21.1.dll" ComponentId="{276040F9-88EB-4EBE-9375-88EA6B718308}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v21.1.dll"/>
+    <ROW Component="DevExpress.Data.v21.1.resources.dll" ComponentId="{A8930492-ECD0-40B8-9607-C2C11C1282C2}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Data.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.Data.v21.1.resources.dll_1" ComponentId="{85949D56-3B7E-43D3-9664-C084EC6C9F81}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Data.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Data.v21.1.resources.dll_2" ComponentId="{368C2481-B194-407C-91FC-235326C147D2}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Data.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Data.v21.1.resources.dll_3" ComponentId="{678C4FBA-5FEB-4A5C-8C4E-ABF4EE202171}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Data.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.DataAccess.v21.1.dll" ComponentId="{98A75715-5406-440F-8791-E01CCC6AD6BC}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.DataAccess.v21.1.dll"/>
+    <ROW Component="DevExpress.DataAccess.v21.1.resources.dll" ComponentId="{94D2A543-9B23-4695-B07A-36A162919ABC}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.DataAccess.v21.1.resources.dll_1" ComponentId="{E03E50A8-2AC6-454B-8353-3DDF0B7C2B2B}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.DataAccess.v21.1.resources.dll_2" ComponentId="{E354E0FF-8954-441A-A579-DF563240A768}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.DataAccess.v21.1.resources.dll_3" ComponentId="{F48CDDEC-A27D-4F39-A080-4670AA0B18B0}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.DataVisualization.v21.1.Core.dll" ComponentId="{5DC78C88-1F03-4A78-A90A-3E00065B1FB4}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.DataVisualization.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Docs.v21.1.dll" ComponentId="{BE93E920-1510-4D9D-86AA-B360D0C9057E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Docs.v21.1.dll"/>
+    <ROW Component="DevExpress.Images.v21.1.dll" ComponentId="{B97A693C-BCC6-4812-A00F-BB731991B2FD}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Images.v21.1.dll"/>
+    <ROW Component="DevExpress.Office.v21.1.Core.dll" ComponentId="{BAD42546-B90D-4C47-BBCD-C7BA46A6611F}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Office.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Office.v21.1.Core.resources.dll" ComponentId="{5F48A0A9-4C85-4C24-8DE9-2FE5F05B5A07}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Office.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Office.v21.1.Core.resources.dll_1" ComponentId="{4A2575F8-8571-4C3C-B828-658C9B917D73}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Office.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Office.v21.1.Core.resources.dll_2" ComponentId="{C65C3938-7C53-4481-B83A-B3825364CC63}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Office.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Office.v21.1.Core.resources.dll_3" ComponentId="{E333A83D-4AE3-42D6-B492-4DAB1285AD99}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Office.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Pdf.v21.1.Core.dll" ComponentId="{CAE34494-0985-4982-83F9-E7D292C1464C}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Pdf.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Pdf.v21.1.Core.resources.dll" ComponentId="{04289729-27F5-4A55-9954-F618F4FA557E}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Pdf.v21.1.Core.resources.dll_1" ComponentId="{F6FE4C9E-59AD-4754-9044-A7BEF24BC119}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Pdf.v21.1.Core.resources.dll_2" ComponentId="{C148755D-9DC2-4F14-A00B-DB411E872BD4}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Pdf.v21.1.Core.resources.dll_3" ComponentId="{1FE76564-9DF6-4B91-9303-C574E25B8B27}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Pdf.v21.1.Drawing.dll" ComponentId="{5F9A0EEF-2A08-4369-834B-DF3A8EDA1614}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Pdf.v21.1.Drawing.dll"/>
+    <ROW Component="DevExpress.Printing.v21.1.Core.dll" ComponentId="{317EABA9-297A-429B-8CE6-426C1E4DC845}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Printing.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Printing.v21.1.Core.resources.dll" ComponentId="{C63C66DD-C8E1-44DF-AE15-28DBD26A6CAA}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Printing.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Printing.v21.1.Core.resources.dll_1" ComponentId="{42FE42B0-89DF-4DA6-8475-D1F04E26BC04}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Printing.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Printing.v21.1.Core.resources.dll_2" ComponentId="{80268504-C7F8-4D3E-BCB6-FF9398382B9B}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Printing.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Printing.v21.1.Core.resources.dll_3" ComponentId="{8B3F1DAD-B90B-4DEA-B6FD-EFF66ECFF501}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Printing.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.RichEdit.v21.1.Core.dll" ComponentId="{604005E4-B6B8-47F9-BAF6-DF4F6D02A062}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.RichEdit.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.RichEdit.v21.1.Core.resources.dll" ComponentId="{426DB404-15A3-4735-BAA8-128BD04E3CEE}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.RichEdit.v21.1.Core.resources.dll_1" ComponentId="{70527BD6-B7B1-4FBB-9642-ECC60E8A4517}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.RichEdit.v21.1.Core.resources.dll_2" ComponentId="{F5949BE9-480F-41E9-B65A-B01898B043E9}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.RichEdit.v21.1.Core.resources.dll_3" ComponentId="{B71C5903-097A-4850-B519-78DE0D5D5FAC}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.RichEdit.v21.1.Export.dll" ComponentId="{AB4991D1-362C-40E7-90F1-F35BD69066CD}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.RichEdit.v21.1.Export.dll"/>
+    <ROW Component="DevExpress.Snap.v21.1.Core.dll" ComponentId="{1A6BF9DD-5699-4F69-B3CB-5942B73A896E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Snap.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Snap.v21.1.Core.resources.dll" ComponentId="{7EC62B31-51B2-4FC3-97F0-689D1885848F}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Snap.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Snap.v21.1.Core.resources.dll_1" ComponentId="{66E0B5C0-3BEB-4073-B177-8460B8E175EB}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Snap.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Snap.v21.1.Core.resources.dll_2" ComponentId="{E15DA637-4414-46A5-A607-0881FA6DD214}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Snap.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Snap.v21.1.Core.resources.dll_3" ComponentId="{689D31B9-46E5-4886-8F29-EDAA8A40E017}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Snap.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Sparkline.v21.1.Core.dll" ComponentId="{6620C9EA-8581-4EF6-8D63-528C360D17D0}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Sparkline.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Sparkline.v21.1.Core.resources.dll" ComponentId="{53CF1611-D427-4EB4-A4C3-FF985C2F1AC9}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Sparkline.v21.1.Core.resources.dll_1" ComponentId="{59390EB7-BFF4-4ED7-82F8-BB92DBA5AE47}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Sparkline.v21.1.Core.resources.dll_2" ComponentId="{B5CB29A6-39CD-41AD-93F0-345F73926A04}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Sparkline.v21.1.Core.resources.dll_3" ComponentId="{3B851AD8-94C7-4A57-BFC4-1E62FB85E780}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Spreadsheet.v21.1.Core.dll" ComponentId="{40E2FBFB-763A-47A5-AC05-8757C0342C54}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Spreadsheet.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Spreadsheet.v21.1.Core.resources.dll" ComponentId="{9A61520C-E438-4D55-AB9E-3B6839A59BAD}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Spreadsheet.v21.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Spreadsheet.v21.1.Core.resources.dll_1" ComponentId="{650E0F01-9C35-4AE8-9D3B-E9D29F577887}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Spreadsheet.v21.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Spreadsheet.v21.1.Core.resources.dll_2" ComponentId="{41E91503-54A8-49F3-86F7-1A72610C0F9D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Spreadsheet.v21.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Spreadsheet.v21.1.Core.resources.dll_3" ComponentId="{7655E681-6E4F-45DB-87E5-E18E39786ACD}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Spreadsheet.v21.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.TreeMap.v21.1.Core.dll" ComponentId="{030DBEC4-3C7B-48C5-BF3D-9518E25B5325}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.TreeMap.v21.1.Core.dll"/>
+    <ROW Component="DevExpress.Utils.v21.1.UI.dll" ComponentId="{19C48DB6-3B6E-4C88-8E7C-81FBB3EBF00F}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v21.1.UI.dll"/>
+    <ROW Component="DevExpress.Utils.v21.1.dll" ComponentId="{408B7F01-A994-43EF-AB18-D0BC7098A3C3}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v21.1.dll"/>
+    <ROW Component="DevExpress.Utils.v21.1.resources.dll" ComponentId="{B217A928-536C-441C-B94E-F7AA7F83A9D7}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v21.1.resources.dll_1" ComponentId="{37EE5746-67C4-46D3-89AD-6073402163E1}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Utils.v21.1.resources.dll_2" ComponentId="{D6F9E9B2-419F-45FE-BC83-D013EED1746D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Utils.v21.1.resources.dll_3" ComponentId="{F714B7ED-7296-4767-A2FE-C0B88DBE7A74}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.Web.ASPxThemes.v21.1.dll" ComponentId="{8C06BF15-D493-4426-9C28-740B24627EF7}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Web.ASPxThemes.v21.1.dll"/>
+    <ROW Component="DevExpress.Web.v21.1.dll" ComponentId="{A1120B12-38E3-46DA-9E50-DDE2FD525C90}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Web.v21.1.dll"/>
+    <ROW Component="DevExpress.Xpo.v21.1.dll" ComponentId="{69B6A285-014C-4977-BEA7-B989587E1FA1}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpo.v21.1.dll"/>
+    <ROW Component="DevExpress.Xpo.v21.1.resources.dll" ComponentId="{C855373E-6FDB-4250-A7C4-1B522DDADCDA}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.Xpo.v21.1.resources.dll_1" ComponentId="{A10F8A4C-9C34-4638-B670-5E667D94C25E}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpo.v21.1.resources.dll_2" ComponentId="{83183ED8-539E-4E6D-B202-EEA5CFE7AAFD}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpo.v21.1.resources.dll_3" ComponentId="{D60151CD-A9F6-47C7-A61D-08FB3046B4D7}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraBars.v21.1.dll" ComponentId="{448AA0A6-8493-4CF0-A92F-83F35186B275}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraBars.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraBars.v21.1.resources.dll" ComponentId="{73C1EDDC-16CC-44C1-9659-688E59CCFEA1}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraBars.v21.1.resources.dll_1" ComponentId="{74835FD4-5BB1-42D6-ACE6-E552233D643C}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraBars.v21.1.resources.dll_2" ComponentId="{203DA7B1-AF92-4ACF-888B-9EFEF0D08745}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraBars.v21.1.resources.dll_3" ComponentId="{426BF205-23F2-45B7-BA3C-C696109BC318}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.Extensions.dll" ComponentId="{4298CBEC-3095-4C2B-BACD-BB153EEB8B32}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.Extensions.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.UI.dll" ComponentId="{78E389C2-B8CE-4E00-B405-868F55306BB9}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.UI.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.Web.dll" ComponentId="{84804300-AF85-415E-835B-E0BC28AE2EB3}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.Web.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.Wizard.dll" ComponentId="{AA0AFDB0-0804-482E-AA51-9E5534DA7037}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.Wizard.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.dll" ComponentId="{9F8C229C-809F-48C6-95ED-052E5B9394BE}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.resources.dll" ComponentId="{0C081D9B-A472-4A83-91DD-12BDD33DE5E4}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.resources.dll_1" ComponentId="{15A5B67E-79C5-41E0-874E-14D697CDF82B}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.resources.dll_2" ComponentId="{B04F634A-4648-4559-9251-6B1864BCA863}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraCharts.v21.1.resources.dll_3" ComponentId="{30DA2178-0A35-4860-B996-1995723A6775}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraEditors.v21.1.dll" ComponentId="{1A7674F8-923A-4CD4-89FF-99FC6A41F95A}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraEditors.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v21.1.resources.dll" ComponentId="{52543C4E-B6B4-43CF-A8B6-CD9801536E78}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v21.1.resources.dll_1" ComponentId="{7FF13A3D-9082-4E68-9C9C-E0964BCA5E79}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraEditors.v21.1.resources.dll_2" ComponentId="{5476FCD4-4E1E-46D1-A2B6-D699D0122A1E}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraEditors.v21.1.resources.dll_3" ComponentId="{C662930E-BB30-46F5-8987-9CA21287DB64}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraGrid.v21.1.dll" ComponentId="{859E5EAD-9B49-4AA5-9F59-C78AE7F5AEBD}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraGrid.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v21.1.resources.dll" ComponentId="{8D925D10-FB71-454C-9D75-AB0EA17A20C8}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v21.1.resources.dll_1" ComponentId="{54BA677E-6642-488E-BEC0-0E446132EF77}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraGrid.v21.1.resources.dll_2" ComponentId="{F287181A-F970-47B6-9330-2C1210A17A4E}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraGrid.v21.1.resources.dll_3" ComponentId="{399EB6F8-CD59-4B51-9B32-4A522B39C75F}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraLayout.v21.1.dll" ComponentId="{09E463CF-704C-4521-8E39-2DCA6DC05F84}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraLayout.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v21.1.resources.dll" ComponentId="{4EB18411-5F45-401D-AFB9-C7C049F4E5C7}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v21.1.resources.dll_1" ComponentId="{F6A4E8E2-D817-414F-B8B4-49832B3B8B3B}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraLayout.v21.1.resources.dll_2" ComponentId="{C32756AF-536E-4604-B4F6-4D1E9F11E05A}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraLayout.v21.1.resources.dll_3" ComponentId="{888D9DB8-C471-40A1-977C-7658230323B1}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraNavBar.v21.1.dll" ComponentId="{3CB73F6B-A656-4541-861F-060341A5A42B}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraNavBar.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraPdfViewer.v21.1.dll" ComponentId="{62C7B02C-6797-45E0-B07E-86BFC2710ABA}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraPdfViewer.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraPdfViewer.v21.1.resources.dll" ComponentId="{ED30C498-83B6-4353-9199-D0E98E076A2D}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraPdfViewer.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraPdfViewer.v21.1.resources.dll_1" ComponentId="{E0A903B3-BF3C-4201-B25B-5C85AAD6CDDE}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraPdfViewer.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraPdfViewer.v21.1.resources.dll_2" ComponentId="{3FD98E98-F7DB-45A1-A50A-104F625A0DBD}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraPdfViewer.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraPdfViewer.v21.1.resources.dll_3" ComponentId="{EF6DDB2F-3EF8-49E0-B912-781085B8152D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraPdfViewer.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraPrinting.v21.1.dll" ComponentId="{589735E9-40A6-4A24-A7A5-3A7E21474281}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraPrinting.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v21.1.resources.dll" ComponentId="{153C8FD1-B7E2-4A25-87A5-FFCBF488F453}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v21.1.resources.dll_1" ComponentId="{3F25950E-1B94-4C9F-B76A-4B055D44DF39}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraPrinting.v21.1.resources.dll_2" ComponentId="{9A86F7F9-7591-4467-96F3-4DF22289723C}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraPrinting.v21.1.resources.dll_3" ComponentId="{E6981BE1-EDD7-40AD-A81F-B7608E74CE8D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraRichEdit.v21.1.dll" ComponentId="{A3BE9077-E214-4FBE-9F0E-CAC989FFB937}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraRichEdit.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v21.1.dll" ComponentId="{8EA18BC3-8BA6-4B07-85BF-F9434687957E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraTreeList.v21.1.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v21.1.resources.dll" ComponentId="{4D7708C7-033F-46CB-AC2F-8571CB5E01AD}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v21.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v21.1.resources.dll_1" ComponentId="{7561BBF7-D9E2-4810-A931-D922FE332ECA}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v21.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraTreeList.v21.1.resources.dll_2" ComponentId="{E58511A4-E30F-470A-B9E2-A8B23DF5877D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v21.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraTreeList.v21.1.resources.dll_3" ComponentId="{69DF595F-A855-46D8-A240-D475888E4309}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v21.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraTreeMap.v21.1.dll" ComponentId="{66B1E909-29FF-4B5D-AFCE-29D969D116AF}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraTreeMap.v21.1.dll"/>
+    <ROW Component="EzOrdiniRemoti.exe" ComponentId="{F62F3D1E-4BE3-4CDB-921F-0B7F4E6BF169}" Directory_="APPDIR" Attributes="0" KeyPath="EzOrdiniRemoti.exe"/>
+    <ROW Component="FluentFTP.dll" ComponentId="{CD4D7ECB-0049-4FA5-84C1-4EA1ED73A542}" Directory_="APPDIR" Attributes="0" KeyPath="FluentFTP.dll"/>
+    <ROW Component="PoolingFileDaElaborare.exe" ComponentId="{FB63EB98-622F-4D65-9622-9140E6040C12}" Directory_="APPDIR" Attributes="0" KeyPath="PoolingFileDaElaborare.exe"/>
+    <ROW Component="ProductInformation" ComponentId="{DDD7EF85-24C7-404D-9B67-BA4A1458F4B5}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="grpc_csharp_ext.x64.dll" ComponentId="{14FF44EF-3224-4E86-A5FB-A52FEAC7D775}" Directory_="APPDIR" Attributes="256" KeyPath="grpc_csharp_ext.x64.dll"/>
+    <ROW Component="grpc_csharp_ext.x86.dll" ComponentId="{2D4D49C4-8E55-44D6-9D80-B004274D2802}" Directory_="APPDIR" Attributes="0" KeyPath="grpc_csharp_ext.x86.dll"/>
+    <ROW Component="itextsharp.dll" ComponentId="{0C39A900-D6BE-4F7E-9F71-9F8C8AF0CB84}" Directory_="APPDIR" Attributes="0" KeyPath="itextsharp.dll"/>
+    <ROW Component="libgrpc_csharp_ext.x64.dylib" ComponentId="{89A76A13-0217-418E-9C59-A42868DAE361}" Directory_="APPDIR" Attributes="0" KeyPath="TemplateOrdini.xlsx" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="TemplateOrdini.xlsx" Component_="libgrpc_csharp_ext.x64.dylib" FileName="TEMPLA~1.XLS|TemplateOrdini.xlsx" Attributes="0" SourcePath="..\..\bin\Release\TemplateOrdini.xlsx" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v21.1.resources.dll" Component_="DevExpress.Data.v21.1.resources.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Data.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v21.1.resources.dll" Component_="DevExpress.DataAccess.v21.1.resources.dll" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.DataAccess.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v21.1.Core.resources.dll" Component_="DevExpress.Office.v21.1.Core.resources.dll" FileName="DEVEXP~3.DLL|DevExpress.Office.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Office.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v21.1.Core.resources.dll" Component_="DevExpress.Pdf.v21.1.Core.resources.dll" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Pdf.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v21.1.Core.resources.dll" Component_="DevExpress.Printing.v21.1.Core.resources.dll" FileName="DEVEXP~5.DLL|DevExpress.Printing.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Printing.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v21.1.Core.resources.dll" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.RichEdit.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Snap.v21.1.Core.resources.dll" Component_="DevExpress.Snap.v21.1.Core.resources.dll" FileName="DEVEXP~7.DLL|DevExpress.Snap.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Snap.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v21.1.Core.resources.dll" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll" FileName="DEVEXP~8.DLL|DevExpress.Sparkline.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Sparkline.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Spreadsheet.v21.1.Core.resources.dll" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll" FileName="DEVEXP~9.DLL|DevExpress.Spreadsheet.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Spreadsheet.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v21.1.resources.dll" Component_="DevExpress.Utils.v21.1.resources.dll" FileName="DEVEX~10.DLL|DevExpress.Utils.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Utils.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v21.1.resources.dll" Component_="DevExpress.Xpo.v21.1.resources.dll" FileName="DEVEX~11.DLL|DevExpress.Xpo.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpo.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v21.1.resources.dll" Component_="DevExpress.XtraBars.v21.1.resources.dll" FileName="DEVEX~12.DLL|DevExpress.XtraBars.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraBars.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.resources.dll" Component_="DevExpress.XtraCharts.v21.1.resources.dll" FileName="DEVEX~13.DLL|DevExpress.XtraCharts.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraCharts.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v21.1.resources.dll" Component_="DevExpress.XtraEditors.v21.1.resources.dll" FileName="DEVEX~14.DLL|DevExpress.XtraEditors.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraEditors.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v21.1.resources.dll" Component_="DevExpress.XtraGrid.v21.1.resources.dll" FileName="DEVEX~15.DLL|DevExpress.XtraGrid.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraGrid.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v21.1.resources.dll" Component_="DevExpress.XtraLayout.v21.1.resources.dll" FileName="DEVEX~16.DLL|DevExpress.XtraLayout.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraLayout.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPdfViewer.v21.1.resources.dll" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll" FileName="DEVEX~17.DLL|DevExpress.XtraPdfViewer.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraPdfViewer.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v21.1.resources.dll" Component_="DevExpress.XtraPrinting.v21.1.resources.dll" FileName="DEVEX~18.DLL|DevExpress.XtraPrinting.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraPrinting.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v21.1.resources.dll" Component_="DevExpress.XtraTreeList.v21.1.resources.dll" FileName="DEVEX~19.DLL|DevExpress.XtraTreeList.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraTreeList.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v21.1.resources.dll_1" Component_="DevExpress.Data.v21.1.resources.dll_1" FileName="DEVEXP~1.DLL|DevExpress.Data.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Data.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v21.1.resources.dll_1" Component_="DevExpress.DataAccess.v21.1.resources.dll_1" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.DataAccess.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v21.1.Core.resources.dll_1" Component_="DevExpress.Office.v21.1.Core.resources.dll_1" FileName="DEVEXP~3.DLL|DevExpress.Office.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Office.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v21.1.Core.resources.dll_1" Component_="DevExpress.Pdf.v21.1.Core.resources.dll_1" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Pdf.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v21.1.Core.resources.dll_1" Component_="DevExpress.Printing.v21.1.Core.resources.dll_1" FileName="DEVEXP~5.DLL|DevExpress.Printing.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Printing.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v21.1.Core.resources.dll_1" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll_1" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.RichEdit.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Snap.v21.1.Core.resources.dll_1" Component_="DevExpress.Snap.v21.1.Core.resources.dll_1" FileName="DEVEXP~7.DLL|DevExpress.Snap.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Snap.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v21.1.Core.resources.dll_1" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll_1" FileName="DEVEXP~8.DLL|DevExpress.Sparkline.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Sparkline.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Spreadsheet.v21.1.Core.resources.dll_1" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll_1" FileName="DEVEXP~9.DLL|DevExpress.Spreadsheet.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Spreadsheet.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v21.1.resources.dll_1" Component_="DevExpress.Utils.v21.1.resources.dll_1" FileName="DEVEX~10.DLL|DevExpress.Utils.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Utils.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v21.1.resources.dll_1" Component_="DevExpress.Xpo.v21.1.resources.dll_1" FileName="DEVEX~11.DLL|DevExpress.Xpo.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpo.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v21.1.resources.dll_1" Component_="DevExpress.XtraBars.v21.1.resources.dll_1" FileName="DEVEX~12.DLL|DevExpress.XtraBars.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraBars.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.resources.dll_1" Component_="DevExpress.XtraCharts.v21.1.resources.dll_1" FileName="DEVEX~13.DLL|DevExpress.XtraCharts.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraCharts.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v21.1.resources.dll_1" Component_="DevExpress.XtraEditors.v21.1.resources.dll_1" FileName="DEVEX~14.DLL|DevExpress.XtraEditors.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraEditors.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v21.1.resources.dll_1" Component_="DevExpress.XtraGrid.v21.1.resources.dll_1" FileName="DEVEX~15.DLL|DevExpress.XtraGrid.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraGrid.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v21.1.resources.dll_1" Component_="DevExpress.XtraLayout.v21.1.resources.dll_1" FileName="DEVEX~16.DLL|DevExpress.XtraLayout.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraLayout.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPdfViewer.v21.1.resources.dll_1" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll_1" FileName="DEVEX~17.DLL|DevExpress.XtraPdfViewer.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraPdfViewer.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v21.1.resources.dll_1" Component_="DevExpress.XtraPrinting.v21.1.resources.dll_1" FileName="DEVEX~18.DLL|DevExpress.XtraPrinting.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraPrinting.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v21.1.resources.dll_1" Component_="DevExpress.XtraTreeList.v21.1.resources.dll_1" FileName="DEVEX~19.DLL|DevExpress.XtraTreeList.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraTreeList.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v21.1.resources.dll_2" Component_="DevExpress.Data.v21.1.resources.dll_2" FileName="DEVEXP~1.DLL|DevExpress.Data.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Data.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v21.1.resources.dll_2" Component_="DevExpress.DataAccess.v21.1.resources.dll_2" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.DataAccess.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v21.1.Core.resources.dll_2" Component_="DevExpress.Office.v21.1.Core.resources.dll_2" FileName="DEVEXP~3.DLL|DevExpress.Office.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Office.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v21.1.Core.resources.dll_2" Component_="DevExpress.Pdf.v21.1.Core.resources.dll_2" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Pdf.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v21.1.Core.resources.dll_2" Component_="DevExpress.Printing.v21.1.Core.resources.dll_2" FileName="DEVEXP~5.DLL|DevExpress.Printing.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Printing.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v21.1.Core.resources.dll_2" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll_2" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.RichEdit.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Snap.v21.1.Core.resources.dll_2" Component_="DevExpress.Snap.v21.1.Core.resources.dll_2" FileName="DEVEXP~7.DLL|DevExpress.Snap.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Snap.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v21.1.Core.resources.dll_2" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll_2" FileName="DEVEXP~8.DLL|DevExpress.Sparkline.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Sparkline.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Spreadsheet.v21.1.Core.resources.dll_2" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll_2" FileName="DEVEXP~9.DLL|DevExpress.Spreadsheet.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Spreadsheet.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v21.1.resources.dll_2" Component_="DevExpress.Utils.v21.1.resources.dll_2" FileName="DEVEX~10.DLL|DevExpress.Utils.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Utils.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v21.1.resources.dll_2" Component_="DevExpress.Xpo.v21.1.resources.dll_2" FileName="DEVEX~11.DLL|DevExpress.Xpo.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpo.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v21.1.resources.dll_2" Component_="DevExpress.XtraBars.v21.1.resources.dll_2" FileName="DEVEX~12.DLL|DevExpress.XtraBars.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraBars.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.resources.dll_2" Component_="DevExpress.XtraCharts.v21.1.resources.dll_2" FileName="DEVEX~13.DLL|DevExpress.XtraCharts.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraCharts.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v21.1.resources.dll_2" Component_="DevExpress.XtraEditors.v21.1.resources.dll_2" FileName="DEVEX~14.DLL|DevExpress.XtraEditors.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraEditors.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v21.1.resources.dll_2" Component_="DevExpress.XtraGrid.v21.1.resources.dll_2" FileName="DEVEX~15.DLL|DevExpress.XtraGrid.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraGrid.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v21.1.resources.dll_2" Component_="DevExpress.XtraLayout.v21.1.resources.dll_2" FileName="DEVEX~16.DLL|DevExpress.XtraLayout.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraLayout.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPdfViewer.v21.1.resources.dll_2" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll_2" FileName="DEVEX~17.DLL|DevExpress.XtraPdfViewer.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraPdfViewer.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v21.1.resources.dll_2" Component_="DevExpress.XtraPrinting.v21.1.resources.dll_2" FileName="DEVEX~18.DLL|DevExpress.XtraPrinting.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraPrinting.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v21.1.resources.dll_2" Component_="DevExpress.XtraTreeList.v21.1.resources.dll_2" FileName="DEVEX~19.DLL|DevExpress.XtraTreeList.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraTreeList.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v21.1.resources.dll_3" Component_="DevExpress.Data.v21.1.resources.dll_3" FileName="DEVEXP~1.DLL|DevExpress.Data.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Data.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v21.1.resources.dll_3" Component_="DevExpress.DataAccess.v21.1.resources.dll_3" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.DataAccess.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v21.1.Core.resources.dll_3" Component_="DevExpress.Office.v21.1.Core.resources.dll_3" FileName="DEVEXP~3.DLL|DevExpress.Office.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Office.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v21.1.Core.resources.dll_3" Component_="DevExpress.Pdf.v21.1.Core.resources.dll_3" FileName="DEVEXP~4.DLL|DevExpress.Pdf.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Pdf.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v21.1.Core.resources.dll_3" Component_="DevExpress.Printing.v21.1.Core.resources.dll_3" FileName="DEVEXP~5.DLL|DevExpress.Printing.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Printing.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v21.1.Core.resources.dll_3" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll_3" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.RichEdit.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Snap.v21.1.Core.resources.dll_3" Component_="DevExpress.Snap.v21.1.Core.resources.dll_3" FileName="DEVEXP~7.DLL|DevExpress.Snap.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Snap.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v21.1.Core.resources.dll_3" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll_3" FileName="DEVEXP~8.DLL|DevExpress.Sparkline.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Sparkline.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Spreadsheet.v21.1.Core.resources.dll_3" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll_3" FileName="DEVEXP~9.DLL|DevExpress.Spreadsheet.v21.1.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Spreadsheet.v21.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v21.1.resources.dll_3" Component_="DevExpress.Utils.v21.1.resources.dll_3" FileName="DEVEX~10.DLL|DevExpress.Utils.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Utils.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v21.1.resources.dll_3" Component_="DevExpress.Xpo.v21.1.resources.dll_3" FileName="DEVEX~11.DLL|DevExpress.Xpo.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpo.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v21.1.resources.dll_3" Component_="DevExpress.XtraBars.v21.1.resources.dll_3" FileName="DEVEX~12.DLL|DevExpress.XtraBars.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraBars.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.resources.dll_3" Component_="DevExpress.XtraCharts.v21.1.resources.dll_3" FileName="DEVEX~13.DLL|DevExpress.XtraCharts.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraCharts.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v21.1.resources.dll_3" Component_="DevExpress.XtraEditors.v21.1.resources.dll_3" FileName="DEVEX~14.DLL|DevExpress.XtraEditors.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraEditors.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v21.1.resources.dll_3" Component_="DevExpress.XtraGrid.v21.1.resources.dll_3" FileName="DEVEX~15.DLL|DevExpress.XtraGrid.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraGrid.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v21.1.resources.dll_3" Component_="DevExpress.XtraLayout.v21.1.resources.dll_3" FileName="DEVEX~16.DLL|DevExpress.XtraLayout.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraLayout.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPdfViewer.v21.1.resources.dll_3" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll_3" FileName="DEVEX~17.DLL|DevExpress.XtraPdfViewer.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraPdfViewer.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v21.1.resources.dll_3" Component_="DevExpress.XtraPrinting.v21.1.resources.dll_3" FileName="DEVEX~18.DLL|DevExpress.XtraPrinting.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraPrinting.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v21.1.resources.dll_3" Component_="DevExpress.XtraTreeList.v21.1.resources.dll_3" FileName="DEVEX~19.DLL|DevExpress.XtraTreeList.v21.1.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraTreeList.v21.1.resources.dll" SelfReg="false"/>
+    <ROW File="EzOrdiniRemoti.exe" Component_="EzOrdiniRemoti.exe" FileName="EZORDI~1.EXE|EzOrdiniRemoti.exe" Attributes="0" SourcePath="..\..\bin\Release\EzOrdiniRemoti.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="PoolingFileDaElaborare.exe" Component_="PoolingFileDaElaborare.exe" FileName="POOLIN~1.EXE|PoolingFileDaElaborare.exe" Attributes="0" SourcePath="..\..\bin\Release\PoolingFileDaElaborare.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="DevExpress.XtraNavBar.v21.1.dll" Component_="DevExpress.XtraNavBar.v21.1.dll" FileName="DEVEXP~1.DLL|DevExpress.XtraNavBar.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraNavBar.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPdfViewer.v21.1.dll" Component_="DevExpress.XtraPdfViewer.v21.1.dll" FileName="DEVEXP~2.DLL|DevExpress.XtraPdfViewer.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraPdfViewer.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v21.1.dll" Component_="DevExpress.XtraPrinting.v21.1.dll" FileName="DEVEXP~3.DLL|DevExpress.XtraPrinting.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraPrinting.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v21.1.dll" Component_="DevExpress.XtraRichEdit.v21.1.dll" FileName="DEVEXP~4.DLL|DevExpress.XtraRichEdit.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraRichEdit.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v21.1.dll" Component_="DevExpress.XtraTreeList.v21.1.dll" FileName="DEVEXP~5.DLL|DevExpress.XtraTreeList.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraTreeList.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeMap.v21.1.dll" Component_="DevExpress.XtraTreeMap.v21.1.dll" FileName="DEVEXP~6.DLL|DevExpress.XtraTreeMap.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraTreeMap.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.BonusSkins.v21.1.dll" Component_="DevExpress.BonusSkins.v21.1.dll" FileName="DEVEXP~7.DLL|DevExpress.BonusSkins.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.BonusSkins.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Charts.v21.1.Core.dll" Component_="DevExpress.Charts.v21.1.Core.dll" FileName="DEVEXP~8.DLL|DevExpress.Charts.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Charts.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.CodeParser.v21.1.dll" Component_="DevExpress.CodeParser.v21.1.dll" FileName="DEVEXP~9.DLL|DevExpress.CodeParser.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.CodeParser.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.Desktop.v21.1.dll" Component_="DevExpress.Data.Desktop.v21.1.dll" FileName="DEVEX~10.DLL|DevExpress.Data.Desktop.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Data.Desktop.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v21.1.dll" Component_="DevExpress.Data.v21.1.dll" FileName="DEVEX~11.DLL|DevExpress.Data.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Data.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v21.1.dll" Component_="DevExpress.DataAccess.v21.1.dll" FileName="DEVEX~12.DLL|DevExpress.DataAccess.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.DataAccess.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataVisualization.v21.1.Core.dll" Component_="DevExpress.DataVisualization.v21.1.Core.dll" FileName="DEVEX~13.DLL|DevExpress.DataVisualization.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.DataVisualization.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Docs.v21.1.dll" Component_="DevExpress.Docs.v21.1.dll" FileName="DEVEX~14.DLL|DevExpress.Docs.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Docs.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Images.v21.1.dll" Component_="DevExpress.Images.v21.1.dll" FileName="DEVEX~15.DLL|DevExpress.Images.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Images.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v21.1.Core.dll" Component_="DevExpress.Office.v21.1.Core.dll" FileName="DEVEX~16.DLL|DevExpress.Office.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Office.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v21.1.Core.dll" Component_="DevExpress.Pdf.v21.1.Core.dll" FileName="DEVEX~17.DLL|DevExpress.Pdf.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Pdf.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v21.1.Drawing.dll" Component_="DevExpress.Pdf.v21.1.Drawing.dll" FileName="DEVEX~18.DLL|DevExpress.Pdf.v21.1.Drawing.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Pdf.v21.1.Drawing.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v21.1.Core.dll" Component_="DevExpress.Printing.v21.1.Core.dll" FileName="DEVEX~19.DLL|DevExpress.Printing.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Printing.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v21.1.Core.dll" Component_="DevExpress.RichEdit.v21.1.Core.dll" FileName="DEVEX~20.DLL|DevExpress.RichEdit.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.RichEdit.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v21.1.Export.dll" Component_="DevExpress.RichEdit.v21.1.Export.dll" FileName="DEVEX~21.DLL|DevExpress.RichEdit.v21.1.Export.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.RichEdit.v21.1.Export.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Snap.v21.1.Core.dll" Component_="DevExpress.Snap.v21.1.Core.dll" FileName="DEVEX~22.DLL|DevExpress.Snap.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Snap.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v21.1.Core.dll" Component_="DevExpress.Sparkline.v21.1.Core.dll" FileName="DEVEX~23.DLL|DevExpress.Sparkline.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Sparkline.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Spreadsheet.v21.1.Core.dll" Component_="DevExpress.Spreadsheet.v21.1.Core.dll" FileName="DEVEX~24.DLL|DevExpress.Spreadsheet.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Spreadsheet.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.TreeMap.v21.1.Core.dll" Component_="DevExpress.TreeMap.v21.1.Core.dll" FileName="DEVEX~25.DLL|DevExpress.TreeMap.v21.1.Core.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.TreeMap.v21.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v21.1.dll" Component_="DevExpress.Utils.v21.1.dll" FileName="DEVEX~26.DLL|DevExpress.Utils.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Utils.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v21.1.UI.dll" Component_="DevExpress.Utils.v21.1.UI.dll" FileName="DEVEX~27.DLL|DevExpress.Utils.v21.1.UI.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Utils.v21.1.UI.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Web.ASPxThemes.v21.1.dll" Component_="DevExpress.Web.ASPxThemes.v21.1.dll" FileName="DEVEX~28.DLL|DevExpress.Web.ASPxThemes.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Web.ASPxThemes.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Web.v21.1.dll" Component_="DevExpress.Web.v21.1.dll" FileName="DEVEX~29.DLL|DevExpress.Web.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Web.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v21.1.dll" Component_="DevExpress.Xpo.v21.1.dll" FileName="DEVEX~30.DLL|DevExpress.Xpo.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.Xpo.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v21.1.dll" Component_="DevExpress.XtraBars.v21.1.dll" FileName="DEVEX~31.DLL|DevExpress.XtraBars.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraBars.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.dll" Component_="DevExpress.XtraCharts.v21.1.dll" FileName="DEVEX~32.DLL|DevExpress.XtraCharts.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraCharts.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.Extensions.dll" Component_="DevExpress.XtraCharts.v21.1.Extensions.dll" FileName="DEVEX~33.DLL|DevExpress.XtraCharts.v21.1.Extensions.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraCharts.v21.1.Extensions.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.UI.dll" Component_="DevExpress.XtraCharts.v21.1.UI.dll" FileName="DEVEX~34.DLL|DevExpress.XtraCharts.v21.1.UI.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraCharts.v21.1.UI.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.Web.dll" Component_="DevExpress.XtraCharts.v21.1.Web.dll" FileName="DEVEX~35.DLL|DevExpress.XtraCharts.v21.1.Web.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraCharts.v21.1.Web.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v21.1.Wizard.dll" Component_="DevExpress.XtraCharts.v21.1.Wizard.dll" FileName="DEVEX~36.DLL|DevExpress.XtraCharts.v21.1.Wizard.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraCharts.v21.1.Wizard.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v21.1.dll" Component_="DevExpress.XtraEditors.v21.1.dll" FileName="DEVEX~37.DLL|DevExpress.XtraEditors.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraEditors.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v21.1.dll" Component_="DevExpress.XtraGrid.v21.1.dll" FileName="DEVEX~38.DLL|DevExpress.XtraGrid.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraGrid.v21.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v21.1.dll" Component_="DevExpress.XtraLayout.v21.1.dll" FileName="DEVEX~39.DLL|DevExpress.XtraLayout.v21.1.dll" Attributes="0" SourcePath="..\..\deploy devexpress\DevExpress.XtraLayout.v21.1.dll" SelfReg="false"/>
+    <ROW File="libgrpc_csharp_ext.x64.dylib" Component_="libgrpc_csharp_ext.x64.dylib" FileName="LIBGRP~1.DYL|libgrpc_csharp_ext.x64.dylib" Attributes="0" SourcePath="..\..\bin\Release\libgrpc_csharp_ext.x64.dylib" SelfReg="false"/>
+    <ROW File="libgrpc_csharp_ext.x64.so" Component_="libgrpc_csharp_ext.x64.dylib" FileName="LIBGRP~1.SO|libgrpc_csharp_ext.x64.so" Attributes="0" SourcePath="..\..\bin\Release\libgrpc_csharp_ext.x64.so" SelfReg="false"/>
+    <ROW File="NLog.config" Component_="libgrpc_csharp_ext.x64.dylib" FileName="NLOG~1.CON|NLog.config" Attributes="0" SourcePath="..\..\bin\Release\NLog.config" SelfReg="false"/>
+    <ROW File="PoolingFileDaElaborare.exe.config" Component_="libgrpc_csharp_ext.x64.dylib" FileName="POOLIN~1.CON|PoolingFileDaElaborare.exe.config" Attributes="0" SourcePath="..\..\bin\Release\PoolingFileDaElaborare.exe.config" SelfReg="false"/>
+    <ROW File="BouncyCastle.Crypto.dll" Component_="BouncyCastle.Crypto.dll" FileName="BOUNCY~1.DLL|BouncyCastle.Crypto.dll" Attributes="0" SourcePath="..\..\bin\Release\BouncyCastle.Crypto.dll" SelfReg="false"/>
+    <ROW File="FluentFTP.dll" Component_="FluentFTP.dll" FileName="FLUENT~1.DLL|FluentFTP.dll" Attributes="0" SourcePath="..\..\bin\Release\FluentFTP.dll" SelfReg="false"/>
+    <ROW File="grpc_csharp_ext.x64.dll" Component_="grpc_csharp_ext.x64.dll" FileName="GRPC_C~1.DLL|grpc_csharp_ext.x64.dll" Attributes="0" SourcePath="..\..\bin\Release\grpc_csharp_ext.x64.dll" SelfReg="false"/>
+    <ROW File="grpc_csharp_ext.x86.dll" Component_="grpc_csharp_ext.x86.dll" FileName="GRPC_C~2.DLL|grpc_csharp_ext.x86.dll" Attributes="0" SourcePath="..\..\bin\Release\grpc_csharp_ext.x86.dll" SelfReg="false"/>
+    <ROW File="itextsharp.dll" Component_="itextsharp.dll" FileName="ITEXTS~1.DLL|itextsharp.dll" Attributes="0" SourcePath="..\..\bin\Release\itextsharp.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder=".." PackageFileName="XCM_Orders_[|ProductVersion]" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="libgrpc_csharp_ext.x64.dylib"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Snap.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v21.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Snap.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v21.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Snap.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v21.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Snap.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Spreadsheet.v21.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPdfViewer.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v21.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="EzOrdiniRemoti.exe"/>
+    <ROW Feature_="MainFeature" Component_="PoolingFileDaElaborare.exe"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraNavBar.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPdfViewer.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraRichEdit.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeMap.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.BonusSkins.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Charts.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.CodeParser.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.Desktop.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataVisualization.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Docs.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Images.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v21.1.Drawing.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v21.1.Export.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Snap.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Spreadsheet.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.TreeMap.v21.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v21.1.UI.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Web.ASPxThemes.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Web.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.UI.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.Web.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v21.1.Wizard.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v21.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="BouncyCastle.Crypto.dll"/>
+    <ROW Feature_="MainFeature" Component_="FluentFTP.dll"/>
+    <ROW Feature_="MainFeature" Component_="grpc_csharp_ext.x64.dll"/>
+    <ROW Feature_="MainFeature" Component_="grpc_csharp_ext.x86.dll"/>
+    <ROW Feature_="MainFeature" Component_="itextsharp.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="EzOrdiniRemoti.exe" SourcePath="..\..\deliveryIcon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="XCMOrders" Directory_="DesktopFolder" Name="XCMORD~1|XCM Orders" Component_="EzOrdiniRemoti.exe" Target="[#EzOrdiniRemoti.exe]" Hotkey="0" Icon_="EzOrdiniRemoti.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

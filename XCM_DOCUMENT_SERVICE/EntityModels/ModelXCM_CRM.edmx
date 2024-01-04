@@ -1,0 +1,2027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XCM_CRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AgentAuthorization">
+          <Key>
+            <PropertyRef Name="AgentAuthorization_ID" />
+          </Key>
+          <Property Name="AgentAuthorization_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_AgentAuthorization_User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AgentAuthorization_OrderConfirmation" Type="bit" Nullable="false" />
+          <Property Name="AgentAuthorization_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="AgentAuthorization_LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="AgentAuthorization_LastModifiedUserID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Anagrafica_Prodotti">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_PRODOTTO" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_PRODOTTO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODICE_PRODOTTO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIZIONE_PRODOTTO" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="PREZZO_UNITARIO" Type="money" />
+          <Property Name="DATA_CREAZIONE" Type="datetime" Nullable="false" />
+          <Property Name="DATA_ULTIMA_MODIFICA" Type="datetime" Nullable="false" />
+          <Property Name="GESPE_CUSTOMERID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CODICE_IVA" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Categorie_Prodotti">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA" />
+          </Key>
+          <Property Name="ID_CATEGORIA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIZIONE" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="PERCENTUALE_COMMISSIONE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cd_PG">
+          <Key>
+            <PropertyRef Name="Cd_PG_ID" />
+          </Key>
+          <Property Name="Cd_PG_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codice_PG" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Cd_PG_Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Cd_PG_NumeroRate" Type="int" Nullable="false" />
+          <Property Name="Cd_PG_AccontoPercentuale" Type="int" Nullable="false" />
+          <Property Name="Cd_PG_PartenzaScadenze" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cd_PG_NumeroGiorni" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client_Location">
+          <Key>
+            <PropertyRef Name="Location_Id" />
+          </Key>
+          <Property Name="Location_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location_Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Location_ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Location_Location" Type="varchar(max)" Nullable="false" />
+          <Property Name="Location_Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="Location_District" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Location_Region" Type="varchar(max)" Nullable="false" />
+          <Property Name="Location_Country" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Location_IsDefault" Type="bit" Nullable="false" />
+          <Property Name="Location_LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Location_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Location_LastModifiedUserId" Type="varchar" MaxLength="50" />
+          <Property Name="Location_GespeLocationId" Type="int" />
+          <Property Name="Location_IsActive" Type="bit" Nullable="false" />
+          <Property Name="FK_Location_Client_ID" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client_User">
+          <Key>
+            <PropertyRef Name="UserClient_UserID" />
+          </Key>
+          <Property Name="UserClient_UserID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserClient_Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="FK_UserClient_Customer_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserClient_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="UserClient_LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="UserClient_LastModifiedUserID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_SessionID" />
+          </Key>
+          <Property Name="Customer_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer_SessionID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer_description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Customer_isEnable" Type="bit" Nullable="false" />
+          <Property Name="Customer_address" Type="varchar(max)" />
+          <Property Name="Customer_zipCode" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_location" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_district" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_country" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_defaultPriceListId" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_vatCode" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_IsEnableCRM" Type="bit" Nullable="false" />
+          <Property Name="Customer_Logo" Type="varbinary(max)" />
+          <Property Name="Customer_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Customer_LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Customer_LastModifiedUserID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer_EspritecAPI_Username" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_EspritecAPI_Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customer_Authorization">
+          <Key>
+            <PropertyRef Name="Customer_Id" />
+          </Key>
+          <Property Name="Customer_Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="LastModifiedUserID" Type="varchar" MaxLength="50" />
+          <Property Name="ExpireDateTracking" Type="datetime" />
+          <Property Name="Tracking_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ExpireDateWarehouse" Type="datetime" />
+          <Property Name="Warehouse_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ExpireDateOrders" Type="datetime" />
+          <Property Name="Orders_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ExpireDateAgents" Type="datetime" />
+          <Property Name="Agents_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ExpireDateAnagrafiche" Type="datetime" />
+          <Property Name="Anagrafiche_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ExpireDateHome" Type="datetime" />
+          <Property Name="Home_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ExpireDateRegistration" Type="datetime" />
+          <Property Name="Registration_Active" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_Client">
+          <Key>
+            <PropertyRef Name="Client_Id" />
+          </Key>
+          <Property Name="Client_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Client_ProgressiveId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client_ExtId" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Client_PartitaIVA" Type="varchar" MaxLength="50" />
+          <Property Name="Client_CodiceFiscale" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Client_IBAN" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Email" Type="varchar" MaxLength="50" />
+          <Property Name="Client_IsActive" Type="bit" Nullable="false" />
+          <Property Name="Client_CodicePagamento" Type="varchar" MaxLength="20" />
+          <Property Name="Client_CodiceFPR" Type="varchar" MaxLength="50" />
+          <Property Name="Client_CodiceIPA" Type="varchar" MaxLength="50" />
+          <Property Name="Client_EntePubblico" Type="bit" />
+          <Property Name="Client_TipoDitta" Type="char" MaxLength="1" />
+          <Property Name="Client_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Client_LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Client_LastModifiedUserID" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="FK_Client_Customer_Id" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_CustomData">
+          <Key>
+            <PropertyRef Name="CustomData_Id" />
+          </Key>
+          <Property Name="CustomData_Id" Type="bigint" Nullable="false" />
+          <Property Name="CustomData_CodiceFiscale" Type="varchar" MaxLength="16" />
+          <Property Name="CustomData_CodiceIPA" Type="char" MaxLength="6" />
+          <Property Name="CustomData_CodideFPR" Type="varchar" MaxLength="100" />
+          <Property Name="CustomData_EntePubblico" Type="bit" />
+          <Property Name="CustomData_TipoDitta" Type="char" MaxLength="1" />
+          <Property Name="CustomData_cd_PG" Type="char" MaxLength="4" />
+          <Property Name="FK_CustomData_Customer_ID" Type="varchar" MaxLength="50" />
+          <Property Name="FK_CustomData_Orders_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Customer_RegType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegTypeId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedUserID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FK_Cutomer_SessionID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="G_Categorie_Subcategorie">
+          <Key>
+            <PropertyRef Name="ID_G_Categorie_Subcategorie" />
+          </Key>
+          <Property Name="ID_G_Categorie_Subcategorie" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_CATEGORIA" Type="bigint" Nullable="false" />
+          <Property Name="FK_SUBCATEGORIA" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="G_ListiniAgenti">
+          <Key>
+            <PropertyRef Name="ID_G_LISTINO_AGENTE" />
+          </Key>
+          <Property Name="ID_G_LISTINO_AGENTE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_USER" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FK_LISTINO" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="G_Podotto_Categoria">
+          <Key>
+            <PropertyRef Name="ID_Prodotto_Categoria" />
+          </Key>
+          <Property Name="ID_Prodotto_Categoria" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_ANAGRAFICA_ARTICOLO" Type="bigint" Nullable="false" />
+          <Property Name="FK_CATEGORIA" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GEO">
+          <Key>
+            <PropertyRef Name="Geo_Id" />
+          </Key>
+          <Property Name="Geo_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Geo_Location" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Geo_ZipCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Geo_District" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Geo_Region" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Geo_IstatCode" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="ListinoCommissioni">
+          <Key>
+            <PropertyRef Name="ID_LISTINO" />
+          </Key>
+          <Property Name="ID_LISTINO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_ANAGRAFICA_PRODOTTO" Type="bigint" Nullable="false" />
+          <Property Name="PERCENTUALE_COMMISSIONE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_Agent">
+          <Key>
+            <PropertyRef Name="OrderAgent_ID" />
+          </Key>
+          <Property Name="OrderAgent_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_OrderAgent_OrdersID" Type="bigint" Nullable="false" />
+          <Property Name="FK_OrderAgent_AgentID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_Client">
+          <Key>
+            <PropertyRef Name="OrdersClient_ID" />
+          </Key>
+          <Property Name="OrdersClient_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnloadLocationID" Type="bigint" />
+          <Property Name="ConsigneeLocationID" Type="bigint" Nullable="false" />
+          <Property Name="FK_OrdersClient_Client_ID" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="FK_OrdersClient_OrdersID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Orders_XcmID" />
+          </Key>
+          <Property Name="Orders_XcmID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Orders_docNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Orders_docDate" Type="datetime" Nullable="false" />
+          <Property Name="Orders_statusDes" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Orders_reference" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Orders_referenceDate" Type="datetime" Nullable="false" />
+          <Property Name="Orders_reTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Orders_senderDes" Type="nvarchar" MaxLength="150" />
+          <Property Name="Orders_consigneeDes" Type="nvarchar" MaxLength="150" />
+          <Property Name="Orders_unloadDes" Type="nvarchar" MaxLength="150" />
+          <Property Name="Orders_customerDes" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Orders_customerID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Orders_siteID" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="Orders_shipID" Type="bigint" />
+          <Property Name="Orders_shipDocNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Orders_tripID" Type="bigint" />
+          <Property Name="Orders_tripDocNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Orders_statusId" Type="int" Nullable="false" />
+          <Property Name="Orders_reference2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_reference2Date" Type="datetime" />
+          <Property Name="Orders_externalID" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_ownerID" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="Orders_ownerDes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_senderID" Type="int" />
+          <Property Name="Orders_senderAddress" Type="nvarchar(max)" />
+          <Property Name="Orders_senderZipCode" Type="nchar" MaxLength="5" />
+          <Property Name="Orders_senderLocation" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_senderDistrict" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_senderRegion" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_senderCountry" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_consigneeID" Type="bigint" />
+          <Property Name="Orders_consigneeAddress" Type="nvarchar(max)" />
+          <Property Name="Orders_consigneeZipCode" Type="nchar" MaxLength="5" />
+          <Property Name="Orders_consigneeLocation" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_consigneeDistrict" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_consigneeRegion" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_consigneeCountry" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_unloadID" Type="bigint" />
+          <Property Name="Orders_unloadAddress" Type="nvarchar(max)" />
+          <Property Name="Orders_unloadZipCode" Type="nchar" MaxLength="5" />
+          <Property Name="Orders_unloadLocation" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_unloadDistrict" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_unloadRegion" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_unloadCountry" Type="nvarchar" MaxLength="250" />
+          <Property Name="Orders_rowsNo" Type="int" />
+          <Property Name="Orders_totalQty" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalPacks" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalBoxes" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalNetWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalGrossWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalCube" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_coverage" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_planned" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_executed" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_internalNote" Type="nvarchar(max)" />
+          <Property Name="Orders_publicNote" Type="nvarchar(max)" />
+          <Property Name="Orders_deliveryNote" Type="nvarchar(max)" />
+          <Property Name="Orders_info1" Type="nvarchar(max)" />
+          <Property Name="Orders_info2" Type="nvarchar(max)" />
+          <Property Name="Orders_info3" Type="nvarchar(max)" />
+          <Property Name="Orders_info4" Type="nvarchar(max)" />
+          <Property Name="Orders_info5" Type="nvarchar(max)" />
+          <Property Name="Orders_info6" Type="nvarchar(max)" />
+          <Property Name="Orders_info7" Type="nvarchar(max)" />
+          <Property Name="Orders_info8" Type="nvarchar(max)" />
+          <Property Name="Orders_info9" Type="nvarchar(max)" />
+          <Property Name="Orders_GespeUniq" Type="bigint" Nullable="false" />
+          <Property Name="Orders_docTip" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders_RegType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegTypeId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="bigint" Nullable="false" />
+          <Property Name="Role_Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Role_Active" Type="bit" />
+          <Property Name="Role_CreationDate" Type="datetime" />
+          <Property Name="Role_LastModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ShipmentList">
+          <Key>
+            <PropertyRef Name="ID_SHIPMENT" />
+          </Key>
+          <Property Name="ID_SHIPMENT" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shipment_GespeID_UNITEX" Type="bigint" Nullable="false" />
+          <Property Name="Shipment_OwnerAgency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_DocNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_DocDate" Type="datetime" />
+          <Property Name="Shipment_StatusID" Type="int" />
+          <Property Name="Shipment_StatusType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_StatusDes" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_WebStatusID" Type="int" />
+          <Property Name="Shipment_WebStatusType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_WebOrderID" Type="int" />
+          <Property Name="Shipment_WebOrderNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_InsideRef" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_ExternalRef" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_ServiceType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_TransportType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_CustomerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_CustomerDes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Shipment_PickupSupplierID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_PickupSupplierDes" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_PickupDateTime" Type="datetime" />
+          <Property Name="Shipment_DeliveryDateTime" Type="nvarchar" MaxLength="150" />
+          <Property Name="Shipment_SenderID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_SenderDes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Shipment_ConsigneeID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_ConsigneeDes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Shipment_FirstStopID" Type="int" />
+          <Property Name="Shipment_FirstStopDes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Shipment_LastStopID" Type="int" />
+          <Property Name="Shipment_LastStopDes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Shipment_Packs" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_FloorPallets" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_TotalPallets" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_NetWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_GrossWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_Cube" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_Meters" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_CashValue" Type="money" />
+          <Property Name="Shipment_CashCurrency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_CashPayment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_CashNote" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shipment_AttachCount" Type="int" />
+          <Property Name="Shipment_DocGespeID_XCM" Type="bigint" Nullable="false" />
+          <Property Name="Shipment_CustomerID_XCM" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcategorie_Prodotti">
+          <Key>
+            <PropertyRef Name="ID_SUBCATEGORIA_PRODOTTO" />
+          </Key>
+          <Property Name="ID_SUBCATEGORIA_PRODOTTO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIZIONE" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="ID_TRACKING" />
+          </Key>
+          <Property Name="ID_TRACKING" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tracking_ShipmentID" Type="bigint" Nullable="false" />
+          <Property Name="Tracking_Data" Type="datetime" Nullable="false" />
+          <Property Name="Tracking_StatusID" Type="int" Nullable="false" />
+          <Property Name="Tracking_StatusDes" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_Email" Type="varchar(max)" Nullable="false" />
+          <Property Name="User_HashPassword" Type="varchar(max)" Nullable="false" />
+          <Property Name="User_Salt" Type="varchar(max)" Nullable="false" />
+          <Property Name="User_FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="User_Surname" Type="varchar" MaxLength="50" />
+          <Property Name="User_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="User_LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="User_Active" Type="bit" />
+          <Property Name="User_PasswordRecovered" Type="bit" Nullable="false" />
+          <Property Name="User_TempPassword" Type="varchar" MaxLength="8" />
+          <Property Name="User_ExpireLinkRecoverPassword" Type="datetime" />
+          <Property Name="FK_User_Role_ID" Type="bigint" Nullable="false" />
+          <Property Name="FK_User_Customer_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AgentAuthorization_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="AgentAuthorization" Type="Self.AgentAuthorization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="AgentAuthorization">
+              <PropertyRef Name="FK_AgentAuthorization_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Location_Client_Location">
+          <End Role="Customer_Client" Type="Self.Customer_Client" Multiplicity="1" />
+          <End Role="Client_Location" Type="Self.Client_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Client">
+              <PropertyRef Name="Client_Id" />
+            </Principal>
+            <Dependent Role="Client_Location">
+              <PropertyRef Name="FK_Location_Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_User_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Client_User" Type="Self.Client_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Client_User">
+              <PropertyRef Name="FK_UserClient_Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Authorization_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer_Authorization" Type="Self.Customer_Authorization" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_Authorization">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Client_Customer_Client">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer_Client" Type="Self.Customer_Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_Client">
+              <PropertyRef Name="FK_Client_Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomData_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customer_CustomData" Type="Self.Customer_CustomData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_CustomData">
+              <PropertyRef Name="FK_CustomData_Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomData_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Customer_CustomData" Type="Self.Customer_CustomData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Orders_XcmID" />
+            </Principal>
+            <Dependent Role="Customer_CustomData">
+              <PropertyRef Name="FK_CustomData_Orders_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_RegType_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer_RegType" Type="Self.Customer_RegType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_RegType">
+              <PropertyRef Name="FK_Cutomer_SessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI">
+          <End Role="Categorie_Prodotti" Type="Self.Categorie_Prodotti" Multiplicity="1" />
+          <End Role="G_Categorie_Subcategorie" Type="Self.G_Categorie_Subcategorie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorie_Prodotti">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Principal>
+            <Dependent Role="G_Categorie_Subcategorie">
+              <PropertyRef Name="FK_CATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI">
+          <End Role="Subcategorie_Prodotti" Type="Self.Subcategorie_Prodotti" Multiplicity="1" />
+          <End Role="G_Categorie_Subcategorie" Type="Self.G_Categorie_Subcategorie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subcategorie_Prodotti">
+              <PropertyRef Name="ID_SUBCATEGORIA_PRODOTTO" />
+            </Principal>
+            <Dependent Role="G_Categorie_Subcategorie">
+              <PropertyRef Name="FK_SUBCATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_ListiniAgenti_ListinoCommissioni">
+          <End Role="ListinoCommissioni" Type="Self.ListinoCommissioni" Multiplicity="1" />
+          <End Role="G_ListiniAgenti" Type="Self.G_ListiniAgenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListinoCommissioni">
+              <PropertyRef Name="ID_LISTINO" />
+            </Principal>
+            <Dependent Role="G_ListiniAgenti">
+              <PropertyRef Name="FK_LISTINO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_ListiniAgenti_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="G_ListiniAgenti" Type="Self.G_ListiniAgenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="G_ListiniAgenti">
+              <PropertyRef Name="FK_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Podotto_Categoria_Anagrafica_Prodotti">
+          <End Role="Anagrafica_Prodotti" Type="Self.Anagrafica_Prodotti" Multiplicity="1" />
+          <End Role="G_Podotto_Categoria" Type="Self.G_Podotto_Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anagrafica_Prodotti">
+              <PropertyRef Name="ID_ANAGRAFICA_PRODOTTO" />
+            </Principal>
+            <Dependent Role="G_Podotto_Categoria">
+              <PropertyRef Name="FK_ANAGRAFICA_ARTICOLO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI">
+          <End Role="Categorie_Prodotti" Type="Self.Categorie_Prodotti" Multiplicity="1" />
+          <End Role="G_Podotto_Categoria" Type="Self.G_Podotto_Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorie_Prodotti">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Principal>
+            <Dependent Role="G_Podotto_Categoria">
+              <PropertyRef Name="FK_CATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListinoCommissioni_Anagrafica_Prodotti">
+          <End Role="Anagrafica_Prodotti" Type="Self.Anagrafica_Prodotti" Multiplicity="1" />
+          <End Role="ListinoCommissioni" Type="Self.ListinoCommissioni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anagrafica_Prodotti">
+              <PropertyRef Name="ID_ANAGRAFICA_PRODOTTO" />
+            </Principal>
+            <Dependent Role="ListinoCommissioni">
+              <PropertyRef Name="FK_ANAGRAFICA_PRODOTTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Agent_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Order_Agent" Type="Self.Order_Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Order_Agent">
+              <PropertyRef Name="FK_OrderAgent_AgentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Client_Order_Client">
+          <End Role="Customer_Client" Type="Self.Customer_Client" Multiplicity="1" />
+          <End Role="Order_Client" Type="Self.Order_Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Client">
+              <PropertyRef Name="Client_Id" />
+            </Principal>
+            <Dependent Role="Order_Client">
+              <PropertyRef Name="FK_OrdersClient_Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_ShipmentList">
+          <End Role="ShipmentList" Type="Self.ShipmentList" Multiplicity="1" />
+          <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentList">
+              <PropertyRef Name="ID_SHIPMENT" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="Tracking_ShipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="FK_User_Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="FK_User_Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="XCM_CRMModelStoreContainer">
+          <EntitySet Name="AgentAuthorization" EntityType="Self.AgentAuthorization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anagrafica_Prodotti" EntityType="Self.Anagrafica_Prodotti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categorie_Prodotti" EntityType="Self.Categorie_Prodotti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cd_PG" EntityType="Self.Cd_PG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client_Location" EntityType="Self.Client_Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client_User" EntityType="Self.Client_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_Authorization" EntityType="Self.Customer_Authorization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_Client" EntityType="Self.Customer_Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_CustomData" EntityType="Self.Customer_CustomData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_RegType" EntityType="Self.Customer_RegType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_Categorie_Subcategorie" EntityType="Self.G_Categorie_Subcategorie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_ListiniAgenti" EntityType="Self.G_ListiniAgenti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_Podotto_Categoria" EntityType="Self.G_Podotto_Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEO" EntityType="Self.GEO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListinoCommissioni" EntityType="Self.ListinoCommissioni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Agent" EntityType="Self.Order_Agent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Client" EntityType="Self.Order_Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders_RegType" EntityType="Self.Orders_RegType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipmentList" EntityType="Self.ShipmentList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subcategorie_Prodotti" EntityType="Self.Subcategorie_Prodotti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AgentAuthorization_User" Association="Self.FK_AgentAuthorization_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="AgentAuthorization" EntitySet="AgentAuthorization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Location_Client_Location" Association="Self.FK_Client_Location_Client_Location">
+            <End Role="Customer_Client" EntitySet="Customer_Client" />
+            <End Role="Client_Location" EntitySet="Client_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_User_Customer" Association="Self.FK_Client_User_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Client_User" EntitySet="Client_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Authorization_Customer" Association="Self.FK_Customer_Authorization_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_Authorization" EntitySet="Customer_Authorization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Client_Customer_Client" Association="Self.FK_Customer_Client_Customer_Client">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_Client" EntitySet="Customer_Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomData_Customer" Association="Self.FK_Customer_CustomData_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_CustomData" EntitySet="Customer_CustomData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomData_Orders" Association="Self.FK_Customer_CustomData_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Customer_CustomData" EntitySet="Customer_CustomData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_RegType_Customer" Association="Self.FK_Customer_RegType_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_RegType" EntitySet="Customer_RegType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI" Association="Self.FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI">
+            <End Role="Categorie_Prodotti" EntitySet="Categorie_Prodotti" />
+            <End Role="G_Categorie_Subcategorie" EntitySet="G_Categorie_Subcategorie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI" Association="Self.FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI">
+            <End Role="Subcategorie_Prodotti" EntitySet="Subcategorie_Prodotti" />
+            <End Role="G_Categorie_Subcategorie" EntitySet="G_Categorie_Subcategorie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_ListiniAgenti_ListinoCommissioni" Association="Self.FK_G_ListiniAgenti_ListinoCommissioni">
+            <End Role="ListinoCommissioni" EntitySet="ListinoCommissioni" />
+            <End Role="G_ListiniAgenti" EntitySet="G_ListiniAgenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_ListiniAgenti_User" Association="Self.FK_G_ListiniAgenti_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="G_ListiniAgenti" EntitySet="G_ListiniAgenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Podotto_Categoria_Anagrafica_Prodotti" Association="Self.FK_G_Podotto_Categoria_Anagrafica_Prodotti">
+            <End Role="Anagrafica_Prodotti" EntitySet="Anagrafica_Prodotti" />
+            <End Role="G_Podotto_Categoria" EntitySet="G_Podotto_Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI" Association="Self.FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI">
+            <End Role="Categorie_Prodotti" EntitySet="Categorie_Prodotti" />
+            <End Role="G_Podotto_Categoria" EntitySet="G_Podotto_Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListinoCommissioni_Anagrafica_Prodotti" Association="Self.FK_ListinoCommissioni_Anagrafica_Prodotti">
+            <End Role="Anagrafica_Prodotti" EntitySet="Anagrafica_Prodotti" />
+            <End Role="ListinoCommissioni" EntitySet="ListinoCommissioni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Agent_User" Association="Self.FK_Order_Agent_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order_Agent" EntitySet="Order_Agent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Client_Order_Client" Association="Self.FK_Order_Client_Order_Client">
+            <End Role="Customer_Client" EntitySet="Customer_Client" />
+            <End Role="Order_Client" EntitySet="Order_Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_ShipmentList" Association="Self.FK_Tracking_ShipmentList">
+            <End Role="ShipmentList" EntitySet="ShipmentList" />
+            <End Role="Tracking" EntitySet="Tracking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Customer" Association="Self.FK_User_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XCM_CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="XCM_CRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Client_Location" EntityType="XCM_CRMModel.Client_Location" />
+          <EntitySet Name="Client_User" EntityType="XCM_CRMModel.Client_User" />
+          <EntitySet Name="Customer" EntityType="XCM_CRMModel.Customer" />
+          <EntitySet Name="Customer_Authorization" EntityType="XCM_CRMModel.Customer_Authorization" />
+          <EntitySet Name="Customer_Client" EntityType="XCM_CRMModel.Customer_Client" />
+          <EntitySet Name="Customer_CustomData" EntityType="XCM_CRMModel.Customer_CustomData" />
+          <EntitySet Name="ListinoCommissioni" EntityType="XCM_CRMModel.ListinoCommissioni" />
+          <EntitySet Name="ShipmentList" EntityType="XCM_CRMModel.ShipmentList" />
+          <EntitySet Name="User" EntityType="XCM_CRMModel.User" />
+          <AssociationSet Name="FK_Client_Location_Client_Location" Association="XCM_CRMModel.FK_Client_Location_Client_Location">
+            <End Role="Customer_Client" EntitySet="Customer_Client" />
+            <End Role="Client_Location" EntitySet="Client_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_User_Customer" Association="XCM_CRMModel.FK_Client_User_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Client_User" EntitySet="Client_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Authorization_Customer" Association="XCM_CRMModel.FK_Customer_Authorization_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_Authorization" EntitySet="Customer_Authorization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Client_Customer_Client" Association="XCM_CRMModel.FK_Customer_Client_Customer_Client">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_Client" EntitySet="Customer_Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomData_Customer" Association="XCM_CRMModel.FK_Customer_CustomData_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_CustomData" EntitySet="Customer_CustomData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Customer" Association="XCM_CRMModel.FK_User_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="XCM_CRMModel.Orders" />
+          <AssociationSet Name="FK_Customer_CustomData_Orders" Association="XCM_CRMModel.FK_Customer_CustomData_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Customer_CustomData" EntitySet="Customer_CustomData" />
+          </AssociationSet>
+          <EntitySet Name="AgentAuthorization" EntityType="XCM_CRMModel.AgentAuthorization" />
+          <EntitySet Name="Anagrafica_Prodotti" EntityType="XCM_CRMModel.Anagrafica_Prodotti" />
+          <EntitySet Name="Categorie_Prodotti" EntityType="XCM_CRMModel.Categorie_Prodotti" />
+          <EntitySet Name="Cd_PG" EntityType="XCM_CRMModel.Cd_PG" />
+          <EntitySet Name="Customer_RegType" EntityType="XCM_CRMModel.Customer_RegType" />
+          <EntitySet Name="G_Categorie_Subcategorie" EntityType="XCM_CRMModel.G_Categorie_Subcategorie" />
+          <EntitySet Name="G_ListiniAgenti" EntityType="XCM_CRMModel.G_ListiniAgenti" />
+          <EntitySet Name="G_Podotto_Categoria" EntityType="XCM_CRMModel.G_Podotto_Categoria" />
+          <EntitySet Name="GEO" EntityType="XCM_CRMModel.GEO" />
+          <EntitySet Name="Order_Agent" EntityType="XCM_CRMModel.Order_Agent" />
+          <EntitySet Name="Order_Client" EntityType="XCM_CRMModel.Order_Client" />
+          <EntitySet Name="Orders_RegType" EntityType="XCM_CRMModel.Orders_RegType" />
+          <EntitySet Name="Role" EntityType="XCM_CRMModel.Role" />
+          <EntitySet Name="Subcategorie_Prodotti" EntityType="XCM_CRMModel.Subcategorie_Prodotti" />
+          <EntitySet Name="Tracking" EntityType="XCM_CRMModel.Tracking" />
+          <AssociationSet Name="FK_AgentAuthorization_User" Association="XCM_CRMModel.FK_AgentAuthorization_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="AgentAuthorization" EntitySet="AgentAuthorization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Podotto_Categoria_Anagrafica_Prodotti" Association="XCM_CRMModel.FK_G_Podotto_Categoria_Anagrafica_Prodotti">
+            <End Role="Anagrafica_Prodotti" EntitySet="Anagrafica_Prodotti" />
+            <End Role="G_Podotto_Categoria" EntitySet="G_Podotto_Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListinoCommissioni_Anagrafica_Prodotti" Association="XCM_CRMModel.FK_ListinoCommissioni_Anagrafica_Prodotti">
+            <End Role="Anagrafica_Prodotti" EntitySet="Anagrafica_Prodotti" />
+            <End Role="ListinoCommissioni" EntitySet="ListinoCommissioni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI" Association="XCM_CRMModel.FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI">
+            <End Role="Categorie_Prodotti" EntitySet="Categorie_Prodotti" />
+            <End Role="G_Categorie_Subcategorie" EntitySet="G_Categorie_Subcategorie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI" Association="XCM_CRMModel.FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI">
+            <End Role="Categorie_Prodotti" EntitySet="Categorie_Prodotti" />
+            <End Role="G_Podotto_Categoria" EntitySet="G_Podotto_Categoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_RegType_Customer" Association="XCM_CRMModel.FK_Customer_RegType_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_RegType" EntitySet="Customer_RegType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Client_Order_Client" Association="XCM_CRMModel.FK_Order_Client_Order_Client">
+            <End Role="Customer_Client" EntitySet="Customer_Client" />
+            <End Role="Order_Client" EntitySet="Order_Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI" Association="XCM_CRMModel.FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI">
+            <End Role="Subcategorie_Prodotti" EntitySet="Subcategorie_Prodotti" />
+            <End Role="G_Categorie_Subcategorie" EntitySet="G_Categorie_Subcategorie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_ListiniAgenti_ListinoCommissioni" Association="XCM_CRMModel.FK_G_ListiniAgenti_ListinoCommissioni">
+            <End Role="ListinoCommissioni" EntitySet="ListinoCommissioni" />
+            <End Role="G_ListiniAgenti" EntitySet="G_ListiniAgenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_ListiniAgenti_User" Association="XCM_CRMModel.FK_G_ListiniAgenti_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="G_ListiniAgenti" EntitySet="G_ListiniAgenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Agent_User" Association="XCM_CRMModel.FK_Order_Agent_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order_Agent" EntitySet="Order_Agent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="XCM_CRMModel.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tracking_ShipmentList" Association="XCM_CRMModel.FK_Tracking_ShipmentList">
+            <End Role="ShipmentList" EntitySet="ShipmentList" />
+            <End Role="Tracking" EntitySet="Tracking" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Client_Location">
+          <Key>
+            <PropertyRef Name="Location_Id" />
+          </Key>
+          <Property Name="Location_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location_Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Location_ZipCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location_Location" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Location_Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Location_District" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Location_Region" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Location_Country" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Location_IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="Location_LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Location_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Location_LastModifiedUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location_GespeLocationId" Type="Int32" />
+          <Property Name="Location_IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="FK_Location_Client_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer_Client" Relationship="XCM_CRMModel.FK_Client_Location_Client_Location" FromRole="Client_Location" ToRole="Customer_Client" />
+        </EntityType>
+        <EntityType Name="Client_User">
+          <Key>
+            <PropertyRef Name="UserClient_UserID" />
+          </Key>
+          <Property Name="UserClient_UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserClient_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FK_UserClient_Customer_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserClient_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserClient_LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserClient_LastModifiedUserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="XCM_CRMModel.FK_Client_User_Customer" FromRole="Client_User" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_SessionID" />
+          </Key>
+          <Property Name="Customer_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_SessionID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_isEnable" Type="Boolean" Nullable="false" />
+          <Property Name="Customer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_zipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_defaultPriceListId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_vatCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_IsEnableCRM" Type="Boolean" Nullable="false" />
+          <Property Name="Customer_Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Customer_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Customer_LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Customer_LastModifiedUserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_EspritecAPI_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_EspritecAPI_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Client_User" Relationship="XCM_CRMModel.FK_Client_User_Customer" FromRole="Customer" ToRole="Client_User" />
+          <NavigationProperty Name="Customer_Authorization" Relationship="XCM_CRMModel.FK_Customer_Authorization_Customer" FromRole="Customer" ToRole="Customer_Authorization" />
+          <NavigationProperty Name="Customer_Client" Relationship="XCM_CRMModel.FK_Customer_Client_Customer_Client" FromRole="Customer" ToRole="Customer_Client" />
+          <NavigationProperty Name="Customer_CustomData" Relationship="XCM_CRMModel.FK_Customer_CustomData_Customer" FromRole="Customer" ToRole="Customer_CustomData" />
+          <NavigationProperty Name="User" Relationship="XCM_CRMModel.FK_User_Customer" FromRole="Customer" ToRole="User" />
+          <NavigationProperty Name="Customer_RegType" Relationship="XCM_CRMModel.FK_Customer_RegType_Customer" FromRole="Customer" ToRole="Customer_RegType" />
+        </EntityType>
+        <EntityType Name="Customer_Authorization">
+          <Key>
+            <PropertyRef Name="Customer_Id" />
+          </Key>
+          <Property Name="Customer_Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastModifiedUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExpireDateTracking" Type="DateTime" Precision="3" />
+          <Property Name="Tracking_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ExpireDateWarehouse" Type="DateTime" Precision="3" />
+          <Property Name="Warehouse_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ExpireDateOrders" Type="DateTime" Precision="3" />
+          <Property Name="Orders_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ExpireDateAgents" Type="DateTime" Precision="3" />
+          <Property Name="Agents_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ExpireDateAnagrafiche" Type="DateTime" Precision="3" />
+          <Property Name="Anagrafiche_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ExpireDateHome" Type="DateTime" Precision="3" />
+          <Property Name="Home_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ExpireDateRegistration" Type="DateTime" Precision="3" />
+          <Property Name="Registration_Active" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Customer" Relationship="XCM_CRMModel.FK_Customer_Authorization_Customer" FromRole="Customer_Authorization" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Customer_Client">
+          <Key>
+            <PropertyRef Name="Client_Id" />
+          </Key>
+          <Property Name="Client_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="Client_ProgressiveId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_ExtId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Client_PartitaIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_CodiceFiscale" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Client_IBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Client_CodicePagamento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Client_CodiceFPR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_CodiceIPA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Client_EntePubblico" Type="Boolean" />
+          <Property Name="Client_TipoDitta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Client_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Client_LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Client_LastModifiedUserID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Client_Customer_Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Client_Location" Relationship="XCM_CRMModel.FK_Client_Location_Client_Location" FromRole="Customer_Client" ToRole="Client_Location" />
+          <NavigationProperty Name="Customer" Relationship="XCM_CRMModel.FK_Customer_Client_Customer_Client" FromRole="Customer_Client" ToRole="Customer" />
+          <NavigationProperty Name="Order_Client" Relationship="XCM_CRMModel.FK_Order_Client_Order_Client" FromRole="Customer_Client" ToRole="Order_Client" />
+        </EntityType>
+        <EntityType Name="Customer_CustomData">
+          <Key>
+            <PropertyRef Name="CustomData_Id" />
+          </Key>
+          <Property Name="CustomData_Id" Type="Int64" Nullable="false" />
+          <Property Name="CustomData_CodiceFiscale" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CustomData_CodiceIPA" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CustomData_CodideFPR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomData_EntePubblico" Type="Boolean" />
+          <Property Name="CustomData_TipoDitta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CustomData_cd_PG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="FK_CustomData_Customer_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_CustomData_Orders_ID" Type="Int64" />
+          <NavigationProperty Name="Customer" Relationship="XCM_CRMModel.FK_Customer_CustomData_Customer" FromRole="Customer_CustomData" ToRole="Customer" />
+          <NavigationProperty Name="Orders" Relationship="XCM_CRMModel.FK_Customer_CustomData_Orders" FromRole="Customer_CustomData" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="ListinoCommissioni">
+          <Key>
+            <PropertyRef Name="ID_LISTINO" />
+          </Key>
+          <Property Name="ID_LISTINO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_ANAGRAFICA_PRODOTTO" Type="Int64" Nullable="false" />
+          <Property Name="PERCENTUALE_COMMISSIONE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Anagrafica_Prodotti" Relationship="XCM_CRMModel.FK_ListinoCommissioni_Anagrafica_Prodotti" FromRole="ListinoCommissioni" ToRole="Anagrafica_Prodotti" />
+          <NavigationProperty Name="G_ListiniAgenti" Relationship="XCM_CRMModel.FK_G_ListiniAgenti_ListinoCommissioni" FromRole="ListinoCommissioni" ToRole="G_ListiniAgenti" />
+        </EntityType>
+        <EntityType Name="ShipmentList">
+          <Key>
+            <PropertyRef Name="ID_SHIPMENT" />
+          </Key>
+          <Property Name="ID_SHIPMENT" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shipment_GespeID_UNITEX" Type="Int64" Nullable="false" />
+          <Property Name="Shipment_OwnerAgency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_DocNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_DocDate" Type="DateTime" Precision="3" />
+          <Property Name="Shipment_StatusID" Type="Int32" />
+          <Property Name="Shipment_StatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_StatusDes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_WebStatusID" Type="Int32" />
+          <Property Name="Shipment_WebStatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_WebOrderID" Type="Int32" />
+          <Property Name="Shipment_WebOrderNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_InsideRef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_ExternalRef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_ServiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_TransportType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_CustomerDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_PickupSupplierID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_PickupSupplierDes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_PickupDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Shipment_DeliveryDateTime" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_SenderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_SenderDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_ConsigneeID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_ConsigneeDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_FirstStopID" Type="Int32" />
+          <Property Name="Shipment_FirstStopDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_LastStopID" Type="Int32" />
+          <Property Name="Shipment_LastStopDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_Packs" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_FloorPallets" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_TotalPallets" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_NetWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_GrossWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_Cube" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_Meters" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Shipment_CashValue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Shipment_CashCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_CashPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_CashNote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment_AttachCount" Type="Int32" />
+          <Property Name="Shipment_DocGespeID_XCM" Type="Int64" Nullable="false" />
+          <Property Name="Shipment_CustomerID_XCM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tracking" Relationship="XCM_CRMModel.FK_Tracking_ShipmentList" FromRole="ShipmentList" ToRole="Tracking" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_HashPassword" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_Salt" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_Active" Type="Boolean" />
+          <Property Name="User_PasswordRecovered" Type="Boolean" Nullable="false" />
+          <Property Name="User_TempPassword" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="User_ExpireLinkRecoverPassword" Type="DateTime" Precision="3" />
+          <Property Name="FK_User_Role_ID" Type="Int64" Nullable="false" />
+          <Property Name="FK_User_Customer_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="XCM_CRMModel.FK_User_Customer" FromRole="User" ToRole="Customer" />
+          <NavigationProperty Name="AgentAuthorization" Relationship="XCM_CRMModel.FK_AgentAuthorization_User" FromRole="User" ToRole="AgentAuthorization" />
+          <NavigationProperty Name="G_ListiniAgenti" Relationship="XCM_CRMModel.FK_G_ListiniAgenti_User" FromRole="User" ToRole="G_ListiniAgenti" />
+          <NavigationProperty Name="Order_Agent" Relationship="XCM_CRMModel.FK_Order_Agent_User" FromRole="User" ToRole="Order_Agent" />
+          <NavigationProperty Name="Role" Relationship="XCM_CRMModel.FK_User_Role" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Client_Location_Client_Location">
+          <End Type="XCM_CRMModel.Customer_Client" Role="Customer_Client" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Client_Location" Role="Client_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Client">
+              <PropertyRef Name="Client_Id" />
+            </Principal>
+            <Dependent Role="Client_Location">
+              <PropertyRef Name="FK_Location_Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_User_Customer">
+          <End Type="XCM_CRMModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Client_User" Role="Client_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Client_User">
+              <PropertyRef Name="FK_UserClient_Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Authorization_Customer">
+          <End Type="XCM_CRMModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Customer_Authorization" Role="Customer_Authorization" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_Authorization">
+              <PropertyRef Name="Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Client_Customer_Client">
+          <End Type="XCM_CRMModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Customer_Client" Role="Customer_Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_Client">
+              <PropertyRef Name="FK_Client_Customer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomData_Customer">
+          <End Type="XCM_CRMModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="XCM_CRMModel.Customer_CustomData" Role="Customer_CustomData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_CustomData">
+              <PropertyRef Name="FK_CustomData_Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Customer">
+          <End Type="XCM_CRMModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="XCM_CRMModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="FK_User_Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Orders_XcmID" />
+          </Key>
+          <Property Name="Orders_XcmID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Orders_docNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_docDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Orders_statusDes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_reference" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_referenceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Orders_reTypeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_senderDes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_consigneeDes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_unloadDes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_customerDes" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_customerID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_siteID" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="Orders_shipID" Type="Int64" />
+          <Property Name="Orders_shipDocNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_tripID" Type="Int64" />
+          <Property Name="Orders_tripDocNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_statusId" Type="Int32" Nullable="false" />
+          <Property Name="Orders_reference2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_reference2Date" Type="DateTime" Precision="3" />
+          <Property Name="Orders_externalID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_ownerID" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="Orders_ownerDes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_senderID" Type="Int32" />
+          <Property Name="Orders_senderAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_senderZipCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="Orders_senderLocation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_senderDistrict" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_senderRegion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_senderCountry" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_consigneeID" Type="Int64" />
+          <Property Name="Orders_consigneeAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_consigneeZipCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="Orders_consigneeLocation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_consigneeDistrict" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_consigneeRegion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_consigneeCountry" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_unloadID" Type="Int64" />
+          <Property Name="Orders_unloadAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_unloadZipCode" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="Orders_unloadLocation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_unloadDistrict" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_unloadRegion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_unloadCountry" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_rowsNo" Type="Int32" />
+          <Property Name="Orders_totalQty" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalPacks" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalBoxes" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalNetWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalGrossWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_totalCube" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_coverage" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_planned" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_executed" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Orders_internalNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_publicNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_deliveryNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_info9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Orders_GespeUniq" Type="Int64" Nullable="false" />
+          <Property Name="Orders_docTip" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer_CustomData" Relationship="XCM_CRMModel.FK_Customer_CustomData_Orders" FromRole="Orders" ToRole="Customer_CustomData" />
+        </EntityType>
+        <Association Name="FK_Customer_CustomData_Orders">
+          <End Type="XCM_CRMModel.Orders" Role="Orders" Multiplicity="0..1" />
+          <End Type="XCM_CRMModel.Customer_CustomData" Role="Customer_CustomData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Orders_XcmID" />
+            </Principal>
+            <Dependent Role="Customer_CustomData">
+              <PropertyRef Name="FK_CustomData_Orders_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AgentAuthorization">
+          <Key>
+            <PropertyRef Name="AgentAuthorization_ID" />
+          </Key>
+          <Property Name="AgentAuthorization_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_AgentAuthorization_User_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgentAuthorization_OrderConfirmation" Type="Boolean" Nullable="false" />
+          <Property Name="AgentAuthorization_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AgentAuthorization_LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AgentAuthorization_LastModifiedUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="XCM_CRMModel.FK_AgentAuthorization_User" FromRole="AgentAuthorization" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Anagrafica_Prodotti">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_PRODOTTO" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_PRODOTTO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODICE_PRODOTTO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIZIONE_PRODOTTO" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PREZZO_UNITARIO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DATA_CREAZIONE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATA_ULTIMA_MODIFICA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GESPE_CUSTOMERID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CODICE_IVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="G_Podotto_Categoria" Relationship="XCM_CRMModel.FK_G_Podotto_Categoria_Anagrafica_Prodotti" FromRole="Anagrafica_Prodotti" ToRole="G_Podotto_Categoria" />
+          <NavigationProperty Name="ListinoCommissioni" Relationship="XCM_CRMModel.FK_ListinoCommissioni_Anagrafica_Prodotti" FromRole="Anagrafica_Prodotti" ToRole="ListinoCommissioni" />
+        </EntityType>
+        <EntityType Name="Categorie_Prodotti">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA" />
+          </Key>
+          <Property Name="ID_CATEGORIA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIZIONE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PERCENTUALE_COMMISSIONE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="G_Categorie_Subcategorie" Relationship="XCM_CRMModel.FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI" FromRole="Categorie_Prodotti" ToRole="G_Categorie_Subcategorie" />
+          <NavigationProperty Name="G_Podotto_Categoria" Relationship="XCM_CRMModel.FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI" FromRole="Categorie_Prodotti" ToRole="G_Podotto_Categoria" />
+        </EntityType>
+        <EntityType Name="Cd_PG">
+          <Key>
+            <PropertyRef Name="Cd_PG_ID" />
+          </Key>
+          <Property Name="Cd_PG_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codice_PG" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cd_PG_Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cd_PG_NumeroRate" Type="Int32" Nullable="false" />
+          <Property Name="Cd_PG_AccontoPercentuale" Type="Int32" Nullable="false" />
+          <Property Name="Cd_PG_PartenzaScadenze" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cd_PG_NumeroGiorni" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_RegType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegTypeId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedUserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Cutomer_SessionID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="XCM_CRMModel.FK_Customer_RegType_Customer" FromRole="Customer_RegType" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="G_Categorie_Subcategorie">
+          <Key>
+            <PropertyRef Name="ID_G_Categorie_Subcategorie" />
+          </Key>
+          <Property Name="ID_G_Categorie_Subcategorie" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_CATEGORIA" Type="Int64" Nullable="false" />
+          <Property Name="FK_SUBCATEGORIA" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Categorie_Prodotti" Relationship="XCM_CRMModel.FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI" FromRole="G_Categorie_Subcategorie" ToRole="Categorie_Prodotti" />
+          <NavigationProperty Name="Subcategorie_Prodotti" Relationship="XCM_CRMModel.FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI" FromRole="G_Categorie_Subcategorie" ToRole="Subcategorie_Prodotti" />
+        </EntityType>
+        <EntityType Name="G_ListiniAgenti">
+          <Key>
+            <PropertyRef Name="ID_G_LISTINO_AGENTE" />
+          </Key>
+          <Property Name="ID_G_LISTINO_AGENTE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_USER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_LISTINO" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ListinoCommissioni" Relationship="XCM_CRMModel.FK_G_ListiniAgenti_ListinoCommissioni" FromRole="G_ListiniAgenti" ToRole="ListinoCommissioni" />
+          <NavigationProperty Name="User" Relationship="XCM_CRMModel.FK_G_ListiniAgenti_User" FromRole="G_ListiniAgenti" ToRole="User" />
+        </EntityType>
+        <EntityType Name="G_Podotto_Categoria">
+          <Key>
+            <PropertyRef Name="ID_Prodotto_Categoria" />
+          </Key>
+          <Property Name="ID_Prodotto_Categoria" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_ANAGRAFICA_ARTICOLO" Type="Int64" Nullable="false" />
+          <Property Name="FK_CATEGORIA" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Anagrafica_Prodotti" Relationship="XCM_CRMModel.FK_G_Podotto_Categoria_Anagrafica_Prodotti" FromRole="G_Podotto_Categoria" ToRole="Anagrafica_Prodotti" />
+          <NavigationProperty Name="Categorie_Prodotti" Relationship="XCM_CRMModel.FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI" FromRole="G_Podotto_Categoria" ToRole="Categorie_Prodotti" />
+        </EntityType>
+        <EntityType Name="GEO">
+          <Key>
+            <PropertyRef Name="Geo_Id" />
+          </Key>
+          <Property Name="Geo_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Geo_Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Geo_ZipCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Geo_District" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Geo_Region" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Geo_IstatCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Order_Agent">
+          <Key>
+            <PropertyRef Name="OrderAgent_ID" />
+          </Key>
+          <Property Name="OrderAgent_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_OrderAgent_OrdersID" Type="Int64" Nullable="false" />
+          <Property Name="FK_OrderAgent_AgentID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="XCM_CRMModel.FK_Order_Agent_User" FromRole="Order_Agent" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Order_Client">
+          <Key>
+            <PropertyRef Name="OrdersClient_ID" />
+          </Key>
+          <Property Name="OrdersClient_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnloadLocationID" Type="Int64" />
+          <Property Name="ConsigneeLocationID" Type="Int64" Nullable="false" />
+          <Property Name="FK_OrdersClient_Client_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="FK_OrdersClient_OrdersID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Customer_Client" Relationship="XCM_CRMModel.FK_Order_Client_Order_Client" FromRole="Order_Client" ToRole="Customer_Client" />
+        </EntityType>
+        <EntityType Name="Orders_RegType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegTypeId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="Int64" Nullable="false" />
+          <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Role_Active" Type="Boolean" />
+          <Property Name="Role_CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="Role_LastModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="XCM_CRMModel.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Subcategorie_Prodotti">
+          <Key>
+            <PropertyRef Name="ID_SUBCATEGORIA_PRODOTTO" />
+          </Key>
+          <Property Name="ID_SUBCATEGORIA_PRODOTTO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIZIONE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="G_Categorie_Subcategorie" Relationship="XCM_CRMModel.FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI" FromRole="Subcategorie_Prodotti" ToRole="G_Categorie_Subcategorie" />
+        </EntityType>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="ID_TRACKING" />
+          </Key>
+          <Property Name="ID_TRACKING" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tracking_ShipmentID" Type="Int64" Nullable="false" />
+          <Property Name="Tracking_Data" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tracking_StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Tracking_StatusDes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ShipmentList" Relationship="XCM_CRMModel.FK_Tracking_ShipmentList" FromRole="Tracking" ToRole="ShipmentList" />
+        </EntityType>
+        <Association Name="FK_AgentAuthorization_User">
+          <End Type="XCM_CRMModel.User" Role="User" Multiplicity="1" />
+          <End Type="XCM_CRMModel.AgentAuthorization" Role="AgentAuthorization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="AgentAuthorization">
+              <PropertyRef Name="FK_AgentAuthorization_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Podotto_Categoria_Anagrafica_Prodotti">
+          <End Type="XCM_CRMModel.Anagrafica_Prodotti" Role="Anagrafica_Prodotti" Multiplicity="1" />
+          <End Type="XCM_CRMModel.G_Podotto_Categoria" Role="G_Podotto_Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anagrafica_Prodotti">
+              <PropertyRef Name="ID_ANAGRAFICA_PRODOTTO" />
+            </Principal>
+            <Dependent Role="G_Podotto_Categoria">
+              <PropertyRef Name="FK_ANAGRAFICA_ARTICOLO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListinoCommissioni_Anagrafica_Prodotti">
+          <End Type="XCM_CRMModel.Anagrafica_Prodotti" Role="Anagrafica_Prodotti" Multiplicity="1" />
+          <End Type="XCM_CRMModel.ListinoCommissioni" Role="ListinoCommissioni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anagrafica_Prodotti">
+              <PropertyRef Name="ID_ANAGRAFICA_PRODOTTO" />
+            </Principal>
+            <Dependent Role="ListinoCommissioni">
+              <PropertyRef Name="FK_ANAGRAFICA_PRODOTTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI">
+          <End Type="XCM_CRMModel.Categorie_Prodotti" Role="Categorie_Prodotti" Multiplicity="1" />
+          <End Type="XCM_CRMModel.G_Categorie_Subcategorie" Role="G_Categorie_Subcategorie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorie_Prodotti">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Principal>
+            <Dependent Role="G_Categorie_Subcategorie">
+              <PropertyRef Name="FK_CATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI">
+          <End Type="XCM_CRMModel.Categorie_Prodotti" Role="Categorie_Prodotti" Multiplicity="1" />
+          <End Type="XCM_CRMModel.G_Podotto_Categoria" Role="G_Podotto_Categoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorie_Prodotti">
+              <PropertyRef Name="ID_CATEGORIA" />
+            </Principal>
+            <Dependent Role="G_Podotto_Categoria">
+              <PropertyRef Name="FK_CATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_RegType_Customer">
+          <End Type="XCM_CRMModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Customer_RegType" Role="Customer_RegType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_SessionID" />
+            </Principal>
+            <Dependent Role="Customer_RegType">
+              <PropertyRef Name="FK_Cutomer_SessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Client_Order_Client">
+          <End Type="XCM_CRMModel.Customer_Client" Role="Customer_Client" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Order_Client" Role="Order_Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Client">
+              <PropertyRef Name="Client_Id" />
+            </Principal>
+            <Dependent Role="Order_Client">
+              <PropertyRef Name="FK_OrdersClient_Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI">
+          <End Type="XCM_CRMModel.Subcategorie_Prodotti" Role="Subcategorie_Prodotti" Multiplicity="1" />
+          <End Type="XCM_CRMModel.G_Categorie_Subcategorie" Role="G_Categorie_Subcategorie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subcategorie_Prodotti">
+              <PropertyRef Name="ID_SUBCATEGORIA_PRODOTTO" />
+            </Principal>
+            <Dependent Role="G_Categorie_Subcategorie">
+              <PropertyRef Name="FK_SUBCATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_ListiniAgenti_ListinoCommissioni">
+          <End Type="XCM_CRMModel.ListinoCommissioni" Role="ListinoCommissioni" Multiplicity="1" />
+          <End Type="XCM_CRMModel.G_ListiniAgenti" Role="G_ListiniAgenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListinoCommissioni">
+              <PropertyRef Name="ID_LISTINO" />
+            </Principal>
+            <Dependent Role="G_ListiniAgenti">
+              <PropertyRef Name="FK_LISTINO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_ListiniAgenti_User">
+          <End Type="XCM_CRMModel.User" Role="User" Multiplicity="1" />
+          <End Type="XCM_CRMModel.G_ListiniAgenti" Role="G_ListiniAgenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="G_ListiniAgenti">
+              <PropertyRef Name="FK_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Agent_User">
+          <End Type="XCM_CRMModel.User" Role="User" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Order_Agent" Role="Order_Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Order_Agent">
+              <PropertyRef Name="FK_OrderAgent_AgentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Type="XCM_CRMModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="XCM_CRMModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="FK_User_Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tracking_ShipmentList">
+          <End Type="XCM_CRMModel.ShipmentList" Role="ShipmentList" Multiplicity="1" />
+          <End Type="XCM_CRMModel.Tracking" Role="Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentList">
+              <PropertyRef Name="ID_SHIPMENT" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="Tracking_ShipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XCM_CRMModelStoreContainer" CdmEntityContainer="XCM_CRMEntities">
+          <EntitySetMapping Name="Client_Location">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Client_Location">
+              <MappingFragment StoreEntitySet="Client_Location">
+                <ScalarProperty Name="FK_Location_Client_ID" ColumnName="FK_Location_Client_ID" />
+                <ScalarProperty Name="Location_IsActive" ColumnName="Location_IsActive" />
+                <ScalarProperty Name="Location_GespeLocationId" ColumnName="Location_GespeLocationId" />
+                <ScalarProperty Name="Location_LastModifiedUserId" ColumnName="Location_LastModifiedUserId" />
+                <ScalarProperty Name="Location_CreationDate" ColumnName="Location_CreationDate" />
+                <ScalarProperty Name="Location_LastModifiedDate" ColumnName="Location_LastModifiedDate" />
+                <ScalarProperty Name="Location_IsDefault" ColumnName="Location_IsDefault" />
+                <ScalarProperty Name="Location_Country" ColumnName="Location_Country" />
+                <ScalarProperty Name="Location_Region" ColumnName="Location_Region" />
+                <ScalarProperty Name="Location_District" ColumnName="Location_District" />
+                <ScalarProperty Name="Location_Address" ColumnName="Location_Address" />
+                <ScalarProperty Name="Location_Location" ColumnName="Location_Location" />
+                <ScalarProperty Name="Location_ZipCode" ColumnName="Location_ZipCode" />
+                <ScalarProperty Name="Location_Description" ColumnName="Location_Description" />
+                <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client_User">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Client_User">
+              <MappingFragment StoreEntitySet="Client_User">
+                <ScalarProperty Name="UserClient_LastModifiedUserID" ColumnName="UserClient_LastModifiedUserID" />
+                <ScalarProperty Name="UserClient_LastModifiedDate" ColumnName="UserClient_LastModifiedDate" />
+                <ScalarProperty Name="UserClient_CreationDate" ColumnName="UserClient_CreationDate" />
+                <ScalarProperty Name="FK_UserClient_Customer_ID" ColumnName="FK_UserClient_Customer_ID" />
+                <ScalarProperty Name="UserClient_Name" ColumnName="UserClient_Name" />
+                <ScalarProperty Name="UserClient_UserID" ColumnName="UserClient_UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Customer_EspritecAPI_Password" ColumnName="Customer_EspritecAPI_Password" />
+                <ScalarProperty Name="Customer_EspritecAPI_Username" ColumnName="Customer_EspritecAPI_Username" />
+                <ScalarProperty Name="Customer_LastModifiedUserID" ColumnName="Customer_LastModifiedUserID" />
+                <ScalarProperty Name="Customer_LastModifiedDate" ColumnName="Customer_LastModifiedDate" />
+                <ScalarProperty Name="Customer_CreationDate" ColumnName="Customer_CreationDate" />
+                <ScalarProperty Name="Customer_Logo" ColumnName="Customer_Logo" />
+                <ScalarProperty Name="Customer_IsEnableCRM" ColumnName="Customer_IsEnableCRM" />
+                <ScalarProperty Name="Customer_vatCode" ColumnName="Customer_vatCode" />
+                <ScalarProperty Name="Customer_defaultPriceListId" ColumnName="Customer_defaultPriceListId" />
+                <ScalarProperty Name="Customer_country" ColumnName="Customer_country" />
+                <ScalarProperty Name="Customer_district" ColumnName="Customer_district" />
+                <ScalarProperty Name="Customer_location" ColumnName="Customer_location" />
+                <ScalarProperty Name="Customer_zipCode" ColumnName="Customer_zipCode" />
+                <ScalarProperty Name="Customer_address" ColumnName="Customer_address" />
+                <ScalarProperty Name="Customer_isEnable" ColumnName="Customer_isEnable" />
+                <ScalarProperty Name="Customer_description" ColumnName="Customer_description" />
+                <ScalarProperty Name="Customer_SessionID" ColumnName="Customer_SessionID" />
+                <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Authorization">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Customer_Authorization">
+              <MappingFragment StoreEntitySet="Customer_Authorization">
+                <ScalarProperty Name="Registration_Active" ColumnName="Registration_Active" />
+                <ScalarProperty Name="ExpireDateRegistration" ColumnName="ExpireDateRegistration" />
+                <ScalarProperty Name="Home_Active" ColumnName="Home_Active" />
+                <ScalarProperty Name="ExpireDateHome" ColumnName="ExpireDateHome" />
+                <ScalarProperty Name="Anagrafiche_Active" ColumnName="Anagrafiche_Active" />
+                <ScalarProperty Name="ExpireDateAnagrafiche" ColumnName="ExpireDateAnagrafiche" />
+                <ScalarProperty Name="Agents_Active" ColumnName="Agents_Active" />
+                <ScalarProperty Name="ExpireDateAgents" ColumnName="ExpireDateAgents" />
+                <ScalarProperty Name="Orders_Active" ColumnName="Orders_Active" />
+                <ScalarProperty Name="ExpireDateOrders" ColumnName="ExpireDateOrders" />
+                <ScalarProperty Name="Warehouse_Active" ColumnName="Warehouse_Active" />
+                <ScalarProperty Name="ExpireDateWarehouse" ColumnName="ExpireDateWarehouse" />
+                <ScalarProperty Name="Tracking_Active" ColumnName="Tracking_Active" />
+                <ScalarProperty Name="ExpireDateTracking" ColumnName="ExpireDateTracking" />
+                <ScalarProperty Name="LastModifiedUserID" ColumnName="LastModifiedUserID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Client">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Customer_Client">
+              <MappingFragment StoreEntitySet="Customer_Client">
+                <ScalarProperty Name="FK_Client_Customer_Id" ColumnName="FK_Client_Customer_Id" />
+                <ScalarProperty Name="Client_LastModifiedUserID" ColumnName="Client_LastModifiedUserID" />
+                <ScalarProperty Name="Client_LastModifiedDate" ColumnName="Client_LastModifiedDate" />
+                <ScalarProperty Name="Client_CreationDate" ColumnName="Client_CreationDate" />
+                <ScalarProperty Name="Client_TipoDitta" ColumnName="Client_TipoDitta" />
+                <ScalarProperty Name="Client_EntePubblico" ColumnName="Client_EntePubblico" />
+                <ScalarProperty Name="Client_CodiceIPA" ColumnName="Client_CodiceIPA" />
+                <ScalarProperty Name="Client_CodiceFPR" ColumnName="Client_CodiceFPR" />
+                <ScalarProperty Name="Client_CodicePagamento" ColumnName="Client_CodicePagamento" />
+                <ScalarProperty Name="Client_IsActive" ColumnName="Client_IsActive" />
+                <ScalarProperty Name="Client_Email" ColumnName="Client_Email" />
+                <ScalarProperty Name="Client_Phone" ColumnName="Client_Phone" />
+                <ScalarProperty Name="Client_IBAN" ColumnName="Client_IBAN" />
+                <ScalarProperty Name="Client_CodiceFiscale" ColumnName="Client_CodiceFiscale" />
+                <ScalarProperty Name="Client_PartitaIVA" ColumnName="Client_PartitaIVA" />
+                <ScalarProperty Name="Client_Description" ColumnName="Client_Description" />
+                <ScalarProperty Name="Client_ExtId" ColumnName="Client_ExtId" />
+                <ScalarProperty Name="Client_ProgressiveId" ColumnName="Client_ProgressiveId" />
+                <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_CustomData">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Customer_CustomData">
+              <MappingFragment StoreEntitySet="Customer_CustomData">
+                <ScalarProperty Name="FK_CustomData_Orders_ID" ColumnName="FK_CustomData_Orders_ID" />
+                <ScalarProperty Name="FK_CustomData_Customer_ID" ColumnName="FK_CustomData_Customer_ID" />
+                <ScalarProperty Name="CustomData_cd_PG" ColumnName="CustomData_cd_PG" />
+                <ScalarProperty Name="CustomData_TipoDitta" ColumnName="CustomData_TipoDitta" />
+                <ScalarProperty Name="CustomData_EntePubblico" ColumnName="CustomData_EntePubblico" />
+                <ScalarProperty Name="CustomData_CodideFPR" ColumnName="CustomData_CodideFPR" />
+                <ScalarProperty Name="CustomData_CodiceIPA" ColumnName="CustomData_CodiceIPA" />
+                <ScalarProperty Name="CustomData_CodiceFiscale" ColumnName="CustomData_CodiceFiscale" />
+                <ScalarProperty Name="CustomData_Id" ColumnName="CustomData_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListinoCommissioni">
+            <EntityTypeMapping TypeName="XCM_CRMModel.ListinoCommissioni">
+              <MappingFragment StoreEntitySet="ListinoCommissioni">
+                <ScalarProperty Name="PERCENTUALE_COMMISSIONE" ColumnName="PERCENTUALE_COMMISSIONE" />
+                <ScalarProperty Name="FK_ANAGRAFICA_PRODOTTO" ColumnName="FK_ANAGRAFICA_PRODOTTO" />
+                <ScalarProperty Name="ID_LISTINO" ColumnName="ID_LISTINO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipmentList">
+            <EntityTypeMapping TypeName="XCM_CRMModel.ShipmentList">
+              <MappingFragment StoreEntitySet="ShipmentList">
+                <ScalarProperty Name="Shipment_CustomerID_XCM" ColumnName="Shipment_CustomerID_XCM" />
+                <ScalarProperty Name="Shipment_DocGespeID_XCM" ColumnName="Shipment_DocGespeID_XCM" />
+                <ScalarProperty Name="Shipment_AttachCount" ColumnName="Shipment_AttachCount" />
+                <ScalarProperty Name="Shipment_CashNote" ColumnName="Shipment_CashNote" />
+                <ScalarProperty Name="Shipment_CashPayment" ColumnName="Shipment_CashPayment" />
+                <ScalarProperty Name="Shipment_CashCurrency" ColumnName="Shipment_CashCurrency" />
+                <ScalarProperty Name="Shipment_CashValue" ColumnName="Shipment_CashValue" />
+                <ScalarProperty Name="Shipment_Meters" ColumnName="Shipment_Meters" />
+                <ScalarProperty Name="Shipment_Cube" ColumnName="Shipment_Cube" />
+                <ScalarProperty Name="Shipment_GrossWeight" ColumnName="Shipment_GrossWeight" />
+                <ScalarProperty Name="Shipment_NetWeight" ColumnName="Shipment_NetWeight" />
+                <ScalarProperty Name="Shipment_TotalPallets" ColumnName="Shipment_TotalPallets" />
+                <ScalarProperty Name="Shipment_FloorPallets" ColumnName="Shipment_FloorPallets" />
+                <ScalarProperty Name="Shipment_Packs" ColumnName="Shipment_Packs" />
+                <ScalarProperty Name="Shipment_LastStopDes" ColumnName="Shipment_LastStopDes" />
+                <ScalarProperty Name="Shipment_LastStopID" ColumnName="Shipment_LastStopID" />
+                <ScalarProperty Name="Shipment_FirstStopDes" ColumnName="Shipment_FirstStopDes" />
+                <ScalarProperty Name="Shipment_FirstStopID" ColumnName="Shipment_FirstStopID" />
+                <ScalarProperty Name="Shipment_ConsigneeDes" ColumnName="Shipment_ConsigneeDes" />
+                <ScalarProperty Name="Shipment_ConsigneeID" ColumnName="Shipment_ConsigneeID" />
+                <ScalarProperty Name="Shipment_SenderDes" ColumnName="Shipment_SenderDes" />
+                <ScalarProperty Name="Shipment_SenderID" ColumnName="Shipment_SenderID" />
+                <ScalarProperty Name="Shipment_DeliveryDateTime" ColumnName="Shipment_DeliveryDateTime" />
+                <ScalarProperty Name="Shipment_PickupDateTime" ColumnName="Shipment_PickupDateTime" />
+                <ScalarProperty Name="Shipment_PickupSupplierDes" ColumnName="Shipment_PickupSupplierDes" />
+                <ScalarProperty Name="Shipment_PickupSupplierID" ColumnName="Shipment_PickupSupplierID" />
+                <ScalarProperty Name="Shipment_CustomerDes" ColumnName="Shipment_CustomerDes" />
+                <ScalarProperty Name="Shipment_CustomerID" ColumnName="Shipment_CustomerID" />
+                <ScalarProperty Name="Shipment_TransportType" ColumnName="Shipment_TransportType" />
+                <ScalarProperty Name="Shipment_ServiceType" ColumnName="Shipment_ServiceType" />
+                <ScalarProperty Name="Shipment_ExternalRef" ColumnName="Shipment_ExternalRef" />
+                <ScalarProperty Name="Shipment_InsideRef" ColumnName="Shipment_InsideRef" />
+                <ScalarProperty Name="Shipment_WebOrderNumber" ColumnName="Shipment_WebOrderNumber" />
+                <ScalarProperty Name="Shipment_WebOrderID" ColumnName="Shipment_WebOrderID" />
+                <ScalarProperty Name="Shipment_WebStatusType" ColumnName="Shipment_WebStatusType" />
+                <ScalarProperty Name="Shipment_WebStatusID" ColumnName="Shipment_WebStatusID" />
+                <ScalarProperty Name="Shipment_StatusDes" ColumnName="Shipment_StatusDes" />
+                <ScalarProperty Name="Shipment_StatusType" ColumnName="Shipment_StatusType" />
+                <ScalarProperty Name="Shipment_StatusID" ColumnName="Shipment_StatusID" />
+                <ScalarProperty Name="Shipment_DocDate" ColumnName="Shipment_DocDate" />
+                <ScalarProperty Name="Shipment_DocNumber" ColumnName="Shipment_DocNumber" />
+                <ScalarProperty Name="Shipment_OwnerAgency" ColumnName="Shipment_OwnerAgency" />
+                <ScalarProperty Name="Shipment_GespeID_UNITEX" ColumnName="Shipment_GespeID_UNITEX" />
+                <ScalarProperty Name="ID_SHIPMENT" ColumnName="ID_SHIPMENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="XCM_CRMModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="FK_User_Customer_ID" ColumnName="FK_User_Customer_ID" />
+                <ScalarProperty Name="FK_User_Role_ID" ColumnName="FK_User_Role_ID" />
+                <ScalarProperty Name="User_ExpireLinkRecoverPassword" ColumnName="User_ExpireLinkRecoverPassword" />
+                <ScalarProperty Name="User_TempPassword" ColumnName="User_TempPassword" />
+                <ScalarProperty Name="User_PasswordRecovered" ColumnName="User_PasswordRecovered" />
+                <ScalarProperty Name="User_Active" ColumnName="User_Active" />
+                <ScalarProperty Name="User_LastModifiedDate" ColumnName="User_LastModifiedDate" />
+                <ScalarProperty Name="User_CreationDate" ColumnName="User_CreationDate" />
+                <ScalarProperty Name="User_Surname" ColumnName="User_Surname" />
+                <ScalarProperty Name="User_FirstName" ColumnName="User_FirstName" />
+                <ScalarProperty Name="User_Salt" ColumnName="User_Salt" />
+                <ScalarProperty Name="User_HashPassword" ColumnName="User_HashPassword" />
+                <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+                <ScalarProperty Name="User_Username" ColumnName="User_Username" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Orders_docTip" ColumnName="Orders_docTip" />
+                <ScalarProperty Name="Orders_GespeUniq" ColumnName="Orders_GespeUniq" />
+                <ScalarProperty Name="Orders_info9" ColumnName="Orders_info9" />
+                <ScalarProperty Name="Orders_info8" ColumnName="Orders_info8" />
+                <ScalarProperty Name="Orders_info7" ColumnName="Orders_info7" />
+                <ScalarProperty Name="Orders_info6" ColumnName="Orders_info6" />
+                <ScalarProperty Name="Orders_info5" ColumnName="Orders_info5" />
+                <ScalarProperty Name="Orders_info4" ColumnName="Orders_info4" />
+                <ScalarProperty Name="Orders_info3" ColumnName="Orders_info3" />
+                <ScalarProperty Name="Orders_info2" ColumnName="Orders_info2" />
+                <ScalarProperty Name="Orders_info1" ColumnName="Orders_info1" />
+                <ScalarProperty Name="Orders_deliveryNote" ColumnName="Orders_deliveryNote" />
+                <ScalarProperty Name="Orders_publicNote" ColumnName="Orders_publicNote" />
+                <ScalarProperty Name="Orders_internalNote" ColumnName="Orders_internalNote" />
+                <ScalarProperty Name="Orders_executed" ColumnName="Orders_executed" />
+                <ScalarProperty Name="Orders_planned" ColumnName="Orders_planned" />
+                <ScalarProperty Name="Orders_coverage" ColumnName="Orders_coverage" />
+                <ScalarProperty Name="Orders_totalCube" ColumnName="Orders_totalCube" />
+                <ScalarProperty Name="Orders_totalGrossWeight" ColumnName="Orders_totalGrossWeight" />
+                <ScalarProperty Name="Orders_totalNetWeight" ColumnName="Orders_totalNetWeight" />
+                <ScalarProperty Name="Orders_totalBoxes" ColumnName="Orders_totalBoxes" />
+                <ScalarProperty Name="Orders_totalPacks" ColumnName="Orders_totalPacks" />
+                <ScalarProperty Name="Orders_totalQty" ColumnName="Orders_totalQty" />
+                <ScalarProperty Name="Orders_rowsNo" ColumnName="Orders_rowsNo" />
+                <ScalarProperty Name="Orders_unloadCountry" ColumnName="Orders_unloadCountry" />
+                <ScalarProperty Name="Orders_unloadRegion" ColumnName="Orders_unloadRegion" />
+                <ScalarProperty Name="Orders_unloadDistrict" ColumnName="Orders_unloadDistrict" />
+                <ScalarProperty Name="Orders_unloadLocation" ColumnName="Orders_unloadLocation" />
+                <ScalarProperty Name="Orders_unloadZipCode" ColumnName="Orders_unloadZipCode" />
+                <ScalarProperty Name="Orders_unloadAddress" ColumnName="Orders_unloadAddress" />
+                <ScalarProperty Name="Orders_unloadID" ColumnName="Orders_unloadID" />
+                <ScalarProperty Name="Orders_consigneeCountry" ColumnName="Orders_consigneeCountry" />
+                <ScalarProperty Name="Orders_consigneeRegion" ColumnName="Orders_consigneeRegion" />
+                <ScalarProperty Name="Orders_consigneeDistrict" ColumnName="Orders_consigneeDistrict" />
+                <ScalarProperty Name="Orders_consigneeLocation" ColumnName="Orders_consigneeLocation" />
+                <ScalarProperty Name="Orders_consigneeZipCode" ColumnName="Orders_consigneeZipCode" />
+                <ScalarProperty Name="Orders_consigneeAddress" ColumnName="Orders_consigneeAddress" />
+                <ScalarProperty Name="Orders_consigneeID" ColumnName="Orders_consigneeID" />
+                <ScalarProperty Name="Orders_senderCountry" ColumnName="Orders_senderCountry" />
+                <ScalarProperty Name="Orders_senderRegion" ColumnName="Orders_senderRegion" />
+                <ScalarProperty Name="Orders_senderDistrict" ColumnName="Orders_senderDistrict" />
+                <ScalarProperty Name="Orders_senderLocation" ColumnName="Orders_senderLocation" />
+                <ScalarProperty Name="Orders_senderZipCode" ColumnName="Orders_senderZipCode" />
+                <ScalarProperty Name="Orders_senderAddress" ColumnName="Orders_senderAddress" />
+                <ScalarProperty Name="Orders_senderID" ColumnName="Orders_senderID" />
+                <ScalarProperty Name="Orders_ownerDes" ColumnName="Orders_ownerDes" />
+                <ScalarProperty Name="Orders_ownerID" ColumnName="Orders_ownerID" />
+                <ScalarProperty Name="Orders_externalID" ColumnName="Orders_externalID" />
+                <ScalarProperty Name="Orders_reference2Date" ColumnName="Orders_reference2Date" />
+                <ScalarProperty Name="Orders_reference2" ColumnName="Orders_reference2" />
+                <ScalarProperty Name="Orders_statusId" ColumnName="Orders_statusId" />
+                <ScalarProperty Name="Orders_tripDocNumber" ColumnName="Orders_tripDocNumber" />
+                <ScalarProperty Name="Orders_tripID" ColumnName="Orders_tripID" />
+                <ScalarProperty Name="Orders_shipDocNumber" ColumnName="Orders_shipDocNumber" />
+                <ScalarProperty Name="Orders_shipID" ColumnName="Orders_shipID" />
+                <ScalarProperty Name="Orders_siteID" ColumnName="Orders_siteID" />
+                <ScalarProperty Name="Orders_customerID" ColumnName="Orders_customerID" />
+                <ScalarProperty Name="Orders_customerDes" ColumnName="Orders_customerDes" />
+                <ScalarProperty Name="Orders_unloadDes" ColumnName="Orders_unloadDes" />
+                <ScalarProperty Name="Orders_consigneeDes" ColumnName="Orders_consigneeDes" />
+                <ScalarProperty Name="Orders_senderDes" ColumnName="Orders_senderDes" />
+                <ScalarProperty Name="Orders_reTypeID" ColumnName="Orders_reTypeID" />
+                <ScalarProperty Name="Orders_referenceDate" ColumnName="Orders_referenceDate" />
+                <ScalarProperty Name="Orders_reference" ColumnName="Orders_reference" />
+                <ScalarProperty Name="Orders_statusDes" ColumnName="Orders_statusDes" />
+                <ScalarProperty Name="Orders_docDate" ColumnName="Orders_docDate" />
+                <ScalarProperty Name="Orders_docNumber" ColumnName="Orders_docNumber" />
+                <ScalarProperty Name="Orders_XcmID" ColumnName="Orders_XcmID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentAuthorization">
+            <EntityTypeMapping TypeName="XCM_CRMModel.AgentAuthorization">
+              <MappingFragment StoreEntitySet="AgentAuthorization">
+                <ScalarProperty Name="AgentAuthorization_LastModifiedUserID" ColumnName="AgentAuthorization_LastModifiedUserID" />
+                <ScalarProperty Name="AgentAuthorization_LastModifiedDate" ColumnName="AgentAuthorization_LastModifiedDate" />
+                <ScalarProperty Name="AgentAuthorization_CreationDate" ColumnName="AgentAuthorization_CreationDate" />
+                <ScalarProperty Name="AgentAuthorization_OrderConfirmation" ColumnName="AgentAuthorization_OrderConfirmation" />
+                <ScalarProperty Name="FK_AgentAuthorization_User_ID" ColumnName="FK_AgentAuthorization_User_ID" />
+                <ScalarProperty Name="AgentAuthorization_ID" ColumnName="AgentAuthorization_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anagrafica_Prodotti">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Anagrafica_Prodotti">
+              <MappingFragment StoreEntitySet="Anagrafica_Prodotti">
+                <ScalarProperty Name="CODICE_IVA" ColumnName="CODICE_IVA" />
+                <ScalarProperty Name="GESPE_CUSTOMERID" ColumnName="GESPE_CUSTOMERID" />
+                <ScalarProperty Name="DATA_ULTIMA_MODIFICA" ColumnName="DATA_ULTIMA_MODIFICA" />
+                <ScalarProperty Name="DATA_CREAZIONE" ColumnName="DATA_CREAZIONE" />
+                <ScalarProperty Name="PREZZO_UNITARIO" ColumnName="PREZZO_UNITARIO" />
+                <ScalarProperty Name="DESCRIZIONE_PRODOTTO" ColumnName="DESCRIZIONE_PRODOTTO" />
+                <ScalarProperty Name="CODICE_PRODOTTO" ColumnName="CODICE_PRODOTTO" />
+                <ScalarProperty Name="ID_ANAGRAFICA_PRODOTTO" ColumnName="ID_ANAGRAFICA_PRODOTTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorie_Prodotti">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Categorie_Prodotti">
+              <MappingFragment StoreEntitySet="Categorie_Prodotti">
+                <ScalarProperty Name="PERCENTUALE_COMMISSIONE" ColumnName="PERCENTUALE_COMMISSIONE" />
+                <ScalarProperty Name="DESCRIZIONE" ColumnName="DESCRIZIONE" />
+                <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cd_PG">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Cd_PG">
+              <MappingFragment StoreEntitySet="Cd_PG">
+                <ScalarProperty Name="Cd_PG_NumeroGiorni" ColumnName="Cd_PG_NumeroGiorni" />
+                <ScalarProperty Name="Cd_PG_PartenzaScadenze" ColumnName="Cd_PG_PartenzaScadenze" />
+                <ScalarProperty Name="Cd_PG_AccontoPercentuale" ColumnName="Cd_PG_AccontoPercentuale" />
+                <ScalarProperty Name="Cd_PG_NumeroRate" ColumnName="Cd_PG_NumeroRate" />
+                <ScalarProperty Name="Cd_PG_Description" ColumnName="Cd_PG_Description" />
+                <ScalarProperty Name="Codice_PG" ColumnName="Codice_PG" />
+                <ScalarProperty Name="Cd_PG_ID" ColumnName="Cd_PG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_RegType">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Customer_RegType">
+              <MappingFragment StoreEntitySet="Customer_RegType">
+                <ScalarProperty Name="FK_Cutomer_SessionID" ColumnName="FK_Cutomer_SessionID" />
+                <ScalarProperty Name="LastModifiedUserID" ColumnName="LastModifiedUserID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegTypeId" ColumnName="RegTypeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_Categorie_Subcategorie">
+            <EntityTypeMapping TypeName="XCM_CRMModel.G_Categorie_Subcategorie">
+              <MappingFragment StoreEntitySet="G_Categorie_Subcategorie">
+                <ScalarProperty Name="FK_SUBCATEGORIA" ColumnName="FK_SUBCATEGORIA" />
+                <ScalarProperty Name="FK_CATEGORIA" ColumnName="FK_CATEGORIA" />
+                <ScalarProperty Name="ID_G_Categorie_Subcategorie" ColumnName="ID_G_Categorie_Subcategorie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_ListiniAgenti">
+            <EntityTypeMapping TypeName="XCM_CRMModel.G_ListiniAgenti">
+              <MappingFragment StoreEntitySet="G_ListiniAgenti">
+                <ScalarProperty Name="FK_LISTINO" ColumnName="FK_LISTINO" />
+                <ScalarProperty Name="FK_USER" ColumnName="FK_USER" />
+                <ScalarProperty Name="ID_G_LISTINO_AGENTE" ColumnName="ID_G_LISTINO_AGENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_Podotto_Categoria">
+            <EntityTypeMapping TypeName="XCM_CRMModel.G_Podotto_Categoria">
+              <MappingFragment StoreEntitySet="G_Podotto_Categoria">
+                <ScalarProperty Name="FK_CATEGORIA" ColumnName="FK_CATEGORIA" />
+                <ScalarProperty Name="FK_ANAGRAFICA_ARTICOLO" ColumnName="FK_ANAGRAFICA_ARTICOLO" />
+                <ScalarProperty Name="ID_Prodotto_Categoria" ColumnName="ID_Prodotto_Categoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEO">
+            <EntityTypeMapping TypeName="XCM_CRMModel.GEO">
+              <MappingFragment StoreEntitySet="GEO">
+                <ScalarProperty Name="Geo_IstatCode" ColumnName="Geo_IstatCode" />
+                <ScalarProperty Name="Geo_Region" ColumnName="Geo_Region" />
+                <ScalarProperty Name="Geo_District" ColumnName="Geo_District" />
+                <ScalarProperty Name="Geo_ZipCode" ColumnName="Geo_ZipCode" />
+                <ScalarProperty Name="Geo_Location" ColumnName="Geo_Location" />
+                <ScalarProperty Name="Geo_Id" ColumnName="Geo_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Agent">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Order_Agent">
+              <MappingFragment StoreEntitySet="Order_Agent">
+                <ScalarProperty Name="FK_OrderAgent_AgentID" ColumnName="FK_OrderAgent_AgentID" />
+                <ScalarProperty Name="FK_OrderAgent_OrdersID" ColumnName="FK_OrderAgent_OrdersID" />
+                <ScalarProperty Name="OrderAgent_ID" ColumnName="OrderAgent_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Client">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Order_Client">
+              <MappingFragment StoreEntitySet="Order_Client">
+                <ScalarProperty Name="FK_OrdersClient_OrdersID" ColumnName="FK_OrdersClient_OrdersID" />
+                <ScalarProperty Name="FK_OrdersClient_Client_ID" ColumnName="FK_OrdersClient_Client_ID" />
+                <ScalarProperty Name="ConsigneeLocationID" ColumnName="ConsigneeLocationID" />
+                <ScalarProperty Name="UnloadLocationID" ColumnName="UnloadLocationID" />
+                <ScalarProperty Name="OrdersClient_ID" ColumnName="OrdersClient_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders_RegType">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Orders_RegType">
+              <MappingFragment StoreEntitySet="Orders_RegType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegTypeId" ColumnName="RegTypeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Role_LastModifiedDate" ColumnName="Role_LastModifiedDate" />
+                <ScalarProperty Name="Role_CreationDate" ColumnName="Role_CreationDate" />
+                <ScalarProperty Name="Role_Active" ColumnName="Role_Active" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subcategorie_Prodotti">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Subcategorie_Prodotti">
+              <MappingFragment StoreEntitySet="Subcategorie_Prodotti">
+                <ScalarProperty Name="DESCRIZIONE" ColumnName="DESCRIZIONE" />
+                <ScalarProperty Name="ID_SUBCATEGORIA_PRODOTTO" ColumnName="ID_SUBCATEGORIA_PRODOTTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracking">
+            <EntityTypeMapping TypeName="XCM_CRMModel.Tracking">
+              <MappingFragment StoreEntitySet="Tracking">
+                <ScalarProperty Name="Tracking_StatusDes" ColumnName="Tracking_StatusDes" />
+                <ScalarProperty Name="Tracking_StatusID" ColumnName="Tracking_StatusID" />
+                <ScalarProperty Name="Tracking_Data" ColumnName="Tracking_Data" />
+                <ScalarProperty Name="Tracking_ShipmentID" ColumnName="Tracking_ShipmentID" />
+                <ScalarProperty Name="ID_TRACKING" ColumnName="ID_TRACKING" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

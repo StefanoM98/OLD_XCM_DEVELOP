@@ -1,0 +1,15 @@
+﻿@model List<API_XCM.Models.XCM.Docs>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/FormLayout.css")" />
+    <script src="~/Scripts/Scripts.js"></script>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("MasterGridPartial", Model)
+}

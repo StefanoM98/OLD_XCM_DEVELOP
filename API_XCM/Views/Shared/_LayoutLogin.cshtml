@@ -1,0 +1,37 @@
+﻿@using API_XCM.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+
+    @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors }
+    )
+    @Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.Editors }
+    )
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/login/Content.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/login/Layout.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap.css")" />
+    @RenderSection("Head", false)
+    <script src="~/Scripts/Scripts.js"></script>
+    <script src="~/Scripts/Bootstrap/bootstrap.js"></script>
+
+
+</head>
+
+<body>
+    <div class="form">
+        <div class="content" id="pageContent">
+            @RenderBody()
+
+        </div>
+    </div>
+</body>
+</html>

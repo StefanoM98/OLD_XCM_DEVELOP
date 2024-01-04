@@ -1,0 +1,98 @@
+﻿@Html.DevExpress().GridView(settings =>
+{
+    settings.Name = "detailGrid_" + ViewData["AnaId"];
+    settings.SettingsDetail.MasterGridName = "masterGrid";
+    settings.CallbackRouteValues = new { Controller = "Nino", Action = "DetailGridPartial", CustomerID = ViewData["AnaId"] };
+
+    settings.KeyFieldName = "CreatedOn";
+
+    settings.CommandColumn.Visible = false;
+    settings.CommandColumn.ShowNewButton = false;
+    settings.CommandColumn.ShowDeleteButton = false;
+    settings.CommandColumn.ShowEditButton = false;
+
+    settings.SettingsPager.Visible = true;
+    settings.SettingsPager.PageSizeItemSettings.Visible = true;
+    settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+    settings.SettingsPager.PageSize = 20;
+    settings.Settings.ShowGroupPanel = false;
+    settings.Settings.ShowFilterRow = false;
+    settings.SettingsBehavior.AllowSelectByRowClick = false;
+    settings.SettingsBehavior.AllowSort = false;
+
+
+    settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+    settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+    settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+    settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+    settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.SettingsPopup.FilterControl.AutoUpdatePosition = false;
+
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "Mandante";
+        c.Caption = "Mandante";
+        c.Visible = false;
+    });
+
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "CreatedOn";
+        c.Caption = "Data Creazione";
+        c.AdaptivePriority = 0;
+    });
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "RiferimentoExt";
+        c.Caption = "Riferimento Esterno";
+        c.AdaptivePriority = 5;
+    });
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "StatoDocumento";
+        c.Caption = "Stato";
+        c.AdaptivePriority = 1;
+    });
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "Quantity";
+        c.Caption = "Quantita";
+        c.AdaptivePriority = 2;
+        c.PropertiesEdit.DisplayFormatString = "#####";
+    });
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "Coverage";
+        c.Caption = "Copertura";
+        c.AdaptivePriority = 3;
+
+    });
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "Executed";
+        c.Caption = "Eseguito";
+        c.AdaptivePriority = 4;
+
+    });
+
+    settings.CustomColumnDisplayText = (s, e) =>
+    {
+        var grd = s as ASPxGridView;
+        var idx = e.VisibleIndex;
+        if (idx < 0) return;
+        var row = grd.GetRow(idx) as API_XCM.Models.XCM.DocumentiNonSpeditiModel;
+        if (e.Column.FieldName == "Coverage")
+        {
+            e.DisplayText = $"{row.Coverage}%";
+
+        }
+        else if (e.Column.FieldName == "Executed")
+        {
+            e.DisplayText = $"{row.Executed}%";
+
+        }
+    };
+
+}).Bind(Model).GetHtml()

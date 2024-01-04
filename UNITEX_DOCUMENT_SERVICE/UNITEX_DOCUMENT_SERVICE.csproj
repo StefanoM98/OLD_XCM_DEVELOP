@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{410B948D-73E8-4D09-96BD-FE0633D27B7C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>UNITEX_DOCUMENT_SERVICE</RootNamespace>
+    <AssemblyName>UNITEX_DOCUMENT_SERVICE</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevUtils">
+      <HintPath>..\..\StdLibs\DevUtils\bin\Release\netstandard2.0\DevUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentFTP, Version=37.0.3.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentFTP.37.0.3\lib\net45\FluentFTP.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoSpec, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\StdLibs\GeoSpec\bin\Release\netstandard2.0\GeoSpec.dll</HintPath>
+    </Reference>
+    <Reference Include="GestFile">
+      <HintPath>..\..\GestioneFile\GestFile\GestFile\bin\Debug\GestFile.dll</HintPath>
+    </Reference>
+    <Reference Include="GestObjectToFile">
+      <HintPath>..\..\GestObjectToFile\bin\Debug\GestObjectToFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.60.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.60.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.60.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Calendar.v3, Version=1.60.0.3017, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Calendar.v3.1.60.0.3017\lib\net45\Google.Apis.Calendar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.60.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.60.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="iAnywhere.Data.SQLAnywhere.v4.5, Version=16.0.0.20434, Culture=neutral, PublicKeyToken=f222fc4333e0d400, processorArchitecture=MSIL">
+      <HintPath>packages\iAnywhere.Data.SQLAnywhere.v4.5.16.0.0.20433\lib\net45\iAnywhere.Data.SQLAnywhere.v4.5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.7.15\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2020.0.2.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.2\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.13.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.13.0\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TempiResa">
+      <HintPath>..\..\StdLibs\TempiResa\bin\Release\netstandard2.0\TempiResa.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.4.3.0\lib\net452\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\FTPClass.cs" />
+    <Compile Include="Code\GestoreMail.cs" />
+    <Compile Include="Code\Helper.cs" />
+    <Compile Include="EF\ANAGRAFICA_FORNITORI.cs">
+      <DependentUpon>Unitex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GEO.cs">
+      <DependentUpon>XCM_CRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Unitex.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unitex.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Unitex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unitex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Unitex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unitex.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\XCM_CRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XCM_CRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\XCM_CRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XCM_CRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\XCM_CRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XCM_CRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\3C\3C_EsitiOUT.cs" />
+    <Compile Include="Model\3C\3C_ShipmentIN.cs" />
+    <Compile Include="Model\APILoginResponseUNITEX.cs" />
+    <Compile Include="Automazione.cs" />
+    <Compile Include="Model\CDGROUP\CDGrpupModels.cs" />
+    <Compile Include="Model\CDGROUP\ListinoCDGroup.cs" />
+    <Compile Include="Model\CDGROUP\SediCaricoCDGroup.cs" />
+    <Compile Include="Model\CDL\CDL_ShipmentOUT.cs" />
+    <Compile Include="Model\CDL\Cliente.cs" />
+    <Compile Include="Model\CDL\EsitiCDLExt.cs" />
+    <Compile Include="Model\CDL\TrackingNew.cs" />
+    <Compile Include="Model\CDL\ShipmentEspritecModel.cs" />
+    <Compile Include="Model\CDL\TrackingNewResponse.cs" />
+    <Compile Include="Model\Chiapparoli\Chiapparoli_EsitiOUT.cs" />
+    <Compile Include="Model\Chiapparoli\Chiapparoli_ShipmentIN.cs" />
+    <Compile Include="Model\DAMORA\DAMORA_ShipmentIN.cs" />
+    <Compile Include="Model\Espritec_API\UNITEX\NewShipmentTMS.cs" />
+    <Compile Include="Model\Espritec_API\UNITEX\ShipmentList.cs" />
+    <Compile Include="Model\Espritec_API\UNITEX\ShipmentUpdate.cs" />
+    <Compile Include="Model\GeoClass.cs" />
+    <Compile Include="Model\LocalGoogleCalendar.cs" />
+    <Compile Include="Model\GUNA\GUNA_ShipmentIN.cs" />
+    <Compile Include="Model\InterpreteInvioCDLBolla.cs" />
+    <Compile Include="EF\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CDL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Logistica93\Logistica93_ShipmentIN.cs" />
+    <Compile Include="Model\PoolPharmaDLF\PoolPharmaDLF_ShipmentIN.cs" />
+    <Compile Include="Model\ShipmentTrackingByID.cs" />
+    <Compile Include="Model\STMGroup\STMGroup_ShipmentIN.cs" />
+    <Compile Include="Model\StockHouse\StockHouse_Esiti_OUT.cs" />
+    <Compile Include="Model\StockHouse\StockHouse_Shipment_IN.cs" />
+    <Compile Include="Model\UNITEX\StandardCSVModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EF\va_bolle_sat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipmentTracking.cs" />
+    <Compile Include="TempiDiResa.cs" />
+    <Compile Include="test.cs" />
+    <Compile Include="TPConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnalisiSpedizioniPerRifCliente.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cdGroupSHID.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RaddrizzateDaComunicare.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecuperaEsitiCDGroup.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecuperaEsitiChiapparoli.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecuperaEsitiGima.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecuperaEsitiLoreal.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecuperaEsitiSTM.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RecuperGXO.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TempiResaCAPDisagiati.txt" />
+    <Content Include="TempiResaHUB.txt" />
+    <None Include="App.config" />
+    <None Include="checkedIDTraking">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="EF\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>CDL.edmx</DependentUpon>
+    </Content>
+    <Content Include="EF\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CDL.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\Unitex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Unitex.edmx</DependentUpon>
+      <LastGenOutput>Unitex.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\Unitex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Unitex.edmx</DependentUpon>
+      <LastGenOutput>Unitex.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\XCM_CRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XCM_CRM.edmx</DependentUpon>
+      <LastGenOutput>XCM_CRM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\XCM_CRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XCM_CRM.edmx</DependentUpon>
+      <LastGenOutput>XCM_CRM.cs</LastGenOutput>
+    </Content>
+    <Content Include="LastCheckChangesTMS.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="CodiciStatoCDGROUP.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CodiciStatoChiapparoli.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CodiciStatoLoreal.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CodiciStatoSTM.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="config.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EntityDeploy Include="EF\CDL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CDL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\CDL.edmx.diagram">
+      <DependentUpon>CDL.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="EF\Unitex.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Unitex.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\Unitex.edmx.diagram">
+      <DependentUpon>Unitex.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="EF\XCM_CRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XCM_CRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\XCM_CRM.edmx.diagram">
+      <DependentUpon>XCM_CRM.edmx</DependentUpon>
+    </None>
+    <None Include="GEO.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MandantiCodifica.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="TemplateEsiti.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonTypes\CommonTypes.csproj">
+      <Project>{bb9b1b57-c759-4b80-a461-3fea3c09829c}</Project>
+      <Name>CommonTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Import Project="packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+</Project>

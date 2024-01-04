@@ -1,0 +1,19 @@
+.formLayoutContainer
+{
+    max-width: 900px;
+}
+
+.formLayout
+{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+
+.float-left {
+    float:left;
+}
+
+.center {
+    text-align: center;
+}

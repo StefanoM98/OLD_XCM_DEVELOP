@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="XCM_Remote_Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UserAPICry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PswAPICry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CodClienteCry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UIDPC" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FPW" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7UdejCFJygb0yFdalBuCeUEhImvBYZYVi4bMHdM8prM=</Value>
+    </Setting>
+    <Setting Name="FUR" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">9z3bHTE25hv3QhXXQnaf7Pb9JesB9gCbBg6hveS9a2U=</Value>
+    </Setting>
+    <Setting Name="FDS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Fy3X5jSaQ1uuOfYcF3138oxACBlQVIW9mWHCjAF9Ogw=</Value>
+    </Setting>
+    <Setting Name="DEXP" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="callUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LPA" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

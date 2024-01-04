@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UnitexFSC.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IndirizzoAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://185.30.181.192</Value>
+    </Setting>
+    <Setting Name="PortaAPI" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8092</Value>
+    </Setting>
+    <Setting Name="IndirizzoFTP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">185.30.181.203</Value>
+    </Setting>
+    <Setting Name="PortFTP" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

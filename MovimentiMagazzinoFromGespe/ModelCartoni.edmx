@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ContenitoriXCMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ANAGRAFICA_CONTENITORI">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_CONTENITORE" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_CONTENITORE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPO_CONTENITORE" Type="int" Nullable="false" />
+          <Property Name="DESCRIZIONE_CONTENITORE" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REGISTRAZIONE_CONTENITORE">
+          <Key>
+            <PropertyRef Name="ID_REGISTRAZIONE_CONTENITORE" />
+          </Key>
+          <Property Name="ID_REGISTRAZIONE_CONTENITORE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_DOCUMENTO" Type="bigint" Nullable="false" />
+          <Property Name="ANAGRAFICA_CONTENITORE" Type="bigint" Nullable="false" />
+          <Property Name="QUANTITA_CONTENITORE" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI">
+          <End Role="ANAGRAFICA_CONTENITORI" Type="Self.ANAGRAFICA_CONTENITORI" Multiplicity="1" />
+          <End Role="REGISTRAZIONE_CONTENITORE" Type="Self.REGISTRAZIONE_CONTENITORE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAGRAFICA_CONTENITORI">
+              <PropertyRef Name="ID_ANAGRAFICA_CONTENITORE" />
+            </Principal>
+            <Dependent Role="REGISTRAZIONE_CONTENITORE">
+              <PropertyRef Name="ANAGRAFICA_CONTENITORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ContenitoriXCMModelStoreContainer">
+          <EntitySet Name="ANAGRAFICA_CONTENITORI" EntityType="Self.ANAGRAFICA_CONTENITORI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REGISTRAZIONE_CONTENITORE" EntityType="Self.REGISTRAZIONE_CONTENITORE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI" Association="Self.FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI">
+            <End Role="ANAGRAFICA_CONTENITORI" EntitySet="ANAGRAFICA_CONTENITORI" />
+            <End Role="REGISTRAZIONE_CONTENITORE" EntitySet="REGISTRAZIONE_CONTENITORE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ContenitoriXCMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ANAGRAFICA_CONTENITORI">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_CONTENITORE" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_CONTENITORE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO_CONTENITORE" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIZIONE_CONTENITORE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="REGISTRAZIONE_CONTENITORE" Relationship="Self.FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI" FromRole="ANAGRAFICA_CONTENITORI" ToRole="REGISTRAZIONE_CONTENITORE" />
+        </EntityType>
+        <EntityType Name="REGISTRAZIONE_CONTENITORE">
+          <Key>
+            <PropertyRef Name="ID_REGISTRAZIONE_CONTENITORE" />
+          </Key>
+          <Property Name="ID_REGISTRAZIONE_CONTENITORE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_DOCUMENTO" Type="Int64" Nullable="false" />
+          <Property Name="ANAGRAFICA_CONTENITORE" Type="Int64" Nullable="false" />
+          <Property Name="QUANTITA_CONTENITORE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ANAGRAFICA_CONTENITORI" Relationship="Self.FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI" FromRole="REGISTRAZIONE_CONTENITORE" ToRole="ANAGRAFICA_CONTENITORI" />
+        </EntityType>
+        <Association Name="FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI">
+          <End Role="ANAGRAFICA_CONTENITORI" Type="Self.ANAGRAFICA_CONTENITORI" Multiplicity="1" />
+          <End Role="REGISTRAZIONE_CONTENITORE" Type="Self.REGISTRAZIONE_CONTENITORE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAGRAFICA_CONTENITORI">
+              <PropertyRef Name="ID_ANAGRAFICA_CONTENITORE" />
+            </Principal>
+            <Dependent Role="REGISTRAZIONE_CONTENITORE">
+              <PropertyRef Name="ANAGRAFICA_CONTENITORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ContenitoriXCMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANAGRAFICA_CONTENITORI" EntityType="Self.ANAGRAFICA_CONTENITORI" />
+          <EntitySet Name="REGISTRAZIONE_CONTENITORE" EntityType="Self.REGISTRAZIONE_CONTENITORE" />
+          <AssociationSet Name="FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI" Association="Self.FK_REGISTRAZIONE_CONTENITORE_ANAGRAFICA_CONTENITORI">
+            <End Role="ANAGRAFICA_CONTENITORI" EntitySet="ANAGRAFICA_CONTENITORI" />
+            <End Role="REGISTRAZIONE_CONTENITORE" EntitySet="REGISTRAZIONE_CONTENITORE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ContenitoriXCMModelStoreContainer" CdmEntityContainer="ContenitoriXCMEntities">
+          <EntitySetMapping Name="ANAGRAFICA_CONTENITORI">
+            <EntityTypeMapping TypeName="ContenitoriXCMModel.ANAGRAFICA_CONTENITORI">
+              <MappingFragment StoreEntitySet="ANAGRAFICA_CONTENITORI">
+                <ScalarProperty Name="ID_ANAGRAFICA_CONTENITORE" ColumnName="ID_ANAGRAFICA_CONTENITORE" />
+                <ScalarProperty Name="TIPO_CONTENITORE" ColumnName="TIPO_CONTENITORE" />
+                <ScalarProperty Name="DESCRIZIONE_CONTENITORE" ColumnName="DESCRIZIONE_CONTENITORE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGISTRAZIONE_CONTENITORE">
+            <EntityTypeMapping TypeName="ContenitoriXCMModel.REGISTRAZIONE_CONTENITORE">
+              <MappingFragment StoreEntitySet="REGISTRAZIONE_CONTENITORE">
+                <ScalarProperty Name="ID_REGISTRAZIONE_CONTENITORE" ColumnName="ID_REGISTRAZIONE_CONTENITORE" />
+                <ScalarProperty Name="ID_DOCUMENTO" ColumnName="ID_DOCUMENTO" />
+                <ScalarProperty Name="ANAGRAFICA_CONTENITORE" ColumnName="ANAGRAFICA_CONTENITORE" />
+                <ScalarProperty Name="QUANTITA_CONTENITORE" ColumnName="QUANTITA_CONTENITORE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

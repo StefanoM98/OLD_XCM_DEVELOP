@@ -1,0 +1,111 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "DocsGridView";
+        settings.CallbackRouteValues = new { Controller = "XCMView", Action = "DocsGridViewPartial" };
+
+        settings.CommandColumn.Visible = false;
+        settings.CommandColumn.ShowNewButton = false;
+        settings.CommandColumn.ShowDeleteButton = false;
+        settings.CommandColumn.ShowEditButton = false;
+
+        settings.KeyFieldName = "GespeID";
+
+        settings.SettingsPager.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Visible = true;
+        settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+        settings.SettingsPager.PageSize = 20;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = false;
+        settings.SettingsBehavior.AllowSort = false;
+
+
+        settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+        settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+        settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+        settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+        settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.SettingsPopup.FilterControl.AutoUpdatePosition = false;
+
+        settings.Toolbars.Add(t =>
+        {
+            t.Position = GridToolbarPosition.Bottom;
+            t.SettingsAdaptivity.Enabled = true;
+
+            t.Items.Add(b =>
+            {
+                b.Command = GridViewToolbarCommand.Refresh;
+                b.Text = "Aggiorna dati";
+                b.ToolTip = "Aggiorna di dati della tabella";
+                b.AdaptivePriority = 0;
+
+            });
+        });
+
+        settings.ClientSideEvents.ToolbarItemClick = "OnToolbarItemClick";
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "GespeID";
+            c.Visible = false;
+            //c.GroupIndex = 0;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Mandante";
+            c.Caption = "Mandante";
+            c.AdaptivePriority = 0;
+            //c.GroupIndex = 0;
+        });
+        //settings.Columns.Add(c =>
+        //{
+        //    c.FieldName = "NuoviOrdiniGiornalieri";
+        //    c.Caption = "Nuovi Ordini";
+        //    c.AdaptivePriority = 1;
+        //});
+        //settings.Columns.Add(c =>
+        //{
+        //    c.FieldName = "NonEvasiPrec";
+        //    c.Caption = "Non evasi ieri";
+        //    c.AdaptivePriority = 2;
+        //});
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Evasi";
+            c.Caption = "Evasi";
+            c.AdaptivePriority = 3;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "NonEvasi";
+            c.Caption = "Non evasi";
+            c.AdaptivePriority = 4;
+        });
+
+
+        settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = false;
+        settings.SettingsDetail.ShowDetailRow = true;
+
+        settings.SetDetailRowTemplateContent(c =>
+        {
+            Html.RenderAction("DocumentiNonSpeditiGridViewPartialNew", new { AnaId = DataBinder.Eval(c.DataItem, "GespeID") });
+        });
+
+        //settings.PreRender = (sender, e) =>
+        //{
+        //    ((MVCxGridView)sender).DetailRows.ExpandRow(0);
+        //};
+
+    });
+
+
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

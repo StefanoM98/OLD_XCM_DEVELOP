@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XCM_WMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ANAGRAFICA_CLIENTI">
+          <Key>
+            <PropertyRef Name="ID_GESPE" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_CLIENTE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_GESPE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="RAGIONE_SOCIALE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL_COMUNICAZIONE" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ANAGRAFICA_OPERATORI">
+          <Key>
+            <PropertyRef Name="ID_OPERATORE_GESPE" />
+          </Key>
+          <Property Name="ID_OPERATORE_GESPE" Type="bigint" Nullable="false" />
+          <Property Name="NOME" Type="nchar" MaxLength="150" Nullable="false" />
+          <Property Name="COGNOME" Type="nchar" MaxLength="150" Nullable="false" />
+          <Property Name="DATA_NASCITA" Type="date" Nullable="false" />
+          <Property Name="CODICE_FISCALE" Type="nchar" MaxLength="150" Nullable="false" />
+          <Property Name="LIVELLO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GEO_IT">
+          <Key>
+            <PropertyRef Name="ID_GEOGRAFICO" />
+          </Key>
+          <Property Name="ID_GEOGRAFICO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CAP" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="CITTA" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="REGIONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROVINCIA" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ABITANTI" Type="int" />
+          <Property Name="CODICE_ISTAT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GEO_IT_CAPOLUOGO">
+          <Key>
+            <PropertyRef Name="ID_CAPOLUOGO_GEO_IT" />
+          </Key>
+          <Property Name="ID_CAPOLUOGO_GEO_IT" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CAP" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="CITTA" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="REGIONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROVINCIA" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ABITANTI" Type="int" />
+          <Property Name="CODICE_ISTAT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PALLET_IN">
+          <Key>
+            <PropertyRef Name="ID_REGISTRAZIONE_PALLET" />
+          </Key>
+          <Property Name="ID_REGISTRAZIONE_PALLET" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_ID_ANAGRAFICA_CLIENTE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="FK_ID_OPERATORE" Type="bigint" Nullable="false" />
+          <Property Name="PALLET_IN" Type="int" Nullable="false" />
+          <Property Name="DATA_INSERIMENTO" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PALLET_MAX">
+          <Key>
+            <PropertyRef Name="ID_PALLET_MAX" />
+          </Key>
+          <Property Name="ID_PALLET_MAX" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="bigint" Nullable="false" />
+          <Property Name="PALLET_PUNTA_MAX" Type="int" />
+          <Property Name="DATA_PALLET_PUNTA_MAX" Type="datetime" />
+          <Property Name="PALLET_START" Type="int" Nullable="false" />
+          <Property Name="DATA_PALLET_START" Type="datetime" Nullable="false" />
+          <Property Name="MAGAZZINO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TMSC_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_LISTINO_TMS" />
+          </Key>
+          <Property Name="ID_LISTINO_TMS" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_GESPE" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="REGIONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FASCIA_PESO_DA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FASCIA_PESO_A" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PREZZO" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TMSC_SCAGLIONI">
+          <Key>
+            <PropertyRef Name="ID_SCAGLIONE" />
+          </Key>
+          <Property Name="ID_SCAGLIONE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_GESPE" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="SCAGLIONE_PESO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SCAGLIONE_PREZZO" Type="money" Nullable="false" />
+          <Property Name="REGIONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_ACCESSORIO" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_ACCESSORIO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIZIONE" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TMSF_FORNITORI">
+          <Key>
+            <PropertyRef Name="ID_FORNITORE" />
+          </Key>
+          <Property Name="ID_FORNITORE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PIVA" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TMSF_G_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_G_TMSF_LISTINO" />
+          </Key>
+          <Property Name="ID_G_TMSF_LISTINO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_TMSF_FORNITORE" Type="bigint" Nullable="false" />
+          <Property Name="FK_TMSF_ACCESSORIO_LISTINO" Type="bigint" Nullable="false" />
+          <Property Name="FK_GEOC" Type="bigint" Nullable="false" />
+          <Property Name="PREZZO" Type="money" Nullable="false" />
+          <Property Name="PERCENTUALE_MAGGIORAZIONE" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TMSF_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_LISTINO_FORNITORE_TMS" />
+          </Key>
+          <Property Name="ID_LISTINO_FORNITORE_TMS" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_FORNITORE" Type="bigint" Nullable="false" />
+          <Property Name="REGIONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FASCIA_DI_PESO_DA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FASCIA_DI_PESO_A" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="COSTO" Type="money" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PALLET_IN_ANAGRAFICA_OPERATORI">
+          <End Role="ANAGRAFICA_OPERATORI" Type="Self.ANAGRAFICA_OPERATORI" Multiplicity="1" />
+          <End Role="PALLET_IN" Type="Self.PALLET_IN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAGRAFICA_OPERATORI">
+              <PropertyRef Name="ID_OPERATORE_GESPE" />
+            </Principal>
+            <Dependent Role="PALLET_IN">
+              <PropertyRef Name="FK_ID_OPERATORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PALLET_IN_PALLET_IN">
+          <End Role="ANAGRAFICA_CLIENTI" Type="Self.ANAGRAFICA_CLIENTI" Multiplicity="1" />
+          <End Role="PALLET_IN" Type="Self.PALLET_IN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAGRAFICA_CLIENTI">
+              <PropertyRef Name="ID_GESPE" />
+            </Principal>
+            <Dependent Role="PALLET_IN">
+              <PropertyRef Name="FK_ID_ANAGRAFICA_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO">
+          <End Role="GEO_IT_CAPOLUOGO" Type="Self.GEO_IT_CAPOLUOGO" Multiplicity="1" />
+          <End Role="TMSF_G_LISTINI" Type="Self.TMSF_G_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEO_IT_CAPOLUOGO">
+              <PropertyRef Name="ID_CAPOLUOGO_GEO_IT" />
+            </Principal>
+            <Dependent Role="TMSF_G_LISTINI">
+              <PropertyRef Name="FK_GEOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+          <End Role="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Type="Self.TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Multiplicity="1" />
+          <End Role="TMSF_G_LISTINI" Type="Self.TMSF_G_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+              <PropertyRef Name="ID_ANAGRAFICA_ACCESSORIO" />
+            </Principal>
+            <Dependent Role="TMSF_G_LISTINI">
+              <PropertyRef Name="FK_TMSF_ACCESSORIO_LISTINO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_G_LISTINI_TMSF_FORNITORI">
+          <End Role="TMSF_FORNITORI" Type="Self.TMSF_FORNITORI" Multiplicity="1" />
+          <End Role="TMSF_G_LISTINI" Type="Self.TMSF_G_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TMSF_FORNITORI">
+              <PropertyRef Name="ID_FORNITORE" />
+            </Principal>
+            <Dependent Role="TMSF_G_LISTINI">
+              <PropertyRef Name="FK_TMSF_FORNITORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_LISTINI_TMSF_FORNITORI">
+          <End Role="TMSF_FORNITORI" Type="Self.TMSF_FORNITORI" Multiplicity="1" />
+          <End Role="TMSF_LISTINI" Type="Self.TMSF_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TMSF_FORNITORI">
+              <PropertyRef Name="ID_FORNITORE" />
+            </Principal>
+            <Dependent Role="TMSF_LISTINI">
+              <PropertyRef Name="FK_FORNITORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="XCM_WMSModelStoreContainer">
+          <EntitySet Name="ANAGRAFICA_CLIENTI" EntityType="Self.ANAGRAFICA_CLIENTI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ANAGRAFICA_OPERATORI" EntityType="Self.ANAGRAFICA_OPERATORI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEO_IT" EntityType="Self.GEO_IT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEO_IT_CAPOLUOGO" EntityType="Self.GEO_IT_CAPOLUOGO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PALLET_IN" EntityType="Self.PALLET_IN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PALLET_MAX" EntityType="Self.PALLET_MAX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMSC_LISTINI" EntityType="Self.TMSC_LISTINI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMSC_SCAGLIONI" EntityType="Self.TMSC_SCAGLIONI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" EntityType="Self.TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMSF_FORNITORI" EntityType="Self.TMSF_FORNITORI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMSF_G_LISTINI" EntityType="Self.TMSF_G_LISTINI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMSF_LISTINI" EntityType="Self.TMSF_LISTINI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PALLET_IN_ANAGRAFICA_OPERATORI" Association="Self.FK_PALLET_IN_ANAGRAFICA_OPERATORI">
+            <End Role="ANAGRAFICA_OPERATORI" EntitySet="ANAGRAFICA_OPERATORI" />
+            <End Role="PALLET_IN" EntitySet="PALLET_IN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PALLET_IN_PALLET_IN" Association="Self.FK_PALLET_IN_PALLET_IN">
+            <End Role="ANAGRAFICA_CLIENTI" EntitySet="ANAGRAFICA_CLIENTI" />
+            <End Role="PALLET_IN" EntitySet="PALLET_IN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO" Association="Self.FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO">
+            <End Role="GEO_IT_CAPOLUOGO" EntitySet="GEO_IT_CAPOLUOGO" />
+            <End Role="TMSF_G_LISTINI" EntitySet="TMSF_G_LISTINI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Association="Self.FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+            <End Role="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" EntitySet="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" />
+            <End Role="TMSF_G_LISTINI" EntitySet="TMSF_G_LISTINI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_G_LISTINI_TMSF_FORNITORI" Association="Self.FK_TMSF_G_LISTINI_TMSF_FORNITORI">
+            <End Role="TMSF_FORNITORI" EntitySet="TMSF_FORNITORI" />
+            <End Role="TMSF_G_LISTINI" EntitySet="TMSF_G_LISTINI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_LISTINI_TMSF_FORNITORI" Association="Self.FK_TMSF_LISTINI_TMSF_FORNITORI">
+            <End Role="TMSF_FORNITORI" EntitySet="TMSF_FORNITORI" />
+            <End Role="TMSF_LISTINI" EntitySet="TMSF_LISTINI" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XCM_WMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="XCM_WMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANAGRAFICA_CLIENTI" EntityType="XCM_WMSModel.ANAGRAFICA_CLIENTI" />
+          <EntitySet Name="ANAGRAFICA_OPERATORI" EntityType="XCM_WMSModel.ANAGRAFICA_OPERATORI" />
+          <EntitySet Name="GEO_IT" EntityType="XCM_WMSModel.GEO_IT" />
+          <EntitySet Name="GEO_IT_CAPOLUOGO" EntityType="XCM_WMSModel.GEO_IT_CAPOLUOGO" />
+          <EntitySet Name="PALLET_IN" EntityType="XCM_WMSModel.PALLET_IN" />
+          <EntitySet Name="PALLET_MAX" EntityType="XCM_WMSModel.PALLET_MAX" />
+          <EntitySet Name="sysdiagrams" EntityType="XCM_WMSModel.sysdiagrams" />
+          <EntitySet Name="TMSC_LISTINI" EntityType="XCM_WMSModel.TMSC_LISTINI" />
+          <EntitySet Name="TMSC_SCAGLIONI" EntityType="XCM_WMSModel.TMSC_SCAGLIONI" />
+          <EntitySet Name="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" EntityType="XCM_WMSModel.TMSF_ANAGRAFICA_ACCESSORI_LISTINI" />
+          <EntitySet Name="TMSF_FORNITORI" EntityType="XCM_WMSModel.TMSF_FORNITORI" />
+          <EntitySet Name="TMSF_G_LISTINI" EntityType="XCM_WMSModel.TMSF_G_LISTINI" />
+          <EntitySet Name="TMSF_LISTINI" EntityType="XCM_WMSModel.TMSF_LISTINI" />
+          <AssociationSet Name="FK_PALLET_IN_PALLET_IN" Association="XCM_WMSModel.FK_PALLET_IN_PALLET_IN">
+            <End Role="ANAGRAFICA_CLIENTI" EntitySet="ANAGRAFICA_CLIENTI" />
+            <End Role="PALLET_IN" EntitySet="PALLET_IN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PALLET_IN_ANAGRAFICA_OPERATORI" Association="XCM_WMSModel.FK_PALLET_IN_ANAGRAFICA_OPERATORI">
+            <End Role="ANAGRAFICA_OPERATORI" EntitySet="ANAGRAFICA_OPERATORI" />
+            <End Role="PALLET_IN" EntitySet="PALLET_IN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO" Association="XCM_WMSModel.FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO">
+            <End Role="GEO_IT_CAPOLUOGO" EntitySet="GEO_IT_CAPOLUOGO" />
+            <End Role="TMSF_G_LISTINI" EntitySet="TMSF_G_LISTINI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Association="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+            <End Role="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" EntitySet="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" />
+            <End Role="TMSF_G_LISTINI" EntitySet="TMSF_G_LISTINI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_G_LISTINI_TMSF_FORNITORI" Association="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_FORNITORI">
+            <End Role="TMSF_FORNITORI" EntitySet="TMSF_FORNITORI" />
+            <End Role="TMSF_G_LISTINI" EntitySet="TMSF_G_LISTINI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TMSF_LISTINI_TMSF_FORNITORI" Association="XCM_WMSModel.FK_TMSF_LISTINI_TMSF_FORNITORI">
+            <End Role="TMSF_FORNITORI" EntitySet="TMSF_FORNITORI" />
+            <End Role="TMSF_LISTINI" EntitySet="TMSF_LISTINI" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ANAGRAFICA_CLIENTI">
+          <Key>
+            <PropertyRef Name="ID_GESPE" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_CLIENTE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_GESPE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="RAGIONE_SOCIALE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL_COMUNICAZIONE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PALLET_IN" Relationship="XCM_WMSModel.FK_PALLET_IN_PALLET_IN" FromRole="ANAGRAFICA_CLIENTI" ToRole="PALLET_IN" />
+        </EntityType>
+        <EntityType Name="ANAGRAFICA_OPERATORI">
+          <Key>
+            <PropertyRef Name="ID_OPERATORE_GESPE" />
+          </Key>
+          <Property Name="ID_OPERATORE_GESPE" Type="Int64" Nullable="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="COGNOME" Type="String" Nullable="false" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="DATA_NASCITA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CODICE_FISCALE" Type="String" Nullable="false" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="LIVELLO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PALLET_IN" Relationship="XCM_WMSModel.FK_PALLET_IN_ANAGRAFICA_OPERATORI" FromRole="ANAGRAFICA_OPERATORI" ToRole="PALLET_IN" />
+        </EntityType>
+        <EntityType Name="GEO_IT">
+          <Key>
+            <PropertyRef Name="ID_GEOGRAFICO" />
+          </Key>
+          <Property Name="ID_GEOGRAFICO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CAP" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="CITTA" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="REGIONE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROVINCIA" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ABITANTI" Type="Int32" />
+          <Property Name="CODICE_ISTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEO_IT_CAPOLUOGO">
+          <Key>
+            <PropertyRef Name="ID_CAPOLUOGO_GEO_IT" />
+          </Key>
+          <Property Name="ID_CAPOLUOGO_GEO_IT" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CAP" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="CITTA" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="REGIONE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROVINCIA" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ABITANTI" Type="Int32" />
+          <Property Name="CODICE_ISTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TMSF_G_LISTINI" Relationship="XCM_WMSModel.FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO" FromRole="GEO_IT_CAPOLUOGO" ToRole="TMSF_G_LISTINI" />
+        </EntityType>
+        <EntityType Name="PALLET_IN">
+          <Key>
+            <PropertyRef Name="ID_REGISTRAZIONE_PALLET" />
+          </Key>
+          <Property Name="ID_REGISTRAZIONE_PALLET" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_ID_ANAGRAFICA_CLIENTE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FK_ID_OPERATORE" Type="Int64" Nullable="false" />
+          <Property Name="PALLET_IN1" Type="Int32" Nullable="false" />
+          <Property Name="DATA_INSERIMENTO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ANAGRAFICA_CLIENTI" Relationship="XCM_WMSModel.FK_PALLET_IN_PALLET_IN" FromRole="PALLET_IN" ToRole="ANAGRAFICA_CLIENTI" />
+          <NavigationProperty Name="ANAGRAFICA_OPERATORI" Relationship="XCM_WMSModel.FK_PALLET_IN_ANAGRAFICA_OPERATORI" FromRole="PALLET_IN" ToRole="ANAGRAFICA_OPERATORI" />
+        </EntityType>
+        <EntityType Name="PALLET_MAX">
+          <Key>
+            <PropertyRef Name="ID_PALLET_MAX" />
+          </Key>
+          <Property Name="ID_PALLET_MAX" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_CLIENTE" Type="Int64" Nullable="false" />
+          <Property Name="PALLET_PUNTA_MAX" Type="Int32" />
+          <Property Name="DATA_PALLET_PUNTA_MAX" Type="DateTime" Precision="3" />
+          <Property Name="PALLET_START" Type="Int32" Nullable="false" />
+          <Property Name="DATA_PALLET_START" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MAGAZZINO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TMSC_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_LISTINO_TMS" />
+          </Key>
+          <Property Name="ID_LISTINO_TMS" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_GESPE" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="REGIONE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FASCIA_PESO_DA" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="FASCIA_PESO_A" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="PREZZO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="TMSC_SCAGLIONI">
+          <Key>
+            <PropertyRef Name="ID_SCAGLIONE" />
+          </Key>
+          <Property Name="ID_SCAGLIONE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_GESPE" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="SCAGLIONE_PESO" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="SCAGLIONE_PREZZO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="REGIONE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_ACCESSORIO" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_ACCESSORIO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIZIONE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TMSF_G_LISTINI" Relationship="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI" FromRole="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" ToRole="TMSF_G_LISTINI" />
+        </EntityType>
+        <EntityType Name="TMSF_FORNITORI">
+          <Key>
+            <PropertyRef Name="ID_FORNITORE" />
+          </Key>
+          <Property Name="ID_FORNITORE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TMSF_G_LISTINI" Relationship="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_FORNITORI" FromRole="TMSF_FORNITORI" ToRole="TMSF_G_LISTINI" />
+          <NavigationProperty Name="TMSF_LISTINI" Relationship="XCM_WMSModel.FK_TMSF_LISTINI_TMSF_FORNITORI" FromRole="TMSF_FORNITORI" ToRole="TMSF_LISTINI" />
+        </EntityType>
+        <EntityType Name="TMSF_G_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_G_TMSF_LISTINO" />
+          </Key>
+          <Property Name="ID_G_TMSF_LISTINO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_TMSF_FORNITORE" Type="Int64" Nullable="false" />
+          <Property Name="FK_TMSF_ACCESSORIO_LISTINO" Type="Int64" Nullable="false" />
+          <Property Name="FK_GEOC" Type="Int64" Nullable="false" />
+          <Property Name="PREZZO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PERCENTUALE_MAGGIORAZIONE" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="GEO_IT_CAPOLUOGO" Relationship="XCM_WMSModel.FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO" FromRole="TMSF_G_LISTINI" ToRole="GEO_IT_CAPOLUOGO" />
+          <NavigationProperty Name="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Relationship="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI" FromRole="TMSF_G_LISTINI" ToRole="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" />
+          <NavigationProperty Name="TMSF_FORNITORI" Relationship="XCM_WMSModel.FK_TMSF_G_LISTINI_TMSF_FORNITORI" FromRole="TMSF_G_LISTINI" ToRole="TMSF_FORNITORI" />
+        </EntityType>
+        <EntityType Name="TMSF_LISTINI">
+          <Key>
+            <PropertyRef Name="ID_LISTINO_FORNITORE_TMS" />
+          </Key>
+          <Property Name="ID_LISTINO_FORNITORE_TMS" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_FORNITORE" Type="Int64" Nullable="false" />
+          <Property Name="REGIONE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FASCIA_DI_PESO_DA" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="FASCIA_DI_PESO_A" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="COSTO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="TMSF_FORNITORI" Relationship="XCM_WMSModel.FK_TMSF_LISTINI_TMSF_FORNITORI" FromRole="TMSF_LISTINI" ToRole="TMSF_FORNITORI" />
+        </EntityType>
+        <Association Name="FK_PALLET_IN_PALLET_IN">
+          <End Type="XCM_WMSModel.ANAGRAFICA_CLIENTI" Role="ANAGRAFICA_CLIENTI" Multiplicity="1" />
+          <End Type="XCM_WMSModel.PALLET_IN" Role="PALLET_IN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAGRAFICA_CLIENTI">
+              <PropertyRef Name="ID_GESPE" />
+            </Principal>
+            <Dependent Role="PALLET_IN">
+              <PropertyRef Name="FK_ID_ANAGRAFICA_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PALLET_IN_ANAGRAFICA_OPERATORI">
+          <End Type="XCM_WMSModel.ANAGRAFICA_OPERATORI" Role="ANAGRAFICA_OPERATORI" Multiplicity="1" />
+          <End Type="XCM_WMSModel.PALLET_IN" Role="PALLET_IN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAGRAFICA_OPERATORI">
+              <PropertyRef Name="ID_OPERATORE_GESPE" />
+            </Principal>
+            <Dependent Role="PALLET_IN">
+              <PropertyRef Name="FK_ID_OPERATORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_G_LISTINI_GEO_IT_CAPOLUOGO">
+          <End Type="XCM_WMSModel.GEO_IT_CAPOLUOGO" Role="GEO_IT_CAPOLUOGO" Multiplicity="1" />
+          <End Type="XCM_WMSModel.TMSF_G_LISTINI" Role="TMSF_G_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEO_IT_CAPOLUOGO">
+              <PropertyRef Name="ID_CAPOLUOGO_GEO_IT" />
+            </Principal>
+            <Dependent Role="TMSF_G_LISTINI">
+              <PropertyRef Name="FK_GEOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_G_LISTINI_TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+          <End Type="XCM_WMSModel.TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Role="TMSF_ANAGRAFICA_ACCESSORI_LISTINI" Multiplicity="1" />
+          <End Type="XCM_WMSModel.TMSF_G_LISTINI" Role="TMSF_G_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+              <PropertyRef Name="ID_ANAGRAFICA_ACCESSORIO" />
+            </Principal>
+            <Dependent Role="TMSF_G_LISTINI">
+              <PropertyRef Name="FK_TMSF_ACCESSORIO_LISTINO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_G_LISTINI_TMSF_FORNITORI">
+          <End Type="XCM_WMSModel.TMSF_FORNITORI" Role="TMSF_FORNITORI" Multiplicity="1" />
+          <End Type="XCM_WMSModel.TMSF_G_LISTINI" Role="TMSF_G_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TMSF_FORNITORI">
+              <PropertyRef Name="ID_FORNITORE" />
+            </Principal>
+            <Dependent Role="TMSF_G_LISTINI">
+              <PropertyRef Name="FK_TMSF_FORNITORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TMSF_LISTINI_TMSF_FORNITORI">
+          <End Type="XCM_WMSModel.TMSF_FORNITORI" Role="TMSF_FORNITORI" Multiplicity="1" />
+          <End Type="XCM_WMSModel.TMSF_LISTINI" Role="TMSF_LISTINI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TMSF_FORNITORI">
+              <PropertyRef Name="ID_FORNITORE" />
+            </Principal>
+            <Dependent Role="TMSF_LISTINI">
+              <PropertyRef Name="FK_FORNITORE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XCM_WMSModelStoreContainer" CdmEntityContainer="XCM_WMSEntities">
+          <EntitySetMapping Name="ANAGRAFICA_CLIENTI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.ANAGRAFICA_CLIENTI">
+              <MappingFragment StoreEntitySet="ANAGRAFICA_CLIENTI">
+                <ScalarProperty Name="EMAIL_COMUNICAZIONE" ColumnName="EMAIL_COMUNICAZIONE" />
+                <ScalarProperty Name="RAGIONE_SOCIALE" ColumnName="RAGIONE_SOCIALE" />
+                <ScalarProperty Name="ID_GESPE" ColumnName="ID_GESPE" />
+                <ScalarProperty Name="ID_ANAGRAFICA_CLIENTE" ColumnName="ID_ANAGRAFICA_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANAGRAFICA_OPERATORI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.ANAGRAFICA_OPERATORI">
+              <MappingFragment StoreEntitySet="ANAGRAFICA_OPERATORI">
+                <ScalarProperty Name="LIVELLO" ColumnName="LIVELLO" />
+                <ScalarProperty Name="CODICE_FISCALE" ColumnName="CODICE_FISCALE" />
+                <ScalarProperty Name="DATA_NASCITA" ColumnName="DATA_NASCITA" />
+                <ScalarProperty Name="COGNOME" ColumnName="COGNOME" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ID_OPERATORE_GESPE" ColumnName="ID_OPERATORE_GESPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEO_IT">
+            <EntityTypeMapping TypeName="XCM_WMSModel.GEO_IT">
+              <MappingFragment StoreEntitySet="GEO_IT">
+                <ScalarProperty Name="CODICE_ISTAT" ColumnName="CODICE_ISTAT" />
+                <ScalarProperty Name="ABITANTI" ColumnName="ABITANTI" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="REGIONE" ColumnName="REGIONE" />
+                <ScalarProperty Name="CITTA" ColumnName="CITTA" />
+                <ScalarProperty Name="CAP" ColumnName="CAP" />
+                <ScalarProperty Name="ID_GEOGRAFICO" ColumnName="ID_GEOGRAFICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEO_IT_CAPOLUOGO">
+            <EntityTypeMapping TypeName="XCM_WMSModel.GEO_IT_CAPOLUOGO">
+              <MappingFragment StoreEntitySet="GEO_IT_CAPOLUOGO">
+                <ScalarProperty Name="CODICE_ISTAT" ColumnName="CODICE_ISTAT" />
+                <ScalarProperty Name="ABITANTI" ColumnName="ABITANTI" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="REGIONE" ColumnName="REGIONE" />
+                <ScalarProperty Name="CITTA" ColumnName="CITTA" />
+                <ScalarProperty Name="CAP" ColumnName="CAP" />
+                <ScalarProperty Name="ID_CAPOLUOGO_GEO_IT" ColumnName="ID_CAPOLUOGO_GEO_IT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PALLET_IN">
+            <EntityTypeMapping TypeName="XCM_WMSModel.PALLET_IN">
+              <MappingFragment StoreEntitySet="PALLET_IN">
+                <ScalarProperty Name="DATA_INSERIMENTO" ColumnName="DATA_INSERIMENTO" />
+                <ScalarProperty Name="PALLET_IN1" ColumnName="PALLET_IN" />
+                <ScalarProperty Name="FK_ID_OPERATORE" ColumnName="FK_ID_OPERATORE" />
+                <ScalarProperty Name="FK_ID_ANAGRAFICA_CLIENTE" ColumnName="FK_ID_ANAGRAFICA_CLIENTE" />
+                <ScalarProperty Name="ID_REGISTRAZIONE_PALLET" ColumnName="ID_REGISTRAZIONE_PALLET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PALLET_MAX">
+            <EntityTypeMapping TypeName="XCM_WMSModel.PALLET_MAX">
+              <MappingFragment StoreEntitySet="PALLET_MAX">
+                <ScalarProperty Name="MAGAZZINO" ColumnName="MAGAZZINO" />
+                <ScalarProperty Name="DATA_PALLET_START" ColumnName="DATA_PALLET_START" />
+                <ScalarProperty Name="PALLET_START" ColumnName="PALLET_START" />
+                <ScalarProperty Name="DATA_PALLET_PUNTA_MAX" ColumnName="DATA_PALLET_PUNTA_MAX" />
+                <ScalarProperty Name="PALLET_PUNTA_MAX" ColumnName="PALLET_PUNTA_MAX" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+                <ScalarProperty Name="ID_PALLET_MAX" ColumnName="ID_PALLET_MAX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="XCM_WMSModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMSC_LISTINI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.TMSC_LISTINI">
+              <MappingFragment StoreEntitySet="TMSC_LISTINI">
+                <ScalarProperty Name="PREZZO" ColumnName="PREZZO" />
+                <ScalarProperty Name="FASCIA_PESO_A" ColumnName="FASCIA_PESO_A" />
+                <ScalarProperty Name="FASCIA_PESO_DA" ColumnName="FASCIA_PESO_DA" />
+                <ScalarProperty Name="REGIONE" ColumnName="REGIONE" />
+                <ScalarProperty Name="ID_GESPE" ColumnName="ID_GESPE" />
+                <ScalarProperty Name="ID_LISTINO_TMS" ColumnName="ID_LISTINO_TMS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMSC_SCAGLIONI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.TMSC_SCAGLIONI">
+              <MappingFragment StoreEntitySet="TMSC_SCAGLIONI">
+                <ScalarProperty Name="REGIONE" ColumnName="REGIONE" />
+                <ScalarProperty Name="SCAGLIONE_PREZZO" ColumnName="SCAGLIONE_PREZZO" />
+                <ScalarProperty Name="SCAGLIONE_PESO" ColumnName="SCAGLIONE_PESO" />
+                <ScalarProperty Name="ID_GESPE" ColumnName="ID_GESPE" />
+                <ScalarProperty Name="ID_SCAGLIONE" ColumnName="ID_SCAGLIONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+              <MappingFragment StoreEntitySet="TMSF_ANAGRAFICA_ACCESSORI_LISTINI">
+                <ScalarProperty Name="DESCRIZIONE" ColumnName="DESCRIZIONE" />
+                <ScalarProperty Name="ID_ANAGRAFICA_ACCESSORIO" ColumnName="ID_ANAGRAFICA_ACCESSORIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMSF_FORNITORI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.TMSF_FORNITORI">
+              <MappingFragment StoreEntitySet="TMSF_FORNITORI">
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ID_FORNITORE" ColumnName="ID_FORNITORE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMSF_G_LISTINI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.TMSF_G_LISTINI">
+              <MappingFragment StoreEntitySet="TMSF_G_LISTINI">
+                <ScalarProperty Name="PERCENTUALE_MAGGIORAZIONE" ColumnName="PERCENTUALE_MAGGIORAZIONE" />
+                <ScalarProperty Name="PREZZO" ColumnName="PREZZO" />
+                <ScalarProperty Name="FK_GEOC" ColumnName="FK_GEOC" />
+                <ScalarProperty Name="FK_TMSF_ACCESSORIO_LISTINO" ColumnName="FK_TMSF_ACCESSORIO_LISTINO" />
+                <ScalarProperty Name="FK_TMSF_FORNITORE" ColumnName="FK_TMSF_FORNITORE" />
+                <ScalarProperty Name="ID_G_TMSF_LISTINO" ColumnName="ID_G_TMSF_LISTINO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMSF_LISTINI">
+            <EntityTypeMapping TypeName="XCM_WMSModel.TMSF_LISTINI">
+              <MappingFragment StoreEntitySet="TMSF_LISTINI">
+                <ScalarProperty Name="COSTO" ColumnName="COSTO" />
+                <ScalarProperty Name="FASCIA_DI_PESO_A" ColumnName="FASCIA_DI_PESO_A" />
+                <ScalarProperty Name="FASCIA_DI_PESO_DA" ColumnName="FASCIA_DI_PESO_DA" />
+                <ScalarProperty Name="REGIONE" ColumnName="REGIONE" />
+                <ScalarProperty Name="FK_FORNITORE" ColumnName="FK_FORNITORE" />
+                <ScalarProperty Name="ID_LISTINO_FORNITORE_TMS" ColumnName="ID_LISTINO_FORNITORE_TMS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

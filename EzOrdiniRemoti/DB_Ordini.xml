@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Questo file xml provvede ad un database client temporaneo -->
+<ordini>
+  <ordine>
+    <numeroOrdine NumeroOrdine="0123no"></numeroOrdine>
+    <ragioneSociale RagSocFatturazione =""></ragioneSociale>
+    <indirizzoFatturazione IndFatturazione =""></indirizzoFatturazione>
+    <capFatturazione CapFatturazione =""></capFatturazione>
+    <cittaFatturazione CittaFatturazione =""></cittaFatturazione>
+    <pIva PIvaFatturazione =""></pIva>
+    <provFatturazione ProvFatturazione =""></provFatturazione>
+
+    <ragioneSociale NomeDestinazione =""></ragioneSociale>
+    <indirizzoDestinazione IndDestinazione =""></indirizzoDestinazione>
+    <capDestinazione CapDestinazione =""></capDestinazione>
+    <cittaDestinazione CittaDestinazione =""></cittaDestinazione>
+    <provDestinazione ProvDestinazione =""></provDestinazione>
+
+    <note Note =""></note>
+
+    <barcode Barcode =""></barcode>
+    <lotto Lotto=""></lotto>
+    <quantita Quantita =""></quantita>
+    <codiceProdotto CodiceProdotto =""></codiceProdotto>
+    <descrizione Descrizione =""></descrizione>
+    <sconto Sconto =""></sconto>
+    <impUnitario ImpUnitario =""></impUnitario>
+    <impTotale ImpTotale =""></impTotale>
+    <iva Iva =""></iva>
+    
+    </ordine>
+
+  <ordine>
+    <numeroOrdine NumeroOrdine="0123no"></numeroOrdine>
+    <ragioneSociale RagSocFatturazione =""></ragioneSociale>
+    <indirizzoFatturazione IndFatturazione =""></indirizzoFatturazione>
+    <capFatturazione CapFatturazione =""></capFatturazione>
+    <cittaFatturazione CittaFatturazione =""></cittaFatturazione>
+    <pIva PIvaFatturazione =""></pIva>
+    <provFatturazione ProvFatturazione =""></provFatturazione>
+
+    <ragioneSociale NomeDestinazione =""></ragioneSociale>
+    <indirizzoDestinazione IndDestinazione =""></indirizzoDestinazione>
+    <capDestinazione CapDestinazione =""></capDestinazione>
+    <cittaDestinazione CittaDestinazione =""></cittaDestinazione>
+    <provDestinazione ProvDestinazione =""></provDestinazione>
+
+    <note Note =""></note>
+
+    <barcode Barcode =""></barcode>
+    <lotto Lotto=""></lotto>
+    <quantita Quantita =""></quantita>
+    <codiceProdotto CodiceProdotto =""></codiceProdotto>
+    <descrizione Descrizione =""></descrizione>
+    <sconto Sconto =""></sconto>
+    <impUnitario ImpUnitario =""></impUnitario>
+    <impTotale ImpTotale =""></impTotale>
+    <iva Iva =""></iva>
+
+  </ordine>
+</ordini>

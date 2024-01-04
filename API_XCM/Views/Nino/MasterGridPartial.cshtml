@@ -1,0 +1,140 @@
+﻿@Html.DevExpress().GridView(settings =>
+{
+    settings.Name = "masterGrid";
+    settings.CallbackRouteValues = new { Controller = "Nino", Action = "MasterGridPartial" };
+
+    settings.CommandColumn.Visible = false;
+    settings.CommandColumn.ShowNewButton = false;
+    settings.CommandColumn.ShowDeleteButton = false;
+    settings.CommandColumn.ShowEditButton = false;
+
+    settings.KeyFieldName = "GespeID";
+
+    settings.SettingsPager.Visible = true;
+    settings.SettingsPager.PageSizeItemSettings.Visible = true;
+    settings.SettingsPager.PageSizeItemSettings.Items = new string[] { "10", "20", "50" };
+    settings.SettingsPager.PageSize = 20;
+    settings.Settings.ShowGroupPanel = false;
+    settings.Settings.ShowFilterRow = false;
+    settings.SettingsBehavior.AllowSelectByRowClick = false;
+    settings.SettingsBehavior.AllowSort = false;
+
+
+    settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+    settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
+    settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
+    settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false;
+    settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
+
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.SettingsPopup.FilterControl.AutoUpdatePosition = false;
+
+
+    settings.SettingsExport.BeforeExport = (s, e) => {
+        MVCxGridView grd = (MVCxGridView)s;
+        grd.Settings.ShowColumnHeaders = false;
+
+
+    };
+    settings.SettingsExport.EnableClientSideExportAPI = true;
+    settings.SettingsExport.ExcelExportMode = DevExpress.Export.ExportType.WYSIWYG;
+    settings.SettingsDetail.ShowDetailRow = true;
+    settings.SettingsDetail.ExportMode = GridViewDetailExportMode.All;
+    settings.SettingsExport.PaperKind = System.Drawing.Printing.PaperKind.A4;
+    settings.SettingsExport.FileName = $"Report_Non_Evasi_{DateTime.Now.ToShortDateString()}.xlsx";
+
+
+
+    settings.Toolbars.Add(t =>
+    {
+        t.Position = GridToolbarPosition.Bottom;
+        t.SettingsAdaptivity.Enabled = true;
+
+        t.Items.Add(b =>
+        {
+            b.Command = GridViewToolbarCommand.Refresh;
+            b.Text = "Aggiorna dati";
+            b.ToolTip = "Aggiorna di dati della tabella";
+            b.AdaptivePriority = 0;
+
+        });
+        t.SettingsAdaptivity.EnableCollapseRootItemsToIcons = true;
+        t.Items.Add(GridViewToolbarCommand.ExportToXlsx);
+        t.Items.Add(GridViewToolbarCommand.ExportToPdf);
+
+    });
+
+    settings.SettingsExport.GetExportDetailGridViews = (s, e) =>
+    {
+        string customerID = (string)DataBinder.Eval(e.DataItem, "GespeID");
+        GridViewExtension grid = new GridViewExtension(API_XCM.Code.XCM.CreateGeneralDetailGridSettings(customerID));
+        grid.Bind(API_XCM.Code.XCM.GetResocontoDocumentiNonSpeditiDaIDGespe(customerID));
+        e.DetailGridViews.Add(grid);
+    };
+
+
+    settings.ClientSideEvents.ToolbarItemClick = "OnToolbarItemClick";
+
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "GespeID";
+        c.Visible = false;
+    });
+
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "Mandante";
+        c.Caption = "Mandante";
+
+    });
+
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "Evasi";
+        c.Caption = "Evasi";
+        c.Width = System.Web.UI.WebControls.Unit.Percentage(10);
+    });
+    settings.Columns.Add(c =>
+    {
+        c.FieldName = "NonEvasi";
+        c.Caption = "Non evasi";
+        c.Width = System.Web.UI.WebControls.Unit.Percentage(10);
+
+    });
+
+    settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = false;
+    settings.SettingsDetail.ShowDetailRow = true;
+
+    settings.SetDetailRowTemplateContent(c =>
+    {
+        Html.RenderAction("DetailGridPartial", new { CustomerID = DataBinder.Eval(c.DataItem, "GespeID") });
+    });
+
+    settings.SettingsExport.RenderBrick = (sender, e) =>
+    {
+        if (e.Column.Grid.ID.StartsWith("detailGrid"))
+        {
+            return;
+        }
+        else
+        {
+            if (e.RowType == GridViewRowType.Data)
+            {
+                e.BrickStyle.BackColor = System.Drawing.Color.Navy;
+                e.BrickStyle.ForeColor = System.Drawing.Color.White;
+            }
+        }
+
+
+
+        //if (e.RowType == GridViewRowType.Data && e.VisibleIndex % 2 == 0)
+        //    e.BrickStyle.BackColor = System.Drawing.Color.FromArgb(0xEE, 0xEE, 0xEE);
+    };
+
+    settings.PreRender = (sender, e) =>
+    {
+        ((MVCxGridView)sender).ExpandAll();
+    };
+
+
+}).Bind(Model).GetHtml()

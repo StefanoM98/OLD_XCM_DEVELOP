@@ -1,0 +1,53 @@
+1;A1;Arrivo Filiale/ Corrispondente
+10;0000;in consegna
+20;0000;in consegna
+30;1;consegnato
+139;1A;consegnato in attesa di documenti
+50;2;giacenza generica
+55;;2G;in attesa di disposizioni cliente
+101;2B;per rifiuto del cliente (specificare nel campo note)
+102;2C;per chiusure (specificare nel campo note)
+103;2D;per evento atmosferico (specificare nel campo note)
+104;2E;per calamità naturale (specificare nel campo note)
+105;2F;per indirizzo/n° telefono sconosciuto/errato
+106;2F;per indirizzo/n° telefono sconosciuto/errato
+140;2G;in attesa di disposizioni cliente
+107;3D;prodotto/i errati
+108;3H;cliente accetta parzialmente
+109;1B;consegna parziale/danneggiata
+43;4;Rifiutata senza giustificato motivo/altri motivi
+110;4A;Rifiutata merce mai ordinata
+111;4F;Rifiutata per mancanza di spazio
+113;4G;Rifiutata consegna rinviata a data decisa dal cliente
+112;4H;Rifiutata incaricato assente
+114;4I;Rifiutata chiesto facchinaggio/sponda
+115;4I;Rifiutata chiesto facchinaggio/sponda
+116;4L;Rifiutata rifiuta termini di pagamento
+117;5;chiuso per altri motivi
+118;5A;festività locale
+120;5B;chiuso per lutto
+119;5C;chiuso per ferie
+121;5D;turno di chiusura infrasettimanale
+122;6E;ritardo per sciopero
+123;6F;zona disagiata
+124;6G;Rispetto tassativa
+125;6H;Data concordata con la mandante
+61;20;appuntamento alla consegna
+127;G;cambio tassativa
+128;7;ritiro negativo
+129;7A;da giacenza
+130;7C;recall
+131;7D;reso cliente
+132;7E;reso x sped. Bloccata dalla mandante
+133;7G;ex anomalia
+103;8A;calamità naturale
+134;9;furto
+135;9A;rapina
+136;9B;altri (esempi non esausitivi: incendio doloso)
+137;10;traffico bloccato (generico)
+138;11;guasto al mezzo
+141;3G;spedizione disguidata
+142;3;merce danneggiata
+143;3A;merce/collo smarriti
+144;3E;mancanza documenti
+70;7A;da giacenza

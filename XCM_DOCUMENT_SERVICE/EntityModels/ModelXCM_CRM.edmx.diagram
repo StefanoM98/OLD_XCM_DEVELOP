@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8460c48fb4604c428b36447ee962089f" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="XCM_CRMModel.Client_Location" Width="1.5" PointX="5.25" PointY="11.375" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Client_User" Width="1.5" PointX="3" PointY="21.5" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer_Authorization" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer_Client" Width="1.5" PointX="3" PointY="10.875" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer_CustomData" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="XCM_CRMModel.ListinoCommissioni" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XCM_CRMModel.ShipmentList" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XCM_CRMModel.User" Width="1.5" PointX="3" PointY="16.625" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Client_Location_Client_Location" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Client_User_Customer" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_Authorization_Customer" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_Client_Customer_Client" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_CustomData_Customer" />
+        <AssociationConnector Association="XCM_CRMModel.FK_User_Customer" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Orders" Width="1.5" PointX="10.375" PointY="1.5" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_CustomData_Orders" />
+        <EntityTypeShape EntityType="XCM_CRMModel.AgentAuthorization" Width="1.5" PointX="5.25" PointY="23.125" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Anagrafica_Prodotti" Width="1.5" PointX="0.875" PointY="0.875" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Categorie_Prodotti" Width="1.5" PointX="3.5" PointY="28.375" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Cd_PG" Width="1.5" PointX="12.375" PointY="4.25" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer_RegType" Width="1.5" PointX="3" PointY="34.625" />
+        <EntityTypeShape EntityType="XCM_CRMModel.G_Categorie_Subcategorie" Width="1.5" PointX="5.75" PointY="28.375" />
+        <EntityTypeShape EntityType="XCM_CRMModel.G_ListiniAgenti" Width="1.5" PointX="8" PointY="15.625" />
+        <EntityTypeShape EntityType="XCM_CRMModel.G_Podotto_Categoria" Width="1.5" PointX="6" PointY="4.125" />
+        <EntityTypeShape EntityType="XCM_CRMModel.GEO" Width="1.5" PointX="12.375" PointY="8.25" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Order_Agent" Width="1.5" PointX="5.25" PointY="34.25" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Order_Client" Width="1.5" PointX="5.25" PointY="19.875" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Orders_RegType" Width="1.5" PointX="12.375" PointY="11.25" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Role" Width="1.5" PointX="0.75" PointY="21.5" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Subcategorie_Prodotti" Width="1.5" PointX="3.5" PointY="31.625" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Tracking" Width="1.5" PointX="10" PointY="21" />
+        <AssociationConnector Association="XCM_CRMModel.FK_AgentAuthorization_User" />
+        <AssociationConnector Association="XCM_CRMModel.FK_G_Podotto_Categoria_Anagrafica_Prodotti" />
+        <AssociationConnector Association="XCM_CRMModel.FK_ListinoCommissioni_Anagrafica_Prodotti" />
+        <AssociationConnector Association="XCM_CRMModel.FK_G_Categorie_Subcategorie_CATEGORIE_PRODOTTI" />
+        <AssociationConnector Association="XCM_CRMModel.FK_G_Podotto_Categoria_CATEGORIE_PRODOTTI" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_RegType_Customer" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Order_Client_Order_Client" />
+        <AssociationConnector Association="XCM_CRMModel.FK_G_Categorie_Subcategorie_SUBCATEGORIE_PRODOTTI" />
+        <AssociationConnector Association="XCM_CRMModel.FK_G_ListiniAgenti_ListinoCommissioni" />
+        <AssociationConnector Association="XCM_CRMModel.FK_G_ListiniAgenti_User" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Order_Agent_User" />
+        <AssociationConnector Association="XCM_CRMModel.FK_User_Role" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Tracking_ShipmentList" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

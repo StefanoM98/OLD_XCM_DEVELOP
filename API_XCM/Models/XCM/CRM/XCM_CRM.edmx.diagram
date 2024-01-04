@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b6ef0e9c7dff4bf09889f6d1ca0eb2b7" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer" Width="2.75" PointX="6.125" PointY="0.625" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Role" Width="2" PointX="0.5" PointY="1.75" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Client_User" Width="2.625" PointX="14" PointY="2.125" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Client_User_Customer" />
+        <EntityTypeShape EntityType="XCM_CRMModel.User" Width="2.25" PointX="3.25" PointY="0.875" />
+        <AssociationConnector Association="XCM_CRMModel.FK_User_Customer" />
+        <AssociationConnector Association="XCM_CRMModel.FK_User_Role" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer_Authorization" Width="2.125" PointX="0.625" PointY="4.875" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_Authorization_Customer" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Customer_Location" Width="3.125" PointX="9.625" PointY="0.875" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Orders" Width="2.5" PointX="13" PointY="5.75" />
+        <EntityTypeShape EntityType="XCM_CRMModel.ShipmentList" Width="2.25" PointX="10.5" PointY="5.75" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Tracking" Width="1.75" PointX="7.875" PointY="11.125" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Customer_Location_Customer1" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Tracking_ShipmentList" />
+        <EntityTypeShape EntityType="XCM_CRMModel.AgentAuthorization" Width="1.5" PointX="6.25" PointY="14.875" />
+        <AssociationConnector Association="XCM_CRMModel.FK_AgentAuthorization_User" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Temp_Orders" Width="1.5" PointX="14.5" PointY="21.125" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Anagrafica_Prodotti" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Order_Agent" Width="2.75" PointX="16.25" PointY="9.375" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Order_Agent_Orders" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Order_Agent_User" />
+        <EntityTypeShape EntityType="XCM_CRMModel.Temp_Order_Products" Width="1.5" PointX="16.75" PointY="21.5" />
+        <AssociationConnector Association="XCM_CRMModel.FK_Temp_Order_Products_Temp_Orders" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

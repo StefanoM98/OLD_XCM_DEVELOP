@@ -1,0 +1,137 @@
+@using VivisolPalletXCM.Models
+@model FormModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/FormLayout.css")" />
+    <script src="~/Content/Scripts.js"></script>
+}
+
+@*<script>
+        function mySubmit(s, e) {
+            if (idDocumentoTextBox.GetText() != "" || idDocumentoTextBox.GetText() != null) {
+                $('#myForm').submit();
+            } else {
+                e.preventDefault();
+            }
+        }
+
+    </script>*@
+
+<div class="formLayout-verticalAlign">
+    <div class="formLayout-container">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "myForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.DevExpress().FormLayout(settings =>
+        {
+           settings.Name = "formLayout";
+           settings.Width = Unit.Percentage(100);
+           var groupItem = settings.Items.AddGroupItem(groupSettings =>
+           {
+               groupSettings.Caption = "Vivisol Pallet Info - XCM";
+               groupSettings.Width = Unit.Percentage(100);
+               groupSettings.ColumnCount = 2;
+           });
+           groupItem.GridSettings.StretchLastItem = DefaultBoolean.True;
+           groupItem.GridSettings.ChangeCaptionLocationAtWidth = 660;
+           groupItem.GridSettings.Breakpoints.Add(new LayoutBreakpoint() { Name = "S", ColumnCount = 1, MaxWidth = 500 });
+           groupItem.GridSettings.Breakpoints.Add(new LayoutBreakpoint() { Name = "M", ColumnCount = 2, MaxWidth = 800 });
+
+           groupItem.Items.Add(m => m.numeroConsegna, i =>
+           {
+               i.Caption = "Numero Consegna";
+               i.VerticalAlign = FormLayoutVerticalAlign.Middle;
+               i.ColumnSpan = 2;
+               i.Name = "numeroConsegnaTextBox";
+               i.NestedExtension().TextBox(s =>
+               {
+                   s.Width = Unit.Percentage(100);
+                   s.AutoCompleteType = AutoCompleteType.Disabled;
+                   s.Properties.ValidationSettings.Display = Display.Dynamic;
+                   s.Properties.ValidationSettings.SetFocusOnError = true;
+                   s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+                   s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+
+                   //s.Properties.ClientSideEvents.Init = "function(s, e){ s.Focus();}";
+                   //s.Properties.ClientSideEvents.TextChanged = "function(s, e) { barCode.Focus() }";
+
+               });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "S", ColumnSpan = 1, RowSpan = 1 });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "M", ColumnSpan = 2, RowSpan = 1 });
+           });
+
+           groupItem.Items.Add(m => m.idDocumento, i =>
+           {
+               i.Caption = "ID Documento";
+               i.VerticalAlign = FormLayoutVerticalAlign.Middle;
+               i.ColumnSpan = 2;
+               i.Name = "idDocumentoTextBox";
+               i.NestedExtension().TextBox(s =>
+               {
+                   s.Width = Unit.Percentage(100);
+                   s.AutoCompleteType = AutoCompleteType.Disabled;
+                   s.Properties.ValidationSettings.Display = Display.Dynamic;
+                   s.Properties.ValidationSettings.SetFocusOnError = true;
+                   s.Properties.ValidationSettings.ErrorTextPosition = ErrorTextPosition.Bottom;
+                   s.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+
+                   s.Properties.ClientSideEvents.Init = "function(s, e){ s.Focus(); }";
+                   s.Properties.ClientSideEvents.TextChanged = "function(s, e) { saveButton.Focus() }";
+
+               });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "S", ColumnSpan = 1, RowSpan = 1 });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "M", ColumnSpan = 2, RowSpan = 1 });
+           });
+
+           groupItem.Items.Add(itemSettings =>
+           {
+               itemSettings.ShowCaption = DefaultBoolean.False;
+               itemSettings.Visible = ViewBag.GeneralError != null;
+               itemSettings.SetNestedContent(() =>
+               {
+                   ViewContext.Writer.Write("<div class=\"generalErrorText\">" + @ViewBag.GeneralError + "</div>");
+               });
+           });
+
+           groupItem.Items.Add(itemSettings =>
+           {
+               itemSettings.ShowCaption = DefaultBoolean.False;
+               itemSettings.Visible = ViewBag.Status != null;
+               itemSettings.SetNestedContent(() =>
+               {
+                   ViewContext.Writer.Write("<div class=\"statusText\">" + @ViewBag.Status + "</div>");
+               });
+           });
+
+           groupItem.Items.Add(i =>
+           {
+               i.ShowCaption = DefaultBoolean.False;
+               i.HorizontalAlign = FormLayoutHorizontalAlign.NotSet;
+               i.Paddings.PaddingTop = Unit.Pixel(30);
+               i.Paddings.PaddingBottom = Unit.Pixel(30);
+               i.ColumnSpan = 2;
+               i.VerticalAlign = FormLayoutVerticalAlign.Middle;
+               i.NestedExtension().Button(s =>
+               {
+                   s.Name = "saveButton";
+                   s.Width = Unit.Percentage(100);
+                   s.Text = "Save";
+
+                   s.ClientSideEvents.Click = "mySubmit";
+                   s.UseSubmitBehavior = false;
+                   s.RouteValues = new {Controller = "Home", Action = "Index"};
+               });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "S", ColumnSpan = 1, RowSpan = 1 });
+               i.SpanRules.Add(new SpanRule() { BreakpointName = "M", ColumnSpan = 2, RowSpan = 1 });
+           });
+       }).GetHtml()
+
+        }
+    </div>
+</div>

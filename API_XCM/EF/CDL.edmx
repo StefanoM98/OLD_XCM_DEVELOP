@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CDLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="va_bolle_sat">
+          <Key>
+            <PropertyRef Name="id_bol_trasporto" />
+          </Key>
+          <Property Name="id_bol_trasporto" Type="bigint" Nullable="false" />
+          <Property Name="id_esercizio" Type="bigint" />
+          <Property Name="id_filiale" Type="bigint" />
+          <Property Name="cod_esercizio" Type="varchar" MaxLength="255" />
+          <Property Name="cod_filiale" Type="varchar" MaxLength="255" />
+          <Property Name="prog_spedizione" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="data_spedizione" Type="date" />
+          <Property Name="espresso" Type="varchar" MaxLength="255" />
+          <Property Name="rag_soc_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="ind_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="cap_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="citta_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="prov_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="citta_sede_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="rag_soc_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="ind_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="cap_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="citta_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="prov_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="citta_sede_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="id_sog_com_fatturazione" Type="bigint" />
+          <Property Name="cod_cliente" Type="varchar" MaxLength="255" />
+          <Property Name="rag_cliente" Type="varchar" MaxLength="255" />
+          <Property Name="tipo_consegna" Type="varchar" MaxLength="255" />
+          <Property Name="num_ddt" Type="varchar" MaxLength="255" />
+          <Property Name="data_ddt" Type="date" />
+          <Property Name="altro_riferimento" Type="varchar" MaxLength="255" />
+          <Property Name="num_colli" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="peso_effettivo" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="metri_cubi" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="mis_colli" Type="varchar(max)" />
+          <Property Name="note_bolla" Type="varchar(max)" />
+          <Property Name="data_cons_tassativa" Type="datetime" />
+          <Property Name="data_appuntamento" Type="varchar" MaxLength="250" />
+          <Property Name="num_dist_cliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="data_dist_cliente" Type="datetime" />
+          <Property Name="data_cons_richiesta" Type="datetime" />
+          <Property Name="note_web" Type="varchar(max)" />
+          <Property Name="bancali" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="tipo_data_tassativa" Type="varchar" MaxLength="255" />
+          <Property Name="attesa_pren" Type="varchar" MaxLength="255" />
+          <Property Name="data_attesa_pren" Type="datetime" />
+          <Property Name="id_loc_provenienza" Type="bigint" />
+          <Property Name="id_loc_destinazione" Type="bigint" />
+          <Property Name="des_contenuto" Type="varchar" MaxLength="255" />
+          <Property Name="peso_volumizzato" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="contrassegno" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="anticipate" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="id_tab_iva" Type="bigint" />
+          <Property Name="data_ora_inserimento" Type="datetime" />
+          <Property Name="data_ora_ult_variazione" Type="datetime" />
+          <Property Name="note_fattura" Type="varchar(max)" />
+          <Property Name="tariffa_forfait" Type="varchar" MaxLength="255" />
+          <Property Name="prima_fascia_oraria" Type="varchar" MaxLength="255" />
+          <Property Name="seconda_fascia_oraria" Type="varchar" MaxLength="255" />
+          <Property Name="nazione_mittente" Type="varchar" MaxLength="255" />
+          <Property Name="nazione_destinatario" Type="varchar" MaxLength="255" />
+          <Property Name="tel_destinatario" Type="varchar(max)" />
+          <Property Name="note_incasso" Type="varchar(max)" />
+          <Property Name="epal" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="tipo_inc_richiesto" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar(max)" />
+          <Property Name="metri_lineari" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="collegamento_tc" Type="varchar" MaxLength="255" />
+          <Property Name="num_colli_tc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="peso_effettivo_tc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="metri_cubi_tc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="bancali_tc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="sec_riferimento" Type="varchar" MaxLength="255" />
+          <Property Name="adr" Type="varchar" MaxLength="255" />
+          <Property Name="mit_longitudine" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="mit_latitudine" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="dest_longitudine" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="dest_latitudine" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="note_ritiro" Type="varchar(max)" />
+          <Property Name="data_pronto_merce" Type="datetime" />
+          <Property Name="tel_mittente" Type="varchar(max)" />
+          <Property Name="regione_mit" Type="varchar" MaxLength="255" />
+          <Property Name="regione_dest" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="CDLModelStoreContainer">
+          <EntitySet Name="va_bolle_sat" EntityType="Self.va_bolle_sat" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="va_bolle_sat">
+          <Key>
+            <PropertyRef Name="id_bol_trasporto" />
+          </Key>
+          <Property Name="id_bol_trasporto" Type="Int64" Nullable="false" />
+          <Property Name="id_esercizio" Type="Int64" />
+          <Property Name="id_filiale" Type="Int64" />
+          <Property Name="cod_esercizio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cod_filiale" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="prog_spedizione" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="data_spedizione" Type="DateTime" Precision="0" />
+          <Property Name="espresso" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rag_soc_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ind_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cap_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="citta_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="prov_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="citta_sede_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rag_soc_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ind_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cap_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="citta_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="prov_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="citta_sede_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_sog_com_fatturazione" Type="Int64" />
+          <Property Name="cod_cliente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rag_cliente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_consegna" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="num_ddt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="data_ddt" Type="DateTime" Precision="0" />
+          <Property Name="altro_riferimento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="num_colli" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="peso_effettivo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="metri_cubi" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="mis_colli" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="note_bolla" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="data_cons_tassativa" Type="DateTime" Precision="3" />
+          <Property Name="data_appuntamento" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="num_dist_cliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="data_dist_cliente" Type="DateTime" Precision="3" />
+          <Property Name="data_cons_richiesta" Type="DateTime" Precision="3" />
+          <Property Name="note_web" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="bancali" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="tipo_data_tassativa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="attesa_pren" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="data_attesa_pren" Type="DateTime" Precision="3" />
+          <Property Name="id_loc_provenienza" Type="Int64" />
+          <Property Name="id_loc_destinazione" Type="Int64" />
+          <Property Name="des_contenuto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="peso_volumizzato" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="contrassegno" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="anticipate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="id_tab_iva" Type="Int64" />
+          <Property Name="data_ora_inserimento" Type="DateTime" Precision="3" />
+          <Property Name="data_ora_ult_variazione" Type="DateTime" Precision="3" />
+          <Property Name="note_fattura" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tariffa_forfait" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="prima_fascia_oraria" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="seconda_fascia_oraria" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nazione_mittente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nazione_destinatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tel_destinatario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="note_incasso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="epal" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="tipo_inc_richiesto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="metri_lineari" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="collegamento_tc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="num_colli_tc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="peso_effettivo_tc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="metri_cubi_tc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="bancali_tc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="sec_riferimento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="adr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="mit_longitudine" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="mit_latitudine" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dest_longitudine" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dest_latitudine" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="note_ritiro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="data_pronto_merce" Type="DateTime" Precision="3" />
+          <Property Name="tel_mittente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="regione_mit" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="regione_dest" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CDLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="va_bolle_sat" EntityType="Self.va_bolle_sat" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDLModelStoreContainer" CdmEntityContainer="CDLEntities">
+          <EntitySetMapping Name="va_bolle_sat">
+            <EntityTypeMapping TypeName="CDLModel.va_bolle_sat">
+              <MappingFragment StoreEntitySet="va_bolle_sat">
+                <ScalarProperty Name="id_bol_trasporto" ColumnName="id_bol_trasporto" />
+                <ScalarProperty Name="id_esercizio" ColumnName="id_esercizio" />
+                <ScalarProperty Name="id_filiale" ColumnName="id_filiale" />
+                <ScalarProperty Name="cod_esercizio" ColumnName="cod_esercizio" />
+                <ScalarProperty Name="cod_filiale" ColumnName="cod_filiale" />
+                <ScalarProperty Name="prog_spedizione" ColumnName="prog_spedizione" />
+                <ScalarProperty Name="data_spedizione" ColumnName="data_spedizione" />
+                <ScalarProperty Name="espresso" ColumnName="espresso" />
+                <ScalarProperty Name="rag_soc_mittente" ColumnName="rag_soc_mittente" />
+                <ScalarProperty Name="ind_mittente" ColumnName="ind_mittente" />
+                <ScalarProperty Name="cap_mittente" ColumnName="cap_mittente" />
+                <ScalarProperty Name="citta_mittente" ColumnName="citta_mittente" />
+                <ScalarProperty Name="prov_mittente" ColumnName="prov_mittente" />
+                <ScalarProperty Name="citta_sede_mittente" ColumnName="citta_sede_mittente" />
+                <ScalarProperty Name="rag_soc_destinatario" ColumnName="rag_soc_destinatario" />
+                <ScalarProperty Name="ind_destinatario" ColumnName="ind_destinatario" />
+                <ScalarProperty Name="cap_destinatario" ColumnName="cap_destinatario" />
+                <ScalarProperty Name="citta_destinatario" ColumnName="citta_destinatario" />
+                <ScalarProperty Name="prov_destinatario" ColumnName="prov_destinatario" />
+                <ScalarProperty Name="citta_sede_destinatario" ColumnName="citta_sede_destinatario" />
+                <ScalarProperty Name="id_sog_com_fatturazione" ColumnName="id_sog_com_fatturazione" />
+                <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+                <ScalarProperty Name="rag_cliente" ColumnName="rag_cliente" />
+                <ScalarProperty Name="tipo_consegna" ColumnName="tipo_consegna" />
+                <ScalarProperty Name="num_ddt" ColumnName="num_ddt" />
+                <ScalarProperty Name="data_ddt" ColumnName="data_ddt" />
+                <ScalarProperty Name="altro_riferimento" ColumnName="altro_riferimento" />
+                <ScalarProperty Name="num_colli" ColumnName="num_colli" />
+                <ScalarProperty Name="peso_effettivo" ColumnName="peso_effettivo" />
+                <ScalarProperty Name="metri_cubi" ColumnName="metri_cubi" />
+                <ScalarProperty Name="mis_colli" ColumnName="mis_colli" />
+                <ScalarProperty Name="note_bolla" ColumnName="note_bolla" />
+                <ScalarProperty Name="data_cons_tassativa" ColumnName="data_cons_tassativa" />
+                <ScalarProperty Name="data_appuntamento" ColumnName="data_appuntamento" />
+                <ScalarProperty Name="num_dist_cliente" ColumnName="num_dist_cliente" />
+                <ScalarProperty Name="data_dist_cliente" ColumnName="data_dist_cliente" />
+                <ScalarProperty Name="data_cons_richiesta" ColumnName="data_cons_richiesta" />
+                <ScalarProperty Name="note_web" ColumnName="note_web" />
+                <ScalarProperty Name="bancali" ColumnName="bancali" />
+                <ScalarProperty Name="tipo_data_tassativa" ColumnName="tipo_data_tassativa" />
+                <ScalarProperty Name="attesa_pren" ColumnName="attesa_pren" />
+                <ScalarProperty Name="data_attesa_pren" ColumnName="data_attesa_pren" />
+                <ScalarProperty Name="id_loc_provenienza" ColumnName="id_loc_provenienza" />
+                <ScalarProperty Name="id_loc_destinazione" ColumnName="id_loc_destinazione" />
+                <ScalarProperty Name="des_contenuto" ColumnName="des_contenuto" />
+                <ScalarProperty Name="peso_volumizzato" ColumnName="peso_volumizzato" />
+                <ScalarProperty Name="contrassegno" ColumnName="contrassegno" />
+                <ScalarProperty Name="anticipate" ColumnName="anticipate" />
+                <ScalarProperty Name="id_tab_iva" ColumnName="id_tab_iva" />
+                <ScalarProperty Name="data_ora_inserimento" ColumnName="data_ora_inserimento" />
+                <ScalarProperty Name="data_ora_ult_variazione" ColumnName="data_ora_ult_variazione" />
+                <ScalarProperty Name="note_fattura" ColumnName="note_fattura" />
+                <ScalarProperty Name="tariffa_forfait" ColumnName="tariffa_forfait" />
+                <ScalarProperty Name="prima_fascia_oraria" ColumnName="prima_fascia_oraria" />
+                <ScalarProperty Name="seconda_fascia_oraria" ColumnName="seconda_fascia_oraria" />
+                <ScalarProperty Name="nazione_mittente" ColumnName="nazione_mittente" />
+                <ScalarProperty Name="nazione_destinatario" ColumnName="nazione_destinatario" />
+                <ScalarProperty Name="tel_destinatario" ColumnName="tel_destinatario" />
+                <ScalarProperty Name="note_incasso" ColumnName="note_incasso" />
+                <ScalarProperty Name="epal" ColumnName="epal" />
+                <ScalarProperty Name="tipo_inc_richiesto" ColumnName="tipo_inc_richiesto" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="metri_lineari" ColumnName="metri_lineari" />
+                <ScalarProperty Name="collegamento_tc" ColumnName="collegamento_tc" />
+                <ScalarProperty Name="num_colli_tc" ColumnName="num_colli_tc" />
+                <ScalarProperty Name="peso_effettivo_tc" ColumnName="peso_effettivo_tc" />
+                <ScalarProperty Name="metri_cubi_tc" ColumnName="metri_cubi_tc" />
+                <ScalarProperty Name="bancali_tc" ColumnName="bancali_tc" />
+                <ScalarProperty Name="sec_riferimento" ColumnName="sec_riferimento" />
+                <ScalarProperty Name="adr" ColumnName="adr" />
+                <ScalarProperty Name="mit_longitudine" ColumnName="mit_longitudine" />
+                <ScalarProperty Name="mit_latitudine" ColumnName="mit_latitudine" />
+                <ScalarProperty Name="dest_longitudine" ColumnName="dest_longitudine" />
+                <ScalarProperty Name="dest_latitudine" ColumnName="dest_latitudine" />
+                <ScalarProperty Name="note_ritiro" ColumnName="note_ritiro" />
+                <ScalarProperty Name="data_pronto_merce" ColumnName="data_pronto_merce" />
+                <ScalarProperty Name="tel_mittente" ColumnName="tel_mittente" />
+                <ScalarProperty Name="regione_mit" ColumnName="regione_mit" />
+                <ScalarProperty Name="regione_dest" ColumnName="regione_dest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

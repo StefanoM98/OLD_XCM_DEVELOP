@@ -1,0 +1,5 @@
+IMPROTA|DDT|Esiti|True
+ALLWAYS|RIF ORDINE|DATA CONSEGNA|False
+EMMEA|num_rife|dat_stat|True
+TLI|Riferimento|Data conse|False
+COTRAF|RIFERIMENTO CLIENTE|DATA CONSEGNA|False

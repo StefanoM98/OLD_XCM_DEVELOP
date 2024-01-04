@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InterscambioAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ANAGRAFICA_MANDANTI">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_MANDANTE" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_MANDANTE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MANDANTE_GESPE" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="NOME_MANDANTE" Type="varchar(max)" Nullable="false" />
+          <Property Name="NOTIFICA_GIACENZE" Type="bit" Nullable="false" />
+          <Property Name="DATA_ULTIMA_NOTIFICA_GIACENZE" Type="datetime" Nullable="false" />
+          <Property Name="NOTIFICA_MOV_MAG" Type="bit" Nullable="false" />
+          <Property Name="DATA_ULTIMA_NOTIFICA_MOVI_MAG" Type="datetime" Nullable="false" />
+          <Property Name="MAIL_NOTIFICA_GIACENZE" Type="varchar(max)" />
+          <Property Name="MAIL_NOTIFICA_MOV_MAG" Type="varchar(max)" />
+          <Property Name="INVIA_DOCUMENTO_BEM" Type="bit" Nullable="false" />
+          <Property Name="MAIL_NOTIFICA_BEM" Type="varchar(max)" />
+          <Property Name="NOTIFICA_TRACKING" Type="bit" Nullable="false" />
+          <Property Name="MAIL_TRACKING" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="APS_DAFNE">
+          <Key>
+            <PropertyRef Name="CODICE_PRODOTTO" />
+          </Key>
+          <Property Name="CODICE_PRODOTTO" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="IVA_PRODOTTO" Type="int" Nullable="false" />
+          <Property Name="PREZZO_PRODOTTO" Type="decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="SCONTO_PRODOTTO" Type="decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="VALUTA_PRODOTTO" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="InterscambioAPIModelStoreContainer">
+          <EntitySet Name="ANAGRAFICA_MANDANTI" EntityType="Self.ANAGRAFICA_MANDANTI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APS_DAFNE" EntityType="Self.APS_DAFNE" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InterscambioAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="InterscambioAPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANAGRAFICA_MANDANTI" EntityType="InterscambioAPIModel.ANAGRAFICA_MANDANTI" />
+          <EntitySet Name="APS_DAFNE" EntityType="InterscambioAPIModel.APS_DAFNE" />
+        </EntityContainer>
+        <EntityType Name="ANAGRAFICA_MANDANTI">
+          <Key>
+            <PropertyRef Name="ID_ANAGRAFICA_MANDANTE" />
+          </Key>
+          <Property Name="ID_ANAGRAFICA_MANDANTE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MANDANTE_GESPE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="NOME_MANDANTE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NOTIFICA_GIACENZE" Type="Boolean" Nullable="false" />
+          <Property Name="DATA_ULTIMA_NOTIFICA_GIACENZE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NOTIFICA_MOV_MAG" Type="Boolean" Nullable="false" />
+          <Property Name="DATA_ULTIMA_NOTIFICA_MOVI_MAG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MAIL_NOTIFICA_GIACENZE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL_NOTIFICA_MOV_MAG" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INVIA_DOCUMENTO_BEM" Type="Boolean" Nullable="false" />
+          <Property Name="MAIL_NOTIFICA_BEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NOTIFICA_TRACKING" Type="Boolean" Nullable="false" />
+          <Property Name="MAIL_TRACKING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="APS_DAFNE">
+          <Key>
+            <PropertyRef Name="CODICE_PRODOTTO" />
+          </Key>
+          <Property Name="CODICE_PRODOTTO" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IVA_PRODOTTO" Type="Int32" Nullable="false" />
+          <Property Name="PREZZO_PRODOTTO" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+          <Property Name="SCONTO_PRODOTTO" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+          <Property Name="VALUTA_PRODOTTO" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InterscambioAPIModelStoreContainer" CdmEntityContainer="InterscambioAPIEntities">
+          <EntitySetMapping Name="ANAGRAFICA_MANDANTI">
+            <EntityTypeMapping TypeName="InterscambioAPIModel.ANAGRAFICA_MANDANTI">
+              <MappingFragment StoreEntitySet="ANAGRAFICA_MANDANTI">
+                <ScalarProperty Name="MAIL_TRACKING" ColumnName="MAIL_TRACKING" />
+                <ScalarProperty Name="NOTIFICA_TRACKING" ColumnName="NOTIFICA_TRACKING" />
+                <ScalarProperty Name="MAIL_NOTIFICA_BEM" ColumnName="MAIL_NOTIFICA_BEM" />
+                <ScalarProperty Name="INVIA_DOCUMENTO_BEM" ColumnName="INVIA_DOCUMENTO_BEM" />
+                <ScalarProperty Name="MAIL_NOTIFICA_MOV_MAG" ColumnName="MAIL_NOTIFICA_MOV_MAG" />
+                <ScalarProperty Name="MAIL_NOTIFICA_GIACENZE" ColumnName="MAIL_NOTIFICA_GIACENZE" />
+                <ScalarProperty Name="DATA_ULTIMA_NOTIFICA_MOVI_MAG" ColumnName="DATA_ULTIMA_NOTIFICA_MOVI_MAG" />
+                <ScalarProperty Name="NOTIFICA_MOV_MAG" ColumnName="NOTIFICA_MOV_MAG" />
+                <ScalarProperty Name="DATA_ULTIMA_NOTIFICA_GIACENZE" ColumnName="DATA_ULTIMA_NOTIFICA_GIACENZE" />
+                <ScalarProperty Name="NOTIFICA_GIACENZE" ColumnName="NOTIFICA_GIACENZE" />
+                <ScalarProperty Name="NOME_MANDANTE" ColumnName="NOME_MANDANTE" />
+                <ScalarProperty Name="ID_MANDANTE_GESPE" ColumnName="ID_MANDANTE_GESPE" />
+                <ScalarProperty Name="ID_ANAGRAFICA_MANDANTE" ColumnName="ID_ANAGRAFICA_MANDANTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APS_DAFNE">
+            <EntityTypeMapping TypeName="InterscambioAPIModel.APS_DAFNE">
+              <MappingFragment StoreEntitySet="APS_DAFNE">
+                <ScalarProperty Name="VALUTA_PRODOTTO" ColumnName="VALUTA_PRODOTTO" />
+                <ScalarProperty Name="SCONTO_PRODOTTO" ColumnName="SCONTO_PRODOTTO" />
+                <ScalarProperty Name="PREZZO_PRODOTTO" ColumnName="PREZZO_PRODOTTO" />
+                <ScalarProperty Name="IVA_PRODOTTO" ColumnName="IVA_PRODOTTO" />
+                <ScalarProperty Name="CODICE_PRODOTTO" ColumnName="CODICE_PRODOTTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

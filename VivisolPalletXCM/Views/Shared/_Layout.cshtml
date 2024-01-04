@@ -1,0 +1,42 @@
+@using VivisolPalletXCM.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+
+
+    @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    @Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.Editors },
+            new Script { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Content.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Layout.css")" />
+    @RenderSection("Head", false)
+
+</head>
+
+<body>
+    <div class="form">
+        <div class="content" id="pageContent">
+            @RenderBody()
+            <div class="footer-wrapper" id="footerWrapper">
+                <div class="footer">
+                    <span class="footer-left">
+                        &copy; 2022 XCM HealthCare
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

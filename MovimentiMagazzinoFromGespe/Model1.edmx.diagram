@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9690f58fcab45cbb103ea9d0116726e" Name="Diagram1" ZoomLevel="16">
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsDocumentRows_XCM" Width="2.625" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsRegistrations" Width="2.375" PointX="3.75" PointY="0.5" />
+        <EntityTypeShape EntityType="GnXcmModel.TmsShipmentMovGoods" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwGrdTmsShipmentMovGoods_Detail" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwTmsShipment" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsDocument" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="GnXcmModel.uvwWmsWarehouse" Width="1.5" PointX="7.375" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="XCM_WMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GEO_IT">
+          <Key>
+            <PropertyRef Name="ID_GEOGRAFICO" />
+          </Key>
+          <Property Name="ID_GEOGRAFICO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CAP" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="CITTA" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="REGIONE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROVINCIA" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ABITANTI" Type="int" />
+          <Property Name="CODICE_ISTAT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="XCM_WMSModelStoreContainer">
+          <EntitySet Name="GEO_IT" EntityType="Self.GEO_IT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XCM_WMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GEO_IT">
+          <Key>
+            <PropertyRef Name="ID_GEOGRAFICO" />
+          </Key>
+          <Property Name="ID_GEOGRAFICO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CAP" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CITTA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="REGIONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ABITANTI" Type="Int32" />
+          <Property Name="CODICE_ISTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="XCM_WMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GEO_IT" EntityType="Self.GEO_IT" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XCM_WMSModelStoreContainer" CdmEntityContainer="XCM_WMSEntities">
+          <EntitySetMapping Name="GEO_IT">
+            <EntityTypeMapping TypeName="XCM_WMSModel.GEO_IT">
+              <MappingFragment StoreEntitySet="GEO_IT">
+                <ScalarProperty Name="ID_GEOGRAFICO" ColumnName="ID_GEOGRAFICO" />
+                <ScalarProperty Name="CAP" ColumnName="CAP" />
+                <ScalarProperty Name="CITTA" ColumnName="CITTA" />
+                <ScalarProperty Name="REGIONE" ColumnName="REGIONE" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="ABITANTI" ColumnName="ABITANTI" />
+                <ScalarProperty Name="CODICE_ISTAT" ColumnName="CODICE_ISTAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
